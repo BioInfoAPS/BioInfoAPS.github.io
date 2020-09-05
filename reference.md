@@ -1,0 +1,4 @@
+---
+layout: reference
+permalink: /reference/
+---

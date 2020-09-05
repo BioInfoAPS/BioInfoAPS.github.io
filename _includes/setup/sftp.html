@@ -1,0 +1,146 @@
+<div id="shell">
+    <h3>Transferring files</h3>
+    <p>
+    Transfering files to and from remote server and your local computer
+    requires a separate transfer protocol, such as Samba or SFTP.
+    The complete list of data transfer methods available for HiperGator 
+    is listed in its 
+    <a href="https://help.rc.ufl.edu/doc/Transfer_Data">wiki page</a>.
+    We recommend use of SFTP (Secure File Transfer Protocol) for 
+    accessing files for this workshop. 
+    Although commandline version of SFTP are often bundled with SSH, 
+    we recommend use of graphical softwares for ease of use if you 
+    are not familiar with <code>sftp</code> commands.
+    </p>
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+            <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+            <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <article role="tabpanel" class="tab-pane active" id="shell-windows">
+                <p>
+                    You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
+                    <a href="hhttps://winscp.net/">WinSCP</a> for uploading or downloading 
+                    data from remote SFTP server. The following instructions 
+                    are for Filezilla.
+                </p>
+                <ol>
+                    <li>
+                        Download Filezilla for windows using 
+                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
+                    </li>
+                    <li>
+                        Install Filezilla and then run the program.
+                    </li>
+                    <li>
+                        Fill the following information in quickconnect panel and press 
+                        <strong>Quickconnect</strong> button.
+                        <ul>
+                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
+                            <li>Username: provided username</li>
+                            <li>Password: provided passsowd</li>
+                            <li>Port: <code>22</code></li>
+                        </ul>
+                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
+                    </li>
+                    <li>
+                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
+                    </li>
+                    <li>Change remote site to the following. Do not forget to replace
+                        &lt;username&gt; with the provided username.
+                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
+                    </li>
+                </ol>
+                <h3>Video instruction for logging in using Filezilla</h3>
+                <iframe src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" width="640" height="480"></iframe>
+            </article>
+            <article role="tabpanel" class="tab-pane" id="shell-macos">
+                <p>
+                    You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
+                    <a href="https://cyberduck.io/">Cyberduck</a> for uploading or downloading 
+                    data from remote SFTP server. The following instructions 
+                    are for Filezilla.
+                </p>
+                <ol>
+                    <li>
+                        Download Filezilla for macOS using 
+                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
+                    </li>
+                    <li>
+                        Install Filezilla and then run the program.
+                    </li>
+                    <li>
+                        Fill the following information in quickconnect panel and press 
+                        <strong>Quickconnect</strong> button.
+                        <ul>
+                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
+                            <li>Username: provided username</li>
+                            <li>Password: provided passsowd</li>
+                            <li>Port: <code>22</code></li>
+                        </ul>
+                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
+                    </li>
+                    <li>
+                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
+                    </li>
+                    <li>Change remote site to the following. Do not forget to replace
+                        &lt;username&gt; with the provided username.
+                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
+                    </li>
+                </ol>
+                <h3>Video instruction for logging in using Filezilla</h3>
+                <iframe src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" width="640" height="480"></iframe>
+            </article>
+            <article role="tabpanel" class="tab-pane" id="shell-linux">
+                <p>
+                    You can mount SFTP as virtual filesystem using sshfs 
+                    and access the files using file any file manager. 
+                </p>
+                <pre>
+sudo apt install sshfs
+mkdir /&lt;mountpoint&gt;
+sshfs &lt;username&gt;@hpg.rc.ufl.edu:/blue/general_workshop/&lt;username&gt; /opt/&lt;mountpoint&gt;</pre>
+                <p>
+                    Alternatively, you can use <a href="https://filezilla-project.org/">Filezilla</a> 
+                    for uploading or downloading data from remote SFTP server. 
+                    The following instructions are for Filezilla.
+                </p>
+                <ol>
+                    <li>
+                        Download Filezilla for linux using 
+                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
+                    </li>
+                    <li>
+                        Install Filezilla and then run the program.
+                    </li>
+                    <li>
+                        Fill the following information in quickconnect panel and press 
+                        <strong>Quickconnect</strong> button.
+                        <ul>
+                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
+                            <li>Username: provided username</li>
+                            <li>Password: provided passsowd</li>
+                            <li>Port: <code>22</code></li>
+                        </ul>
+                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
+                    </li>
+                    <li>
+                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
+                    </li>
+                    <li>Change remote site to the following. Do not forget to replace
+                        &lt;username&gt; with the provided username.
+                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
+                    </li>
+                </ol>
+                <h3>Video instruction for logging in using Filezilla</h3>
+                <iframe src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" width="640" height="480"></iframe>
+            
+            </article>
+        </div>
+    </div>
+</div>
+  
