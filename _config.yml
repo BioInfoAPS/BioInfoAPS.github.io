@@ -65,7 +65,7 @@ repository: rknx/APSBasicBioinformatics
 email: "sujan.timilsina@ufl.edu"
 
 # Sites.
-baseSite: "https://workshop.anujs.com.np/"
+baseSite: "https://bioinfoaps.github.io/"
 faq: "faq.html"
 survey: "survey.html"
 feedback: "feedback.html"
