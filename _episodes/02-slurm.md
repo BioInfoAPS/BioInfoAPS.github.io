@@ -46,7 +46,7 @@ However, it alsocontains extra comments which can be read by SLURM
 to determine resource requests.
 
 To get started with SLURM, lets create new directory in your work directory and 
-copy a submission script template from share directory.
+copy a submission script template from share/scripts directory.
 
 ```sh
 $ cd /blue/general_workshop/<username>
@@ -55,7 +55,7 @@ $ mkdir slurm
 
 $ cd slurm
 
-$ cp ../../share/slurm_template.sh ./slurm.sh
+$ cp ../../share/scripts/slurm_template.sh ./slurm.sh
 ```
 
 Note: `.sh` is commonly used extension for shell scripts. Using a extension is not mandatory.
@@ -88,8 +88,6 @@ A basic text editor will open.
 #SBATCH --time 00:05:00               # Time limit hrs:min:sec
 #SBATCH --output serial_test_%j.log   # Standard output and error log
 
-pwd; hostname; date
-
 -----------------------------------------------------------------------------------------------
 ^G Get Help     ^O WriteOut     ^R Read File     ^Y Prev Page     ^K Cut Text       ^C Cur Pos
 ^X Exit         ^J Justify      ^W Where Is      ^V Next Page     ^U UnCut Text     ^T To Spell
@@ -105,8 +103,6 @@ Lets add more lines under the last line to run a demo job.
 ``` 
 # Return current date and time every 30 seconds for 6 times
 for i in {0..5}; do printf '%s %s\n' "$(date)"; sleep 10s; done
-
-echo 'Job completed!'
 ```
 
 Press <kbd>Ctrl</kbd>+<kbd>x</kbd> (<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
@@ -144,3 +140,18 @@ $ squeue -A general_workshop
 ```
 
 Under status `ST`, `R` stands for Running and `PD` stands for pending.
+
+
+SLURM script: (/blue/general_workshop/share/scripts/slurm_template.sh)
+```
+#!/bin/bash
+#SBATCH --job-name=serial_job_test    # Job name
+#SBATCH --account=general_workshop    # Account to run the computational task
+#SBATCH --qos=general_workshop        # Account allocation
+#SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
+#SBATCH --mail-user=<email_address>   # Where to send mail  
+#SBATCH --ntasks=1                    # Run on a single CPU
+#SBATCH --mem=1gb                     # Job memory request
+#SBATCH --time=00:05:00               # Time limit hrs:min:sec
+#SBATCH --output=serial_test_%j.log   # Standard output and error log
+```
