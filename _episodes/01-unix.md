@@ -25,9 +25,9 @@ Once you login to HiperGator through SSH, you will start using a bash shell.
 The `$` prompt shows that the bash shell is ready to accept bash commands.
 Before learning some basic commands, there are a few recommendations regarding UNIX systems.
 
-- The Terminal hates spaces between names. For long or complex names, use conectors such “_" or ‘-’ instead of spaces.
-- Uppercase is different from lowercase. ‘R’ is not ‘r’ for the terminal.
-- UNIX system `/` for path, unlike windows, which used `\`.
+- The ternminal syntax hates spaces between names. For long or complex names, use connectors such “_" or ‘-’ instead of spaces.
+- Uppercase is different from lowercase. ‘R’ is not the same as ‘r’ in commands, paths and arguments.
+- UNIX system uses `/` for path, unlike windows, which uses `\`.
 
 Tip: We will be working on ‘blue’ storage in HiperGator where UF has separated 32 dedicated nodes for our workshop under a group name ‘general_workshop’. Each user has a profile in the ‘general_workshop’ folder along with a ‘share’ folder where all the datasets and information for this workshop are stored. Please remember to only copy requested files from shared folder to your user folder and run the analyses in the peronnel directory only.
 
@@ -64,9 +64,9 @@ total 0
 Tip: Your directory is currently empty. Run `ls` and `ls -l` 
 later after we create some files and directories.
 The command displays the properties of the files 
-r means read only permission 
-w means write perimision 
-x means read execution perimision
+`r` means read only permission 
+`w` means write perimision 
+`x` means read execution perimision
 
 ### Copying files
 
@@ -107,6 +107,8 @@ $ rm newfile.txt
 $ ls
 dir1     file1.txt
 ```
+
+Tip: You can use <kbd>Tab</kbd> to autocomplete paths and filenames.
 
 ### Creating directories
 
@@ -257,9 +259,9 @@ $ sed -n 56,60p file1.txt > middle.txt
 You can even save the lists of files in current directory into a file.
 
 ```sh
-ls > files.txt
+$ ls > files.txt
 
-cat files.txt
+$ cat files.txt
 dir1
 file1.txt
 files.txt
@@ -304,7 +306,7 @@ CM008457
 ```
 
 Looks like the columns in `files1.txt` are tab separated. 
-Alternatibvely, we can just extract the first column.cut 
+Alternatively, we can just extract the first column using `cut`. 
 
 ```sh
 $ cut -f 1 file1.txt
@@ -321,7 +323,7 @@ we can get the chromosome name by separating lines
 into columns using `.` and taking the first column. 
 
 ```sh
-$ cut -f 1 -d "."
+$ cut -f 1 -d "." file1.txt
 CM008465
 CM008458
 ...
@@ -394,7 +396,7 @@ Tip: `-k2nr` is shortcut for `-k 2 -n -r`.
 with `new` in the file `file1`.
 
 ```sh
-$ sed 's/CM0084/Chr/g' file1.txt > prettyfile.txt
+$ sed 's/CM0084/Chr_/g' file1.txt > prettyfile.txt
 
 $ head -n 3 prettyfile.txt
 Chr_65.1        4979077 A       C       intergenic_region       T459_26891-T459_26892   gene26890-gene26891     4979077A>C              2       3       0       11
@@ -404,7 +406,7 @@ Chr_59.1        72668492        G       A       intergenic_region       T459_144
 
 ### Search and Extract
 
-`grep` command is used to find a string in a file and return the mathcing line.
+`grep` command is used to find a string in a file and return the matching line.
 Argument `-c` is used to return the number of matches.
 
 ```sh
