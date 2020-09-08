@@ -42,10 +42,7 @@ eventbrite: false     # optional: alphanumeric key for Eventbrite registration, 
 
 
 {% comment %} Pre-requisite {% endcomment %}
-<p id="requirements">
-  <strong>Requirements:</strong>
-  Participants must bring a laptop with Windows, MacOS or Linux operating system (not a tablet, Chromebook, etc.) that they have administrative privileges on. They should have a few specific software packages installed (listed <a href="#setup">below</a>).
-</p>
+{% include intro/prereq.html %}
 
 
 {% comment %} Accessibility {% endcomment %}
