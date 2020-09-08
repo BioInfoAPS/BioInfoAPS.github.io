@@ -66,6 +66,8 @@ email: "sujan.timilsina@ufl.edu"
 
 # Sites.
 baseSite: "https://bioinfoaps.github.io/"
+github.url: "https://bioinfoaps.github.io/"
+workshop_repo: "https://github.com/BioInfoAPS/BioInfoAPS.github.io"
 faq: "faq.html"
 survey: "survey.html"
 feedback: "feedback.html"
