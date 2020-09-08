@@ -27,9 +27,9 @@ Before learning some basic commands, there are a few recommendations regarding U
 - Uppercase is different from lowercase. ‘R’ is not the same as ‘r’ in commands, paths and arguments.
 - UNIX system uses `/` for path, unlike windows, which uses `\`.
 
-Tip: We will be working on ‘blue’ storage in HiperGator where UF has separated 32 dedicated nodes for our workshop under a group name ‘general_workshop’. Each user has a profile in the ‘general_workshop’ folder along with a ‘share’ folder where all the datasets and information for this workshop are stored. Please remember to only copy requested files from shared folder to your user folder and run the analyses in the peronnel directory only.
+Tip: We will be working on ‘blue’ storage in HiperGator for our workshop under a group name ‘general_workshop’. Each user has a profile in the ‘general_workshop’ folder. There is also a ‘share’ folder where all the datasets and information for this workshop are stored. Please remember to only copy requested files from shared folder to your user folder and run the analyses in the folder(directory) with your username only.
 
-To go to your respective folder, enter the folowing command (we will talk about `cd` shortly). Do not forget to replace &lt;username&gt; with the username provided to you.
+To go to your personal folder which is named as your username for the gatorlink account provided to you, enter the following command (we will talk about `cd` shortly). Do not forget to replace &lt;username&gt; with the username provided to you.
 
 ```sh
 $ cd /blue/general_workshop/<username>
@@ -63,8 +63,8 @@ Tip: Your directory is currently empty. Run `ls` and `ls -l`
 later after we create some files and directories.
 The command displays the properties of the files 
 `r` means read only permission 
-`w` means write perimision 
-`x` means read execution perimision
+`w` means write permission 
+`x` means read execution permission
 
 ### Copying files
 
@@ -97,7 +97,7 @@ dir1     file1.txt     newfile.txt
 
 ### Deleting files
 
-`rm` can be used for deleting files (and directories too with `-r` recursive argument.)
+`rm` can be used for deleting files (and directories too with `-r` recursive argument)
 
 ```sh
 $ rm newfile.txt
@@ -130,6 +130,8 @@ Use `pwd` to check the current path.
 ```sh
 $ mkdir newdir
 
+$ cd newdir
+
 $ pwd
 /blue/general_workshop/<username>/newdir
 ```
@@ -151,10 +153,10 @@ $ pwd
 
 `rmdir` removes the specified directory from current path. 
 Lets remove the `newdir` we created earlier and 
-check if it is gone using `ls`.
+check if it is removed using `ls`.
 ```sh
 $ ls
-newdir
+dir1    file1.txt   newdir
 
 $ rmdir newdir
 
@@ -183,7 +185,7 @@ In `less` output, you can scroll up and down the file content using
 <kbd>&uparrow;</kbd> and <kbd>&downarrow;</kbd> keys.
 In `more` output, you can scroll down the file using <kbd>enter</kbd> key.
 You can return to command line prompt by pressing <kbd>q</kbd> key.
-Lets view `file1.txt` again but using '`more` or `less`.
+Lets view `file1.txt` again but using `more` or `less`.
 
 ```sh
 $ less file1.txt
@@ -470,7 +472,7 @@ CM008455.1      82264380        ACC     A       intergenic_region
 
 Let’s use the commands in a simple real case. Copy a file in shared folder ‘aliens_in_scabies’ using following command
 
-warning: make sure you are in /blue/general_workshop/&lt;username&gt; folder
+warning: make sure you are in /blue/general_workshop/&lt;username&gt; folder, if not use 'cd /blue/general_workshop/username' to go to your personal directory. 
 
 $ cp ../share/strep/aliens_in_scabies ./
 
@@ -502,7 +504,7 @@ $ cut -f1 aliens_in_scabies | sed 's/SCAB/SCABIES/g'
 </details>
 
 ## An intro to loops
-Many tasks are repetitive. It is not necessary to repeat the same command multiple times. We learn ho to pipe and re-direct the outputs of the orders.
+Many tasks are repetitive. It is not necessary to repeat the same command multiple times. We learn how to pipe and re-direct outputs of the commands.
 let’s learn how to use loops to repeat a task
 
 ### Wildcards
