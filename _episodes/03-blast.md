@@ -56,7 +56,7 @@ BLAST can be run online (e.g. NCBI blast) as well as locally. Few applications o
 1. to compare against multiple genomes of interest,
 2. to output in different formats that can be used in downstream applications.
 
-## BLAST exercise
+## Outline of sequences to BLAST
 
 We will use the local BLAST to identify if the bacterial genomes carry a gene of interest. 
 We will use bacterial spot causing *Xanthomonas* and one of the conserved effector ‘AvrBs2’ sequence as an example today. 
@@ -211,7 +211,7 @@ $ blastdb_aliastool -dblist "Xeu.fasta Xp.fasta Xg.fasta Xc.fasta" -dbtype nucl 
 
 We can also run `blast` as a SLURM job, which is useful for long and resource intensive search.
 
-The SLURM submission script is available in `/blue/general_workshop/share/scripts/slurm_ncbi.sh`. 
+The SLURM submission script is available in `/blue/general_workshop/share/scripts/slurm_blast.sh`. 
 Genome and query files are available in `/blue/general_workshop/share/bacteria_genomes/xanthomonas`
 
 1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;`
@@ -223,43 +223,35 @@ Genome and query files are available in `/blue/general_workshop/share/bacteria_g
 7. Check status of the job as it is running.
 8. After job is completed, check the list of files in current directory.
 
-SLURM script: (/blue/general_workshop/share/scripts/slurm_ncbi.sh)
-```
-#!/bin/bash
-#SBATCH --job-name=serial_job_test    # Job name
-#SBATCH --account=general_workshop    # Account to run the computational task
-#SBATCH --qos=general_workshop        # Account allocation
-#SBATCH --mail-type=END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=<email_address>   # Where to send mail  
-#SBATCH --ntasks=1                    # Run on a single CPU
-#SBATCH --mem=1gb                     # Job memory request
-#SBATCH --time=00:05:00               # Time limit hrs:min:sec
-#SBATCH --output=serial_test_%j.log   # Standard output and error log
-pwd; hostname; date
+<details>
+  <summary> Click here for answer. </summary>
 
-# Load blast
-module load ncbi_blast
-
-# Loop over each genome
-for genome in `ls *.fasta | sed 's/.fasta//g'`
-do
-  # Make database
-  makeblastdb -in "$genome.fasta" --dbtype nucl
-
-  # Run blastn on that database
-  blastn -query avrBs2.fas -db "$genome.fasta" -out $genome"_avrBs2.out" -outfmt 5 -evalue 0.001
-done
-```
-
-Answer:
 ```sh
-cd /blue/general_workshop/<username>
-mkdir slurm_blast
-cd slurm_blast
-cp /blue/general_workshop/share/bacteria_genomes/xanthomonas/* ./
-cp /blue/general_workshop/share/scripts/slurm_ncbi.sh ./
-nano slurm_ncbi.sh > edit email > Ctrl+x > y
-sbatch slurm_ncbi.sh
-squeue -u <username>
-ls
+#1
+$ cd /blue/general_workshop/<username>
+
+#2
+$ mkdir slurm_blast
+
+$ cd slurm_blast
+
+#3
+$ cp /blue/general_workshop/share/bacteria_genomes/xanthomonas/* ./
+
+#4
+$ cp /blue/general_workshop/share/scripts/slurm_blast.sh ./
+
+#5
+$ nano slurm_blast.sh > edit email > Ctrl+x > y
+
+#6
+$ sbatch slurm_blast.sh
+
+#7
+$ squeue -u <username>
+
+#8
+$ ls
 ```
+
+</details>
