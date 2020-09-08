@@ -62,7 +62,7 @@ We will use bacterial spot causing *Xanthomonas* and one of the conserved effect
 Note: Effectors are proteins secreted by pathogenic bacteria into the host cells. 
 Note: *avrBs2* is one of the most studied and conserved effector gene found in multiple *Xanthomonas* species.
 
-In the folder `/blue/share/bacteria_genomes/xanthomonas/`, there are few *Xanthomonas* species genomes.
+In the folder `/blue/share/xanthomonas/`, there are few *Xanthomonas* species genomes.
 
 - *Xanthomonas euvesicatoria* &rarr; `Xeu.fasta`
 - *Xanthomonas perforans* &rarr; `Xp.fasta`
@@ -78,7 +78,7 @@ Before starting, copy all the required files to your working directory.
 ```sh
 $ cd /blue/general_workshop/<username>
 
-$ cp ../share/bacteria_genomes/xanthomonas ./
+$ cp ../share/xanthomonas ./
 
 $ ls
 strep     slurm     xanthomonas
@@ -104,10 +104,10 @@ which in our case are the genome files `Xeu.fasta`, `Xp.fasta`, `Xg.fasta`, and 
 is used for creating BLAST databases from FASTA files.
 
 ```sh
-$ makeblastdb -in Xeu.fasta -dbtype nucl
+$ makeblastdb -in Xeu.fasta -out Xeu -dbtype nucl
 
 Building a new DB, current time: 09/06/2020 23:17:22
-New DB name:   /blue/general_workshop/<username>/xanthomonas/Xeu.fasta
+New DB name:   /blue/general_workshop/<username>/xanthomonas/Xeu
 New DB title:  Xeu.fasta
 Sequence type: Nucleotide
 Keep MBits: T
@@ -115,11 +115,11 @@ Maximum file size: 1000000000B
 Adding sequences from FASTA; added 3 sequences in 0.0926349 seconds.
 
 $ ls
-avrBs2.fasta      Xc.fasta          Xeu.fasta         Xeu.fasta.ndb     Xeu.fasta.nhr 
-Xeu.fasta.nin     Xeu.fasta.not     Xeu.fasta.nsq     Xeu.fasta.ntf     Xeu.fasta.nto
-Xg.fasta          Xp.fasta
+avrBs2.fasta     Xc.fasta     Xeu.fasta     Xeu.ndb     Xeu.nhr 
+Xeu.nin          Xeu.not      Xeu.nsq       Xeu.ntf     Xeu.nto
+Xg.fasta         Xp.fasta
 ```
-Tip: `makeblastdb -h` command displays options avaialbe for `makeblstdb`.
+Tip: `makeblastdb -h` command displays options avaialbe for `makeblastdb`.
 
 Note that new database files with extensions `.ndb`, `.nhr`, `.nsq` etc. have been created.
 
@@ -136,10 +136,14 @@ Extension - ‘.fasta’.
 We can specify all files in current path with fasta extension by `./*.fasta`.
 
 ```sh
-$ for genome in ./*.fasta; do makeblastdb -in "${genome}" --dbtype nucl; done
+$ genomes=`ls *.fasta | sed 's/.fasta//g'`
+
+$ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done
 ```
 Tip: Short loops can be written in a same line by separating commands with `;`. 
 `;` is equivalent to pressing <kbd>Enter</kbd>.
+
+Tip: `sed` command is used to remove `.fasta` extension from list of names.
 
 ### Performing BLAST search
 
@@ -147,10 +151,10 @@ We are now ready to do a BLAST search. Since both the query (`avrBs2.fasta`)
 and the database are nucleotide sequences, we will perform `blastn`.
 
 ```sh
-$ blastn -query avrBs2.fas -db Xeu.fasta -out Xeu_avrBs2.out -outfmt 0 -evalue 0.001
+$ blastn -query avrBs2.fas -db Xeu -out Xeu_avrBs2.out -outfmt 0 -evalue 0.001
 
 $ ls
-avrBs2.fasta      Xeu_avrBs2.out     Xc.fasta          Xeu.fasta         Xeu.fasta.ndb
+avrBs2.fasta      Xeu_avrBs2.out     Xc.fasta          Xeu.fasta         Xeu.ndb
 ...
 ...
 ```
@@ -182,8 +186,6 @@ Xc
 -----------------------------------------------------------------------------------------------
 ```
 
-Note, we are not putting `.fasta` part of the database. This is come handy later in naming outputs.
-
 Press <kbd>Ctrl</kbd>+<kbd>o</kbd> (<kbd>Cmd</kbd>+<kbd>o</kbd> in MacOS) to save the file.
 Give it a name `dblist.txt` and press <kbd>Enter</kbd>.
 
@@ -194,7 +196,7 @@ Now we can run the `blastn` in loop.
 ```sh
 $ while read -r dbname
 $ do
-$   blastn -query avrBs2.fas -db "$dbname.fasta" -out $dbname"_avrBs2.out" -outfmt 0 -evalue 0.001
+$   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -outfmt 0 -evalue 0.001
 $ done < dblist.txt
 ```
 
@@ -202,7 +204,7 @@ Note: BLAST+ also includes a command `blastdb_aliastool` for combining databases
 however, it is outside the scope of this workshop.
 
 ```sh
-$ blastdb_aliastool -dblist "Xeu.fasta Xp.fasta Xg.fasta Xc.fasta" -dbtype nucl -out xanthomonas_all -title "Xanthomonas genomic"
+$ blastdb_aliastool -dblist "Xeu Xp Xg Xc" -dbtype nucl -out xanthomonas_all -title "Xanthomonas genomic"
 ```
 
 ## Exercise: Performing blast search in SLURM
@@ -210,7 +212,7 @@ $ blastdb_aliastool -dblist "Xeu.fasta Xp.fasta Xg.fasta Xc.fasta" -dbtype nucl 
 We can also run `blast` as a SLURM job, which is useful for long and resource intensive search.
 
 The SLURM submission script is available in `/blue/general_workshop/share/scripts/slurm_blast.sh`. 
-Genome and query files are available in `/blue/general_workshop/share/bacteria_genomes/xanthomonas`
+Genome and query files are available in `/blue/general_workshop/share/xanthomonas`
 
 1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;`
 2. Make a folder in your working directory called `slurm_blast` and enter that directory.
@@ -221,12 +223,12 @@ Genome and query files are available in `/blue/general_workshop/share/bacteria_g
 7. Check status of the job as it is running.
 8. After job is completed, check the list of files in current directory.
 
-<details>
+<details markdown="1">
   <summary> Click here for answer. </summary>
 
 ```sh
 #1
-$ cd /blue/general_workshop/<username>
+$ cd /blue/general_workshop/&lt;username&gt;
 
 #2
 $ mkdir slurm_blast
@@ -234,19 +236,19 @@ $ mkdir slurm_blast
 $ cd slurm_blast
 
 #3
-$ cp /blue/general_workshop/share/bacteria_genomes/xanthomonas/* ./
+$ cp /blue/general_workshop/share/xanthomonas/* ./
 
 #4
 $ cp /blue/general_workshop/share/scripts/slurm_blast.sh ./
 
 #5
-$ nano slurm_blast.sh > edit email > Ctrl+x > y
+$ nano slurm_blast.sh &rarr; edit email &rarr; Ctrl+x $rarr; y
 
 #6
 $ sbatch slurm_blast.sh
 
 #7
-$ squeue -u <username>
+$ squeue -u &lt;username&gt;
 
 #8
 $ ls

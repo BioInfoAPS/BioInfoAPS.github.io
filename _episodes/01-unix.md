@@ -482,8 +482,8 @@ Using UNIX commands
 3. Using the new file, create a table to sort the table by gene GC content. 
 4. Create a table with only the gene names but replace the name SCAB with SCABIES.
 
-<details>
-  <summary> Click here for answer. </summary>
+<details markdown=1>
+  <summary> Click here for answer.</summary>
 
 ```sh
 # 1
