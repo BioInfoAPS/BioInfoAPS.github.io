@@ -457,7 +457,24 @@ Using UNIX commands
 3. Using the new file, create a table to sort the table by gene GC content. 
 4. Create a table with only the gene names but replace the name SCAB with SCABIES.
 
+<details>
+  <summary> Click here for answer. </summary>
 
+```sh
+# 1
+$ sort -k2n aliens_in_scabies
+
+# 2
+$ sort -k2nr aliens_in_scabies | head > newfile.txt
+
+# 3
+$ sort -k3n newfile.txt
+
+# 4
+$ cut -f1 aliens_in_scabies | sed 's/SCAB/SCABIES/g'
+```
+
+</details>
 
 ## An intro to loops
 Many tasks are repetitive. It is not necessary to repeat the same command multiple times. We learn ho to pipe and re-direct the outputs of the orders.
