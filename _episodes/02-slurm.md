@@ -10,8 +10,6 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-# SLURM workload manager
-
 Unlike a personal computer, a computation cluster is used by large number 
 of users to run resource intensive jobs. 
 The sum of the resources requested by 

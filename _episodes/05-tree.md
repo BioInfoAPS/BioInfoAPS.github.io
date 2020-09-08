@@ -10,8 +10,6 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-# Phylogenetic tree
-
 ## Sequence alignment
 
 Sequence alignment is the basic and the most important step in phylogenetic analysis. 

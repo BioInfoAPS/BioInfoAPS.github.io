@@ -10,8 +10,6 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-#  BLAST
-
 **B**asic **L**ocal **A**lignment **S**earch **T**ool ([Altschul S et al.](https://doi.org/10.1016/s0022-2836(05)80360-2)) is a set of programs 
 that search sequence database for statistically significant similarities. 
 There are five traditional BLAST programs available in BLAST+ tools in commandline:

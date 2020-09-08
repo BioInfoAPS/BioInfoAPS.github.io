@@ -1,5 +1,5 @@
 ---
-title: "UNIX commandline"
+title: "UNIX command line"
 teaching: 30
 exercises: 15
 questions:
@@ -9,8 +9,6 @@ objectives:
 keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
-
-# UNIX Command line
 
 Command line and graphical user interaface are different ways of communicating with computer’s operating system. The shell is a program that provides the command line interface and allowing to control the computer using keyboard commands. For bioinformatics tools, limited software have graphical user interface and you will have to use shell. The shell is a powerful method of communicating with the computer that can help you to do your work more efficienty and understanding how to use shell will be transformative for you to apply in bioinformatics. It can be used to connect to remote and cloud computers.
 
