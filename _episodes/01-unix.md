@@ -268,6 +268,8 @@ middle.txt
 tail.txt
 ```
 
+Tip: `>>` operator is used to append to a file.
+
 ### Concatenate/Join files
 
 `cat` command is used for concatenation of multiple files. 
@@ -279,6 +281,31 @@ $ cat head.txt middle.txt tail.txt > concat.txt
 
 $ wc -l concat.txt
 15 concat.txt
+```
+
+### Print/output to screen
+
+`echo` command can be used to display result to the screen.
+
+```sh
+$ echo "hi"
+hi
+```
+
+### Variables
+
+Variables can be assigned values with `=` operator. Do not use space around `=`.
+
+```sh
+$ a="Hello"
+
+$ echo $a
+Hello
+
+$ b="World"
+
+$ echo "$a $b!"
+Hello World!
 ```
 
 ### Text manipulation
