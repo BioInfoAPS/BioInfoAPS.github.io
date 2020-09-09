@@ -75,26 +75,34 @@ Our objective would be to see if the bacterial genomes carry the effector gene.
 
 Before starting, copy all the required files to your working directory.
 
-```sh
+~~~
 $ cd /blue/general_workshop/<username>
 
 $ cp ../share/xanthomonas ./
 
 $ ls
-strep     slurm     xanthomonas
+~~~
+{: .language-bash}
 
+~~~
+strep     slurm     xanthomonas
+~~~
+{: .output}
+
+~~~
 $ cd xanthomonas
-```
+~~~
+{: .language-bash}
 
 ### Loading BLAST in Hipergator cluster
 
 First, we need the BLAST program. 
 BLAST tools is already installed in HiperGator, but not available by default.
 We can use `module load` command to load the program.
-```sh
+~~~
 $ module load ncbi_blast
-```
-Tip: `ml` is shortcut for `module load`.
+~~~
+{: .language-bash}
 
 ### Creating BLAST database
 
@@ -103,9 +111,12 @@ which in our case are the genome files `Xeu.fasta`, `Xp.fasta`, `Xg.fasta`, and 
 `makeblastdb` command, which is a part of BLAST+ package, 
 is used for creating BLAST databases from FASTA files.
 
-```sh
+~~~
 $ makeblastdb -in Xeu.fasta -out Xeu -dbtype nucl
+~~~
+{: .language-bash}
 
+~~~
 Building a new DB, current time: 09/06/2020 23:17:22
 New DB name:   /blue/general_workshop/<username>/xanthomonas/Xeu
 New DB title:  Xeu.fasta
@@ -113,15 +124,29 @@ Sequence type: Nucleotide
 Keep MBits: T
 Maximum file size: 1000000000B
 Adding sequences from FASTA; added 3 sequences in 0.0926349 seconds.
+~~~
+{: .output}
 
+~~~
 $ ls
+~~~
+{: .language-bash}
+
+~~~
 avrBs2.fasta     Xc.fasta     Xeu.fasta     Xeu.ndb     Xeu.nhr 
 Xeu.nin          Xeu.not      Xeu.nsq       Xeu.ntf     Xeu.nto
 Xg.fasta         Xp.fasta
-```
-Tip: `makeblastdb -h` command displays options avaialbe for `makeblastdb`.
+~~~
+{: .output}
 
-Note that new database files with extensions `.ndb`, `.nhr`, `.nsq` etc. have been created.
+> New database files with extensions `.ndb`, `.nhr`, `.nsq` etc. have been created.
+{: .notes}
+
+> ## Understanding command arguments
+> For most unix commandline commands, you can use `-h` or `-help` argument to see help or options.
+> This will include list of arguments and their meanings.
+> In this case, `makeblastdb -h` command displays options avaiable for `makeblastdb`.
+{: .tips}
 
 ### Creating BLAST database in batch
 
@@ -135,31 +160,45 @@ Extension - ‘.fasta’.
 
 We can specify all files in current path with fasta extension by `./*.fasta`.
 
-```sh
+~~~
 $ genomes=`ls *.fasta | sed 's/.fasta//g'`
 
 $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done
-```
-Tip: Short loops can be written in a same line by separating commands with `;`. 
-`;` is equivalent to pressing <kbd>Enter</kbd>.
+~~~
+{: .language-bash}
 
-Tip: `sed` command is used to remove `.fasta` extension from list of names.
+~~~
+...
+...
+~~~
+{: .output}
+
+> ## One liners
+> Short loops can be written in a same line by separating commands with `;`. 
+>`;` is equivalent to pressing <kbd>Enter</kbd>.
+{: .tips}
+
+> `sed` command is used to remove `.fasta` extension from list of names.
+{: .notes}
 
 ### Performing BLAST search
 
 We are now ready to do a BLAST search. Since both the query (`avrBs2.fasta`) 
 and the database are nucleotide sequences, we will perform `blastn`.
 
-```sh
-$ blastn -query avrBs2.fas -db Xeu -out Xeu_avrBs2.out -outfmt 0 -evalue 0.001
+~~~
+$ blastn -query avrBs2.fas -db Xeu -out Xeu_avrBs2.out -evalue 0.001
 
 $ ls
-avrBs2.fasta      Xeu_avrBs2.out     Xc.fasta          Xeu.fasta         Xeu.ndb
-...
-...
-```
+~~~
+{: .language-bash}
 
-Tip: Run `blastn -h` for explanation of the arguments used.
+~~~
+avrBs2.fasta      𝗫𝗲𝘂_𝗮𝘃𝗿𝗕𝘀𝟮.𝗼𝘂𝘁     Xc.fasta          Xeu.fasta         Xeu.ndb
+...
+...
+~~~
+{: .output}
 
 ### Performing BLAST search in multiple databases in batch
 
@@ -167,12 +206,13 @@ We can blast multiple databases in a lop as well.
 First lets create a list of all databases to BLAST against and save it into a file.
 We can use a small text editor program called `nano` for writing to a file.
 
-```sh
+~~~
 $ nano
-```
+~~~
+{: .language-bash}
 
 A basic text editor will open. Type in all the databases to search against. 
-```
+~~~
 -----------------------------------------------------------------------------------------------
  GNU nano 3.3 beta 02                      New Buffer
 -----------------------------------------------------------------------------------------------
@@ -184,7 +224,8 @@ Xc
 ^G Get Help     ^O WriteOut     ^R Read File     ^Y Prev Page     ^K Cut Text       ^C Cur Pos
 ^X Exit         ^J Justify      ^W Where Is      ^V Next Page     ^U UnCut Text     ^T To Spell
 -----------------------------------------------------------------------------------------------
-```
+~~~
+{: .terminal}
 
 Press <kbd>Ctrl</kbd>+<kbd>o</kbd> (<kbd>Cmd</kbd>+<kbd>o</kbd> in MacOS) to save the file.
 Give it a name `dblist.txt` and press <kbd>Enter</kbd>.
@@ -193,65 +234,74 @@ Press <kbd>Ctrl</kbd>+<kbd>x</kbd> (<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to ret
 
 Now we can run the `blastn` in loop.
 
-```sh
+~~~
 $ while read -r dbname
 $ do
 $   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -outfmt 0 -evalue 0.001
 $ done < dblist.txt
-```
+~~~
+{: .language-bash}
 
-Note: BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
-however, it is outside the scope of this workshop.
+> If you are copying sequence from provided material or the website, so not forget to remove the `$` sign.
+{: .caution}
 
-```sh
-$ blastdb_aliastool -dblist "Xeu Xp Xg Xc" -dbtype nucl -out xanthomonas_all -title "Xanthomonas genomic"
-```
+> Merging database with `blastdb_aliastool`
+> BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
+> however, it is outside the scope of this workshop.
+>
+> Usage: 
+> `$ blastdb_aliastool -dblist "Xeu Xp Xg Xc" -dbtype nucl -out xanthomonas_all -title "Xanthomonas genomic"`
+{: .notes}
 
-## Exercise: Performing blast search in SLURM
-
-We can also run `blast` as a SLURM job, which is useful for long and resource intensive search.
-
-The SLURM submission script is available in `/blue/general_workshop/share/scripts/slurm_blast.sh`. 
-Genome and query files are available in `/blue/general_workshop/share/xanthomonas`
-
-1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;`
-2. Make a folder in your working directory called `slurm_blast` and enter that directory.
-3. Copy all genome and query fasta files to current directory.
-4. Copy the submission script from to the current directory.
-5. Open the script in nano and edit the email address.
-6. Submit the job to SLURM.
-7. Check status of the job as it is running.
-8. After job is completed, check the list of files in current directory.
-
-<details markdown="1">
-  <summary> Click here for answer. </summary>
-
-```sh
-#1
-$ cd /blue/general_workshop/&lt;username&gt;
-
-#2
-$ mkdir slurm_blast
-
-$ cd slurm_blast
-
-#3
-$ cp /blue/general_workshop/share/xanthomonas/* ./
-
-#4
-$ cp /blue/general_workshop/share/scripts/slurm_blast.sh ./
-
-#5
-$ nano slurm_blast.sh &rarr; edit email &rarr; Ctrl+x $rarr; y
-
-#6
-$ sbatch slurm_blast.sh
-
-#7
-$ squeue -u &lt;username&gt;
-
-#8
-$ ls
-```
-
-</details>
+> ## Exercise: Performing blast search in SLURM
+> 
+> We can also run `blast` as a SLURM job, which is useful for long and resource intensive search.
+> 
+> The SLURM submission has been prepared for your and is available as 
+> `/blue/general_workshop/share/scripts/slurm_blast.sh`. 
+> Genome and query files are available in `/blue/general_workshop/share/xanthomonas`.
+> 
+> 1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;` <input type="checkbox">
+> 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
+> 3. Copy all genome and query fasta files to current directory. <input type="checkbox">
+> 4. Copy the submission script from to the current directory. <input type="checkbox">
+> 5. Open the script in nano and edit the email address. <input type="checkbox">
+> 6. Submit the job to SLURM. <input type="checkbox">
+> 7. Check status of the job as it is running. <input type="checkbox">
+> 8. After job is completed, check the list of files in current directory. <input type="checkbox">
+> 
+> <details markdown="1">
+>   <summary></summary>
+> 
+> ~~~
+> #1
+> $ cd /blue/general_workshop/<username>
+> 
+> #2
+> $ mkdir slurm_blast
+> 
+> $ cd slurm_blast
+> 
+> #3
+> $ cp /blue/general_workshop/share/xanthomonas/* ./
+> 
+> #4
+> $ cp /blue/general_workshop/share/scripts/slurm_blast.sh ./
+> 
+> #5
+> $ nano slurm_blast.sh
+> → edit email address → ctrl+x → y
+> 
+> #6
+> $ sbatch slurm_blast.sh
+> 
+> #7
+> $ squeue -u <username>
+> 
+> #8
+> $ ls
+> ~~~
+> {: .language-bash}
+> 
+> </details>
+{: .challenge}

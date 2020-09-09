@@ -24,15 +24,17 @@ Muscle is regarded good with proteins for medium alignments.
 
 We will use MAFFT sequence alignment tool.
 
-```sh
+~~~
 $ module load mafft
 
 $ mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
 
 $ more avrBs2_all_genomes_aligned.fas
-```
-Warning: Make sure you are still in phylogeny folder. 
-You can use `pwd` to check.
+~~~
+{: .language-bash}
+
+> Make sure you are still in phylogeny folder. You can use `pwd` to check.
+{: .caution}
 
 The two files avrBs2_all_genomes.fas and avrBs2_all_genomes.aligned.fas 
 may not look very different at the moment considering the gene was present 
@@ -56,10 +58,14 @@ construct the tree that we will submit through a batch file.
 
 The SLURM submission script is present in `/blue/general_workshop/share/scripts/tree.sh
 
-```sh
+~~~
 $ cp ../../scripts/tree.sh ./
 
 $ tail -n8 tree.sh
+~~~
+{: .language-bash}
+
+~~~
 # Load RAxML
 module load raxml
 
@@ -68,11 +74,15 @@ raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tr
 
 # Success message
 echo 'ML tree output in RAxML_bestTree.avrBs2_tree'
-```
-Tip: the argument `-n` allows us to name the output suffix. In our case, the output will
+~~~
+{: .output}
+
+The argument `-n` allows us to name the output suffix. In our case, the output will
 be name `RAxML_bestTree.avrBs2_tree`.
 
-Tip: To understand what other arguments mean, you can check the help file `raxalHPC -h`.
+> ## Help with arguments
+> To understand what other arguments mean, you can check the help file `raxalHPC -h`.
+{: .tips}
 
 Edit the email address in the SLURM submission script and submit the job.
 
@@ -118,27 +128,36 @@ Let's put everything together into one script. The input files are
 available in `/blue/general_workshop/share/all_in_one/` and the 
 script is available as `/blue/general_workshop/share/scripts/all_in_one.sh`.
 
-```sh
+~~~
 $ cd /blue/general_workshop/<username>
 
-$ cp -r ../share/all_in_one ./
+$ mkdir all_in_one
 
 $ cd all_in_one
+
+$ cp -r ../share/phylogeny/* ./
 
 $ cp ../share/scripts/all_in_one.sh ./
 
 $ cp ../share/scripts/blast2fasta.sh ./
 
 $ ls
+~~~
+{: .language-bash}
+
+~~~
 all_in_one.sh     avrBs2.fas     blast2fasta.sh     GEV1001.fasta     GEV1026.fasta
 ...
 ...
+~~~
+{: .output}
 
+~~~
 $ tail -n22 all_in_one.sh
-```
+~~~
+{: .language-bash}
 
-
-```sh
+~~~
 # Load programs
 module load ncbi_blast
 module load mafft
@@ -162,13 +181,19 @@ mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
 
 # Mkae tree with RAxML
 raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tree
-```
+~~~
+{: .output}
 
 After editing the email address in `nano`, you are ready to submit the submission script.
 
-```sh
+~~~
 $ sbatch all_in_one.sh
-```
+~~~
+{: .output}
 
-Tip: Once the job finishes, you can transfer all the outputs to your personal computer. 
-Then, you can visualize the ‘RAxML_bestTree.avrBs2_tree’ using Figtree software.
+
+> ## Visualize tree
+> Once the job finishes, you can transfer all the outputs to your personal computer. 
+> Then, you can visualize the ‘RAxML_bestTree.avrBs2_tree’ using Figtree software. 
+> [Setup page](/setup.html) has instructions on how to install Figtree.
+{: .tips}

@@ -17,10 +17,9 @@ Command line and graphical user interaface are different ways of communicating w
 Once you login to HiperGator through SSH, you will start using a bash shell.
 
 ~~~
-{: .output}
 [<username>@login1 ~]$
 ~~~
-{: .output}
+{: .terminal}
 
 The `$` prompt shows that the bash shell is ready to accept bash commands.
 Before learning some basic commands, there are a few recommendations regarding UNIX systems.
@@ -36,7 +35,7 @@ To go to your personal folder which is named as your username for the gatorlink 
 ~~~
 $ cd /blue/general_workshop/<username>
 ~~~
-{: .output}
+{: .language-bash}
 
 ## Basic Commands
 
@@ -117,7 +116,7 @@ dir1     file1.txt     file2.txt
 ~~~
 {: .output}
 
-> ### Common path symbols in linux
+> ## Common path symbols in linux
 > Linux uses some symbols to represent commonly used paths.
 > - `..` stands for parent directory.
 > - `.` stands for current directory.
@@ -679,43 +678,47 @@ CM008455.1      82264380        ACC     A       intergenic_region
 ~~~
 {: .output}
 
-## Exercise: Finding “alien genes” in the plant pathogen *Streptomyces scabies*.
-
-Let’s use the commands in a simple real case. Copy a file `aliens_in_scabies` inside `share` directory using following command
-
-> Make sure you are in `/blue/general_workshop/<username>` directory, 
-> if not use `cd /blue/general_workshop/<username>` to go to your personal working directory. 
-{: .caution}
-
-$ cp ../share/strep/aliens_in_scabies ./
-
-*Streptomyces scabies* is a plant pathogen that produces necrosis in potatoes. Most of the virulence factors are locate regions that have low GC content. Also, virulence is highly expressed during the interaction with roots. The file “aliens_in_scabies” contains a tabular table with more than 1000 genes (first column) with the level of change expression when comparing growth in rich medium vs. interaction with roots (second column). Besides, the gene sequences, GC% content is provided in the third column of the table.
-
-Using UNIX commands 
-1. Sort the table by expression levels (second column). 
-2. Create a new file that contains the top 10 highest expressed genes. 
-3. Using the new file, create a table to sort the table by gene GC content. 
-4. Create a table with only the gene names but replace the name SCAB with SCABIES.
-
-<details markdown=1>
-  <summary> Click here for answer.</summary>
-
-~~~
-# 1
-$ sort -k2n aliens_in_scabies
-
-# 2
-$ sort -k2nr aliens_in_scabies | head > newfile.txt
-
-# 3
-$ sort -k3n newfile.txt
-
-# 4
-$ cut -f1 aliens_in_scabies | sed 's/SCAB/SCABIES/g'
-~~~
-{: .language-bash}
-
-</details>
+> ## Exercise: Finding “alien genes” in the plant pathogen *Streptomyces scabies*.
+> 
+> Let’s use the commands in a simple real case. Copy a file `aliens_in_scabies` inside `share` directory using following command
+> 
+> > Make sure you are in `/blue/general_workshop/<username>` directory, 
+> > if not use `cd /blue/general_workshop/<username>` to go to your personal working directory. 
+> {: .caution}
+> 
+> ~~~
+> $ cp ../share/strep/aliens_in_scabies ./
+> ~~~
+> {: .language-bash}
+> 
+> *Streptomyces scabies* is a plant pathogen that produces necrosis in potatoes. Most of the virulence factors are locate regions that have low GC content. Also, virulence is highly > expressed during the interaction with roots. The file “aliens_in_scabies” contains a tabular table with more than 1000 genes (first column) with the level of change expression when > comparing growth in rich medium vs. interaction with roots (second column). Besides, the gene sequences, GC% content is provided in the third column of the table.
+> 
+> Using UNIX commands 
+> 1. Sort the table by expression levels (second column).  <input type="checkbox">
+> 2. Create a new file that contains the top 10 highest expressed genes.  <input type="checkbox">
+> 3. Using the new file, create a table to sort the table by gene GC content.  <input type="checkbox">
+> 4. Create a table with only the gene names but replace the name SCAB with SCABIES. <input type="checkbox">
+> 
+> <details markdown=1>
+>   <summary></summary>
+> 
+> ~~~
+> # 1
+> $ sort -k2n aliens_in_scabies
+> 
+> # 2
+> $ sort -k2nr aliens_in_scabies | head > newfile.txt
+> 
+> # 3
+> $ sort -k3n newfile.txt
+> 
+> # 4
+> $ cut -f1 aliens_in_scabies | sed 's/SCAB/SCABIES/g'
+> ~~~
+> {: .language-bash}
+> 
+> </details>
+{: .challenge}
 
 ## An intro to loops
 Many tasks are repetitive. It is not necessary to repeat the same command multiple times. We learn how to pipe and re-direct outputs of the commands.
@@ -737,7 +740,6 @@ file1.txt     files.txt     head.txt     middle.txt     tail.txt
 {: .output}
 
 ~~~
-
 $ cat *.txt
 ~~~
 {: .language-bash}

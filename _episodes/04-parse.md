@@ -39,7 +39,7 @@ however, we will work with a larger set (20) of *Xanthomonas* genomes.
 You can find the genomes in the directory 
 `/blue/general_workshop/share/phylogeny`. 
 
-```sh
+~~~
 $ cd /blue/general_workshop/<username>
 
 $ cp -r ../share/phylogeny ./
@@ -47,51 +47,89 @@ $ cp -r ../share/phylogeny ./
 $ cd phylogeny
 
 $ ls
+~~~
+{: .language-bash}
+
+~~~
 avrBs2.fas     GEV1026.fasta     GEV1001.fasta     GEV1044.fasta     GEV1054.fasta
 ...
 ...
-```
+~~~
+{: .output}
 
 The SLURM submission script is located in `/blue/general_workshop/share/scripts/slurm_blast_xml.sh`
 
 Warning: This is not the same script as last section. Use this script, not the last one.
 
-```sh
+~~~
 $ tail -n8 ../share/scripts/slurm_blast_xml.sh
+~~~
+{: .language-bash}
+
+~~~
 for genome in `ls *.fasta | sed 's/.fasta//g'`
 do
   # Make database
   makeblastdb -in "$genome.fasta" --dbtype nucl -out "$genome"
 
   # Run blastn on that database
-  blastn -query avrBs2.fas -db "$genome" -out $genome"_avrBs2.out" -outfmt 5 -evalue 0.001
+  blastn -query avrBs2.fas -db "$genome" -out $genome"_avrBs2.out" -𝗼𝘂𝘁𝗳𝗺𝘁 𝟱 -evalue 0.001
 done
-```
+~~~
+{: .output}
 
 Note the new argument `-outfmt 5`. This will output the result in XML format.
 
+> The `.out` files you generated in previous section is not in XML format.
+{: .caution}
 
-## Exercise
 
-Submit the SLURM script. 
-Do not forget to copy it to your current (`phylogeny`) directory and 
-to replace your own email address first.
-
----
-
-The folder should now have 20 output files with ’_avrBs2.out’ from each genome. 
-
-```sh
-$ ls *_avrBs2.out | wc -l
-20
-```
----
-
-Optional: Don’t forget to check one of the output file using a text editor 
-such as ‘BBedit’ for mac users and ‘Sublime text’ for windows.
-The output file in this output format is full of information about the 
-query and database sequence. 
-Optional because Filezilla may take time!!
+> ## Exercise: Transfering BLAST results in personal device
+> 
+> The obejctive of this exercise is to be able to run SLURM script and transfer
+> output file to your own device.
+> 1. Copy script to your working directory (`phylogeny`). <input type="checkbox">
+> 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
+> 3. Submit the SLURM script. <input type="checkbox">
+> 4. Make sure the all output files are present at the end of the job. <input type="checkbox">
+> 5. Connect to HiperGator storage with your SFTP application (We recommend Filezilla) <input type="checkbox">
+> 6. Transfer one of the output file (`.out` extension) to your personal computer. <input type="checkbox">
+> 7. Open the contents of the output file using a text editor. <input type="checkbox">
+> 
+> <details markdown="1">
+>   <summary></summary>
+> ~~~
+> #1
+> $ cp ../../share/scripts/slurm_blast_xml.sh ./
+> 
+> #2
+> $ nano slurm_blast.sh
+> → edit email address → ctrl+x → y
+> 
+> #3
+> $ sbatch slurm_blast_xml.sh
+> ~~~
+> {: .language-bash}
+> 
+> - After the job is done, there should be 20 output files with `.out` extension, one from each genome. 
+>
+> ~~~
+> #4
+> $ ls *_avrBs2.out | wc -l
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> 20
+> ~~~
+> {: .output}
+> 
+> - The steps for connecting to Hipergator using Filezilla and 
+> transferring files are available in [setup page](/setup.html).
+>
+> 
+> </details>
+{: .challenge}
 
 ## BLAST XML output Vs FASTA format
 
@@ -100,14 +138,18 @@ that can be read by multiple software to run analyses.
 Specifically, we will convert it to `FASTA` format, which we
 will subsequently use to generate a phylogenetic tree.
 
-BLAST XML format ncludes a lot of information on query and database name, 
+BLAST XML format includes a lot of information on query and database name, 
 sequence identity, statistics, alignments and so on.
 Below, you can see what BLAST XML output looks like:
 
 Note: The example below has been abridged.
 
-```
-$ cat 
+~~~
+$ cat Xeu_avrBs2.out
+~~~
+{: .language-bash}
+
+~~~
 <?xml version="1.0"?>
 <!DOCTYPE BlastOutput PUBLIC "-//NCBI//NCBI BlastOutput/EN" "http://www.ncbi.nlm.nih.gov/dtd/NCBI_BlastOutput.dtd">
 <BlastOutput>
@@ -119,7 +161,6 @@ $ cat
 ...
 <Hit>
   <Hit_num>1</Hit_num>
-  <Hit_def>NZ_CM002866.1 Xanthomonas euvesicatoria pv. allii CFBP 6369 chromosome, whole genome shotgun sequence</Hit_def>
   <Hit_hsps>
     <Hsp>
       <Hsp_bit-score>4170.86</Hsp_bit-score>
@@ -135,16 +176,17 @@ $ cat
     </Hsp>
   </Hit_hsps>
 </Hit>
-```
-Warning: The `.out` files you generated in last section is not in XML format.
+~~~
+{: .output}
 
 We will have to convert it into FASTA format which only needs two line from the XML:
 `BlastOutput_db` and `Hsp_hseq`. The FASTA format looks like:
 
-```
+~~~
 > Xeu
 AAGTGCTGGCAACGCGTCCAAACACCAGCAGGCCAGGCAGACCGAGACGGATTGA
-```
+~~~
+{: .terminal}
 
 ### Bash script to parse XML to FASTA
 
@@ -152,37 +194,53 @@ We will now use a bash script to parse the BLAST output to
 extract the file as a multiFASTA file.
 THe script is located in path `/blue/general_workshop/share/scripts/blast2fasta.sh`
 
-```sh
+~~~
 $ cp ../../share/scripts/blast2fasta.sh ./   
 
 $ cat blast2fasta.sh
+~~~
+{: .language-bash}
+
+~~~
 #!/bin/bash
 while read line
 do
         [[ `grep "BlastOutput_db" <<< $line` ]] && echo -n ">" <<< $line
         [[ `grep -E "BlastOutput_db|Hsp_hseq" <<< $line` ]] && sed -n "s:.*>\(.*\)</.*:\1:p" <<< $line
 done
-```
+~~~
+{: .output}
 
 What this script does is loop line by line over the file, 
 and look for keywords `BlastOutput_db` and `Hsp_hseq`.
 If it find the keywords, then it will extract the contents
 between those tags and output in appropriate format.
 
-Tip: `sed` is replacing everything except necessary information with empty string.
+> We won't cover what exactly is going on inside the while loop. 
+> This requires advanced bash knowledge of test command, ifelse shorthand, 
+> extended posix and here string.
+{: .tips}
 
-### Runnig the bash script
+### Running a bash script
 
-We can run the script now.
-We can call the script in two ways
+We can call the bash script in two ways
 
 - `./<script_name>`
 - `sh <scriptname>`
 
-```sh
+~~~
 $ cat *_avrBs2.out | ./blast2fasta.sh > avrBs2_all_genomes.fas
+~~~
+{: .language-bash}
 
+The FASTA output is stored in file `avrBs2_all_genomes.fas`.
+
+~~~
 $ cat avrBs2_all_genomes.fas
+~~~
+{: .language-bash}
+
+~~~
 >GEV1026
 AAGTGCTGGCAACGCGTCCAAACAAGGCCTGCGCCGCACGCCTGCCAGCGCGCGCAACGCAGGCATCGTTTCGCATCCGGG
 CGGTACTTTTCGCCTAATTTGCCAATTGTCATATGCCACGCGCTTTACTGGCCGCCCGCCGCGTTTTCGAGGTCATCATGC
@@ -195,14 +253,19 @@ CGGTACTTTTCGCCTAATTTGCCAATTGTCAGATGCCACGCGCTTTACTGGCCGCCCGACGCGTTTTCGAGGTCATCATG
 GCATCGGTCCTCTGCAACCTTCTATCGCGCA
 ...
 ...
-```
+~~~
+{: .output}
 
-Tip: We are not using SLURM for this job because it is fast and not resource intensive.
+> The example above is for demonstration purpose and the actual output will be
+> different from the example.
+{: .notes}
 
-Note: The example above is for demonstration purpose and the same as the
-output of the script.
+> ##When to use SLURM?
+> We are not using SLURM for this job because it is fast and not resource intensive.
+> Use SLURM for resource intensive or time-consuming tasks.
+{: .tips}
 
-Now we have a multifasta file with sequence id for each genome database 
+Now we have a multiFASTA file with sequence id for each genome database 
 we used along with their respective sequence. 
-We can now use this fasta formatted file to run sequence alignment and 
+We can now use this FASTA formatted file to run sequence alignment and 
 subsequently construct a tree.

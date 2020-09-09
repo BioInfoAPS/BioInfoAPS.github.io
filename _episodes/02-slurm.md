@@ -17,11 +17,11 @@ those jobs often exceed the resources available in cluster.
 To deal with this issue, many high performance clusters use schedulers 
 to manage resources allocated to those jobs.
 
-UF HiperGator uses a popular scheduler called Slurm workload manager.  
+UF HiperGator uses a popular scheduler called SLURM workload manager.  
 Portable Batch System (PBS), Platform LSF, Moab, LoadLeveler etc. 
 are examples of other schedulers.
 
-Slurm is has three major functions:
+SLURM is has three major functions:
 
 1. Allocate exclusive and/or non-exlcudisve access to resources for a duration of time so they can perform a work,
 2. Provide a framework for starting, executing, and monitoring work on allocated nodes,
@@ -46,7 +46,7 @@ to determine resource requests.
 To get started with SLURM, lets create new directory in your work directory and 
 copy a submission script template from share/scripts directory.
 
-```sh
+~~~
 $ cd /blue/general_workshop/<username>
 
 $ mkdir slurm
@@ -54,7 +54,8 @@ $ mkdir slurm
 $ cd slurm
 
 $ cp ../../share/scripts/slurm_template.sh ./slurm.sh
-```
+~~~
+{: .language-bash}
 
 Note: `.sh` is commonly used extension for shell scripts. Using a extension is not mandatory.
 
@@ -64,13 +65,14 @@ We have to modify some information in the template to make the provide more info
 to SLURM about the job.
 
 We can use a small text editor program called `nano` for writing to a file.
+This will open a basic text editor.
 
-```sh
+~~~
 $ nano slurm.sh
-```
+~~~
+{: .language-bash}
 
-A basic text editor will open.
-```
+~~~
 -----------------------------------------------------------------------------------------------
  GNU nano 3.3 beta 02                      New Buffer
 -----------------------------------------------------------------------------------------------
@@ -88,11 +90,14 @@ A basic text editor will open.
 
 # Return current date and time every 30 seconds for 6 times
 for i in {0..5}; do printf '%s %s\n' "$(date)"; sleep 10s; done
+
+
 -----------------------------------------------------------------------------------------------
 ^G Get Help     ^O WriteOut     ^R Read File     ^Y Prev Page     ^K Cut Text       ^C Cur Pos
 ^X Exit         ^J Justify      ^W Where Is      ^V Next Page     ^U UnCut Text     ^T To Spell
 -----------------------------------------------------------------------------------------------
-```
+~~~
+{: .terminal}
 
 The comments beginning with `#SBATCH` tell SLURM various information about the job.
 The acutal commands to run appear after the comments. In this case it just returns
@@ -109,48 +114,87 @@ Press <kbd>Y</kbd> to save the changes made to the file.
 
 To submit the job to SLURM, `sbatch` command is used.
 
-```sh
+~~~
 $ sbatch slurm.sh 
-Submitted batch job <jobid>
-```
+~~~
+{: .language-bash}
 
-### Checking status of s SLURM job
+~~~
+Submitted batch job <jobid>
+~~~
+{: .output}
+
+### Checking status of a SLURM job
 
 You can check the status of the job using the command `squeue`. 
 `-u` argument accepts &lt;username&gt; and displays all jobs by the user.
 `-A` argument accepts account name and displays all jobs 
 using the resources allocated to that account.
 
-```sh
+~~~
 $ squeue -u <username> 
+~~~
+{: .language-bash}
+
+~~~
     JOBID PARTITION     NAME     USER ST       TIME  NODES NODELIST(REASON)
   <jobid> hpg2-comp serial_j   <user>  R       0:07      1 c29a-s2
+~~~
+{: .output}
 
-
+~~~
 $ squeue -A general_workshop
+~~~
+{: .language-bash}
+
+~~~
     JOBID PARTITION     NAME      USER  ST       TIME  NODES NODELIST(REASON)
   <jobid> hpg2-comp serial_j   <user1>  PD       0:00      1 c29a-s2
   <jobid> hpg2-comp serial_j   <user2>   R       1:12      1 c15a-s1
   <jobid> hpg2-comp serial_j   <user3>   R       0:46      1 c09a-s4
-```
+~~~
+{: .output}
 
-Under status `ST`, `R` stands for Running and `PD` stands for pending.
+> ## Understanding Job Status
+> Under status `ST`, `R` stands for Running and `PD` stands for pending.
+> If the job is pending, a reason may be provided in last column. Eg:
+> - **Priority**: Higher priority jobs exist in this partition.
+> - **QOSMaxCpuPerUserLimit**: The user is already using max number of CPU that he/she is allowed to.
+{: .tips}
 
 ### Checking the output
 
 The SLURM submission script containas a line 
 `#SBATCH --output serial_test_%j.log`. Thus the output for this job
-with be in the file `serial_test_<jobid>.log.
+with be in the file `serial_test_<jobid>.log`.
 
-```sh
+~~~
 $ ls
-serial_test_<jobid>.log     slurm.sh
+~~~
+{: .language-bash}
 
+~~~
+serial_test_<jobid>.log     slurm.sh
+~~~
+{: .output}
+
+~~~
 $ cat serial_test_<jobid>.log
+~~~
+{: .language-bash}
+
+~~~
 Tue Sep 15 02:04:05 EDT 2020
 Tue Sep 15 02:04:15 EDT 2020
 Tue Sep 15 02:04:25 EDT 2020
 Tue Sep 15 02:04:35 EDT 2020
 Tue Sep 15 02:04:45 EDT 2020
 Tue Sep 15 02:04:55 EDT 2020
-```
+~~~
+{: .output}
+
+> ## Autocomplete in terminal
+> To autocomplete a file or directory name, press <kbd>Tab</kbd> button. 
+> Names are autocompleted until there are conflicts (e.g. files with same prefixes).
+> In case of conflict, press tab two time to view list of files and folders (equivalent to `ls`).
+{: .tips}
