@@ -139,7 +139,7 @@ $ ls
 ~~~
 dir1     file1.txt     newfile.txt
 ~~~
-{: output}
+{: .output}
 
 ### Deleting files
 
@@ -794,8 +794,8 @@ The variable `x` will take consecutive values from array `{0..3}` in each iterat
 `while` loop iterates as long as a condition is true. Lets use the example.
 
 ~~~
-$ x=1
-> while(($x <5))
+$ x=0
+> while(($x <4))
 > do 
 >   echo $x
 >   ((++x)) 
@@ -804,10 +804,10 @@ $ x=1
 {: .language-bash}
 
 ~~~
+0
 1
 2
 3
-4
 ~~~
 {: .output}
 
