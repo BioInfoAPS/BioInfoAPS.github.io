@@ -1,4 +1,4 @@
-<div id="shell">
+<div id="sftp">
     <h3>Transferring files</h3>
     <p>
     Transfering files to and from remote server and your local computer
@@ -25,79 +25,15 @@
                 <p>
                     You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
                     <a href="hhttps://winscp.net/">WinSCP</a> for uploading or downloading 
-                    data from remote SFTP server. The following instructions 
-                    are for Filezilla.
+                    data from remote SFTP server.
                 </p>
-                <ol>
-                    <li>
-                        Download Filezilla for windows using 
-                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
-                    </li>
-                    <li>
-                        Install Filezilla and then run the program.
-                    </li>
-                    <li>
-                        Fill the following information in quickconnect panel and press 
-                        <strong>Quickconnect</strong> button.
-                        <ul>
-                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
-                            <li>Username: provided username</li>
-                            <li>Password: provided passsowd</li>
-                            <li>Port: <code>22</code></li>
-                        </ul>
-                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
-                    </li>
-                    <li>
-                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
-                    </li>
-                    <li>Change remote site to the following. Do not forget to replace
-                        &lt;username&gt; with the provided username.
-                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
-                    </li>
-                </ol>
-                <h3>Video instruction for logging in using Filezilla</h3>
-                <div style="position:relative; width:100%; height: 0; padding-bottom: 75%">
-                    <iframe style="position:absolute; width:100%; height: 100%;" src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" frameBorder="0" ></iframe>
-                </div>
             </article>
             <article role="tabpanel" class="tab-pane" id="shell-macos">
                 <p>
                     You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
                     <a href="https://cyberduck.io/">Cyberduck</a> for uploading or downloading 
-                    data from remote SFTP server. The following instructions 
-                    are for Filezilla.
+                    data from remote SFTP server. 
                 </p>
-                <ol>
-                    <li>
-                        Download Filezilla for macOS using 
-                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
-                    </li>
-                    <li>
-                        Install Filezilla and then run the program.
-                    </li>
-                    <li>
-                        Fill the following information in quickconnect panel and press 
-                        <strong>Quickconnect</strong> button.
-                        <ul>
-                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
-                            <li>Username: provided username</li>
-                            <li>Password: provided passsowd</li>
-                            <li>Port: <code>22</code></li>
-                        </ul>
-                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
-                    </li>
-                    <li>
-                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
-                    </li>
-                    <li>Change remote site to the following. Do not forget to replace
-                        &lt;username&gt; with the provided username.
-                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
-                    </li>
-                </ol>
-                <h3>Video instruction for logging in using Filezilla</h3>
-                <div style="position:relative; width:100%; height: 0; padding-bottom: 75%">
-                    <iframe style="position:absolute; width:100%; height: 100%;" src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" frameBorder="0" ></iframe>
-                </div>
             </article>
             <article role="tabpanel" class="tab-pane" id="shell-linux">
                 <p>
@@ -111,40 +47,47 @@ sshfs &lt;username&gt;@hpg.rc.ufl.edu:/blue/general_workshop/&lt;username&gt; /o
                 <p>
                     Alternatively, you can use <a href="https://filezilla-project.org/">Filezilla</a> 
                     for uploading or downloading data from remote SFTP server. 
-                    The following instructions are for Filezilla.
                 </p>
-                <ol>
-                    <li>
-                        Download Filezilla for linux using 
-                        <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
-                    </li>
-                    <li>
-                        Install Filezilla and then run the program.
-                    </li>
-                    <li>
-                        Fill the following information in quickconnect panel and press 
-                        <strong>Quickconnect</strong> button.
-                        <ul>
-                            <li>Host: <code>hpg.rc.ufl.edu</code></li>
-                            <li>Username: provided username</li>
-                            <li>Password: provided passsowd</li>
-                            <li>Port: <code>22</code></li>
-                        </ul>
-                        <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
-                    </li>
-                    <li>
-                        Click <code>OK</code> if prompted to certify the RSA key fingerprint.
-                    </li>
-                    <li>Change remote site to the following. Do not forget to replace
-                        &lt;username&gt; with the provided username.
-                            <pre>/blue/general_workshop/&lt;username&gt;</pre>
-                    </li>
-                </ol>
-                <h3>Video instruction for logging in using Filezilla</h3>
-                <div style="position:relative; width:100%; height: 0; padding-bottom: 75%">
-                    <iframe style="position:absolute; width:100%; height: 100%;" src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" frameBorder="0" ></iframe>
-                </div>
             </article>
+        </div>
+    </div>
+    <br>
+    <p>
+        The following instructions are for Filezilla.
+    </p>
+    <ol>
+        <li>
+            Download Filezilla using 
+            <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
+        </li>
+        <li>
+            Install Filezilla and then run the program.
+        </li>
+        <li>
+            Fill the following information in quickconnect panel and press 
+            <strong>Quickconnect</strong> button.
+            <ul>
+                <li>Host: <code>hpg.rc.ufl.edu</code></li>
+                <li>Username: provided username</li>
+                <li>Password: provided passsowd</li>
+                <li>Port: <code>22</code></li>
+            </ul>
+            <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect">
+        </li>
+        <li>
+            Click <code>OK</code> if prompted to certify the RSA key fingerprint.
+        </li>
+        <li>Change remote site to the following. Do not forget to replace
+            &lt;username&gt; with the provided username.
+                <pre>/blue/general_workshop/&lt;username&gt;</pre>
+        </li>
+    </ol>
+    <h3>Video instruction for logging in using Filezilla</h3>
+    <div style="max-width: 720px;">
+        <div style="position:relative; width:100%; height: 0; padding-bottom: 75%;">
+            <iframe style="position:absolute; width:100%; height: 100%;" 
+                src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" frameBorder="0" >
+            </iframe>
         </div>
     </div>
 </div>
