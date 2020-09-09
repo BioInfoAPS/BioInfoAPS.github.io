@@ -46,6 +46,7 @@ $color-notes:       #47acf0 !default;
 .source  { @include cdSetup($color-source); }
 
 .bash, .language-bash     { @include cdSetup($color-source); }
+.terminal                 { @include cdSetup($color-output); }
 .make, .language-make     { @include cdSetup($color-source); }
 .matlab, .language-matlab { @include cdSetup($color-source); }
 .python, .language-python { @include cdSetup($color-source); }
@@ -57,6 +58,7 @@ $color-notes:       #47acf0 !default;
 .output::before,
 .source::before,
 .bash::before, .language-bash::before,
+.terminal::before,
 .make::before, .language-make::before,
 .matlab::before, .language-matlab::before,
 .python::before, .language-python::before,
@@ -73,6 +75,7 @@ $color-notes:       #47acf0 !default;
 .output::before { background-color: #efefef; content: "Output"; }
 .source::before { content: "Code"; }
 .bash::before, .language-bash::before { content: "Bash"; }
+.terminal::before { content: "Terminal"; }
 .make::before, .language-make::before { content: "Make"; }
 .matlab::before, .language-matlab::before { content: "Matlab"; }
 .python::before, .language-python::before { content: "Python"; }
@@ -355,10 +358,30 @@ kbd {
 details {
   border: 2px black solid;
   border-radius: 5px;
-  padding: 2px 5px;
+  padding: 2px 10px;
+  background: #ffffff44;
+  margin: 0 10px;
 }
 
 details > summary {
   outline: none;
   cursor: pointer;
+}
+
+details > summary:after {
+  content: "Click here for answer."
+}
+
+details[open] > summary:after {
+  content: "Click here to hide the answer."
+}
+
+
+.bash::before, .language-bash::before {
+  counter-increment: bash;
+  content: "Bash | #" counter(bash);
+}
+
+.container {
+  counter-reset: bash;
 }
