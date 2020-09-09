@@ -25,6 +25,8 @@ $color-objectives:  #daee84 !default;
 $color-prereq:      #9cd6dc !default;
 $color-solution:    #ded4b9 !default;
 $color-testimonial: #fc8dc1 !default;
+$color-tips:        #ee9775 !default;
+$color-notes:       #47acf0 !default;
 
 //----------------------------------------
 // Specialized code blocks.
@@ -171,6 +173,8 @@ $codeblock-padding: 5px !default;
 .prereq{ @include bkSetup($color-prereq, "\e124"); }
 .solution{ @include bkSetup($color-solution, "\e105"); }
 .testimonial{ @include bkSetup($color-testimonial, "\e143"); }
+.tips { @include bkSetup($color-tips, "\e086"); }
+.notes { @include bkSetup($color-notes, "\e043"); }
 
 .callout h3,
 .challenge h3,
@@ -180,11 +184,14 @@ $codeblock-padding: 5px !default;
 .objectives h3,
 .prereq h3,
 .solution h3,
-.testimonial h3 {
+.testimonial h3,
+.tips h3,
+.notes h3 {
 font-size: 18px;
 }
 
 .challenge    { background-color: #eec27520; }
+.caution      { background-color: #eb4d571c; }
 .callout      { background-color: #f4fd9c20; }
 .challenge    { background-color: #eec27520; }
 .checklist    { background-color: #dfd2a020; }
@@ -194,6 +201,8 @@ font-size: 18px;
 .prereq       { background-color: #9cd6dc20; }
 .solution     { background-color: #ded4b94d; }
 .testimonial  { background-color: #fc8dc120; }
+.tips         { background-color: #ee977525; }
+.notes        { background-color: #5da9f03d; }
 
 blockquote p {
     margin: 5px;
@@ -339,4 +348,17 @@ kbd {
     box-shadow: 0 1px 0 rgba(12,13,14,0.2), 0 0 0 2px #FFF inset;
     white-space: nowrap;
     font-style: normal;
+}
+
+//-------------------------------------------
+
+details {
+  border: 2px black solid;
+  border-radius: 5px;
+  padding: 2px 5px;
+}
+
+details > summary {
+  outline: none;
+  cursor: pointer;
 }
