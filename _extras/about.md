@@ -15,7 +15,7 @@ bacterial evolution and ecology, host-pathogen interactions and
 microbial ecology, and computational biology. 
 His research is focused on understanding bacterial evolution and 
 emerging pathogens and their impact in the disease epidemilogy. 
-He is also interested in developing compuational methods 
+He is also interested in developing computational methods 
 for studying bacterial population.
 
 [Sujan Timilsina](https://sites.google.com/site/sujantimilsina){: .btn} |
@@ -79,3 +79,7 @@ understanding mutation rate of bacterial effectors.
 [Google Scholar](https://scholar.google.com/citations?hl=en&user=cNdnwIsAAAAJ){: .btn} | 
 [Twitter](https://twitter.com/rknx){: .btn}  | 
 [Github](https://github.com/rknx){: .btn}
+
+#### Plant Pathology Department at University of Florida
+
+Read more about the department [here](https://plantpath.ifas.ufl.edu/). 
