@@ -56,12 +56,12 @@ the tree with the highest probability is shared.
 We will use RAxML - Randomized Axelerated Maximum Likelihood tool to 
 construct the tree that we will submit through a batch file.
 
-The SLURM submission script is present in `/blue/general_workshop/share/scripts/tree.sh
+The SLURM submission script is present in `/blue/general_workshop/share/scripts/slurm_tree.sh.sh
 
 ~~~
-$ cp ../../scripts/tree.sh ./
+$ cp ../../scripts/slurm_tree.sh ./
 
-$ tail -n8 tree.sh
+$ tail -n8 slurm_tree.sh.sh
 ~~~
 {: .language-bash}
 
@@ -126,7 +126,7 @@ Understanding what might go wrong comes from experience in bioinformatics.
 
 Let's put everything together into one script. The input files are
 available in `/blue/general_workshop/share/all_in_one/` and the 
-script is available as `/blue/general_workshop/share/scripts/all_in_one.sh`.
+script is available as `/blue/general_workshop/share/scripts/slurm_pipeline.sh`.
 
 ~~~
 $ cd /blue/general_workshop/<username>
@@ -137,7 +137,7 @@ $ cd all_in_one
 
 $ cp -r ../share/phylogeny/* ./
 
-$ cp ../share/scripts/all_in_one.sh ./
+$ cp ../share/scripts/slurm_pipeline.sh ./
 
 $ cp ../share/scripts/blast2fasta.sh ./
 
@@ -146,14 +146,16 @@ $ ls
 {: .language-bash}
 
 ~~~
-all_in_one.sh     avrBs2.fas     blast2fasta.sh     GEV1001.fasta     GEV1026.fasta
-...
-...
+avrBs2.fas         GEV1054.fasta     GEV909.fasta     GEV968.fasta          Xeu.fasta
+blast2fasta.sh     GEV1063.fasta     GEV915.fasta     GEV993.fasta          Xg.fasta
+GEV1001.fasta      GEV839.fasta      GEV917.fasta     slurm_pipeline.sh     Xp.fasta
+GEV1026.fasta      GEV893.fasta      GEV936.fasta     TB15.fasta
+GEV1044.fasta      GEV904.fasta      GEV940.fasta     Xc.fasta
 ~~~
 {: .output}
 
 ~~~
-$ tail -n22 all_in_one.sh
+$ tail -n22 slurm_pipeline.sh
 ~~~
 {: .language-bash}
 
@@ -187,7 +189,7 @@ raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tr
 After editing the email address in `nano`, you are ready to submit the submission script.
 
 ~~~
-$ sbatch all_in_one.sh
+$ sbatch slurm_pipeline.sh
 ~~~
 {: .output}
 
