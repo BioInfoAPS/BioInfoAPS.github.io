@@ -22,9 +22,9 @@ There are five traditional BLAST programs available in BLAST+ tools in commandli
 | TBLASTN | compares a protein query sequence against a nucleotide sequence database dynamically translated in all reading frames. |
 | TBLASTX | compares the six-frame translations of a nucleotide query sequence against the six-frame translations of a nucleotide sequence database. |
 
-These are the same blast applications what you can see in the NCBI blast website. 
-Read more about command line BLAST 
-[here](https://open.oregonstate.education/computationalbiology/chapter/command-line-blast/).
+These are the same blast applications what you can see in the [NCBI blast website](https://blast.ncbi.nlm.nih.gov/Blast.cgi). 
+Read more about command line [BLAST 
+here](https://open.oregonstate.education/computationalbiology/chapter/command-line-blast/).
 
 ## BLAST terminology
 
@@ -57,7 +57,7 @@ BLAST can be run online (e.g. NCBI blast) as well as locally. Few applications o
 ## Outline of sequences to BLAST
 
 We will use the local BLAST to identify if the bacterial genomes carry a gene of interest. 
-We will use bacterial spot causing *Xanthomonas* and one of the conserved effector ‘AvrBs2’ sequence as an example today. 
+We will use bacterial spot causing *Xanthomonas* and one of the conserved effector ‘AvrBs2’ sequence as an example today. More information on *Xanthomonas* is [available here](https://www.nature.com/articles/s41579-020-0361-8). 
 
 Note: Effectors are proteins secreted by pathogenic bacteria into the host cells. 
 Note: *avrBs2* is one of the most studied and conserved effector gene found in multiple *Xanthomonas* species.
@@ -157,7 +157,7 @@ Xeu.fasta      Xeu.nin
 
 ### Creating BLAST database in batch
 
-Makeing database individually for all genomes will be manually laborious. 
+Making database individually for all genomes will be manually laborious. 
 Instead, we can identify common patterns in the name of the genome files and 
 execute `makeblastdb` in a loop.
 
@@ -247,6 +247,8 @@ Xc
 ~~~
 {: .terminal}
 
+You do not have to press enter and go to the next line after typing 'Xc'. The next line will be read as an empty line and give error message. Although the additional line and error message due to the empty line does not affect our outputs here, it might be relevant for other situations. 
+
 Press <kbd>Ctrl</kbd>+<kbd>o</kbd> (<kbd>Cmd</kbd>+<kbd>o</kbd> in MacOS) to save the file.
 Give it a name `dblist.txt` and press <kbd>Enter</kbd>.
 
@@ -275,7 +277,7 @@ $ while read -r dbname
 > Genome and query files are available in `/blue/general_workshop/share/xanthomonas`.
 > You can use the checklist to mark progress.
 > 
-> 1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;` <input type="checkbox">
+> 1. Change your location to your working directory `/blue/general_workshop/'username';` <input type="checkbox">
 > 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
 > 3. Copy all genome and query fasta files to current directory. <input type="checkbox">
 > 4. Copy the submission script from to the current directory. <input type="checkbox">
