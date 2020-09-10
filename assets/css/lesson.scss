@@ -385,3 +385,27 @@ details[open] > summary:after {
 .container {
   counter-reset: bash;
 }
+
+@media print  
+{
+    div.highlighter-rouge, blockquote {
+        page-break-inside: avoid;
+    }
+
+    .highlight {
+      -webkit-print-color-adjust: exact;
+      background-color:  #f4f4f4 !important
+    }
+
+    .language-bash::before, .terminal::before, .output::before {
+      -webkit-print-color-adjust: exact;
+      background-color: #e7e7e7 !important
+    }
+
+    :not(pre) > code {
+      -webkit-print-color-adjust: exact; 
+      background-color: #e7e7e7 !important
+    }
+
+    h1, :not(blockquote) > h2 {page-break-before: always;}
+}
