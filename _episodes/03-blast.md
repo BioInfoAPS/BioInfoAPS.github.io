@@ -277,7 +277,7 @@ $ while read -r dbname
 > Genome and query files are available in `/blue/general_workshop/share/xanthomonas`.
 > You can use the checklist to mark progress.
 > 
-> 1. Change your location to your working directory `/blue/general_workshop/'username';` <input type="checkbox">
+> 1. Change your location to your working directory `/blue/general_workshop/<username>`. <input type="checkbox">
 > 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
 > 3. Copy all genome and query fasta files to current directory. <input type="checkbox">
 > 4. Copy the submission script from to the current directory. <input type="checkbox">
