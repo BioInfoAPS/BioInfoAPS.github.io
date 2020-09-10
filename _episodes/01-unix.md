@@ -49,7 +49,8 @@ $ cd /blue/general_workshop/<username>
 ~~~
 {: .language-bash}
 
-> # `$` sign
+> Do not copy `$` sign.
+{: .caution}
 
 ## Basic Commands
 
@@ -204,8 +205,6 @@ $ ls
 demo     file1.txt
 ~~~
 {: .output}
-
-Tip: You can use <kbd>Tab</kbd> to autocomplete paths and filenames.
 
 ### Creating directories
 
@@ -512,6 +511,7 @@ Hello World
 > # `"` vs `'` (Double quotes vs single quotes)
 > `"` and `'` mean different things in unix and should not be use interchangeably.
 > Check yourself how the output of `echo '$a $b'` differs from that of `echo "$a $b"`.
+{: .tips}
 
 ### Text manipulation
 

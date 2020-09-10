@@ -115,8 +115,8 @@ Press <kbd>Y</kbd> to save the changes made to the file.
 > Be careful, you may be editing in wrong place.
 >
 > If you accidentally edited in wrong place, exit nano, 
-> delete the script `nano slurm.sh` and copy again from share directory.
-> Do not forget to edit the <email_address>.
+> delete the script `slurm.sh` and copy again from share directory.
+> Do not forget to edit the &lt;email_address>&gt;
 {: .caution}
 
 ## Running a job in SLURM

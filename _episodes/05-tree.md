@@ -220,7 +220,7 @@ After editing the email address in `nano`, you are ready to submit the submissio
 ~~~
 $ sbatch slurm_pipeline.sh
 ~~~
-{: .output}
+{: .language-bash}
 
 
 > ## Visualize tree
