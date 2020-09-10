@@ -508,7 +508,7 @@ Hello World
 ~~~
 {: .output}
 
-> # `"` vs `'` (Double quotes vs single quotes)
+> ## `"` vs `'` (Double quotes vs single quotes)
 > `"` and `'` mean different things in unix and should not be use interchangeably.
 > Check yourself how the output of `echo '$a $b'` differs from that of `echo "$a $b"`.
 {: .tips}
