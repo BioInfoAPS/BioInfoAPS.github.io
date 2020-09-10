@@ -6,7 +6,7 @@ permalink: /faq/index.html
 
 ## General
 
-*Where can I get help?*
+*Where can I get help before the session?*
 :   Mail us at [{{site.email}}](mailto:{{site.email}}),
     or send a tweet to 
     [@sujantimilsina](https://twitter.com/sujantimilsina),
@@ -15,7 +15,7 @@ permalink: /faq/index.html
 
 *Where can I report problems or suggest improvements?*
 :   Please file an issue against [this repository]({{site.workshop_repo}})
-    or [mail us](mailto:{{site.email}}).
+    or [mail us](mailto:anujsharma@ufl.edu).
 
 *Where is the information about setting up the computer?*
 :   Please check the [setup page](setup.html) for the 
@@ -26,8 +26,8 @@ permalink: /faq/index.html
 
 *How do we ask for help if we get stuck in middle of session?*
 :   In addition to instructors, other moderators will be monitoring chats.
-    Send us a message with the step that you are facing problem with,
-    and also any error messages if applicable.
+    Send us a message with the step number that you are facing 
+    problem with, and also any error messages if applicable.
 
 *Can I just copy and paste the codes from the website?*
 :   Yes, but be careful. Only copy the lines with `$` sign. 
@@ -45,7 +45,7 @@ permalink: /faq/index.html
 
 *How can I share the workshop to social media?*
 :   You can 
-    [Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=http%3A//bioinfoaps.github.io/){:target="_blank"},
-    [Tweet about it](https://twitter.com/intent/tweet?text=http%3A//bioinfoaps.github.io/){:target="_blank"},
-    [Post to LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bioinfoaps.github.io/&title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists&summary=&source=){:target="_blank"} or
-    [Submit to reddit](http://www.reddit.com/submit?url=https://bioinfoaps.github.io/&title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists){:target="_blank"}.
+    [Share on Facebook](https://www.facebook.com/sharer/sharer.php?u=http%3A//bioinfoaps.github.io/){:target="_blank" .btn},
+    [Tweet about it](https://twitter.com/intent/tweet?text=http%3A//bioinfoaps.github.io/){:target="_blank" .btn},
+    [Post to LinkedIn](https://www.linkedin.com/shareArticle?mini=true&url=http%3A//bioinfoaps.github.io/&title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists&summary=&source=){:target="_blank" .btn} or
+    [Submit to reddit](http://www.reddit.com/submit?url=https://bioinfoaps.github.io/&title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists){:target="_blank" .btn}.
