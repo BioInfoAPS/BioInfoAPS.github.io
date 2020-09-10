@@ -774,7 +774,13 @@ CM008455.1      82264380        ACC     A       intergenic_region
 > ~~~
 > {: .language-bash}
 > 
-> *Streptomyces scabies* is a plant pathogen that produces necrosis in potatoes. Most of the virulence factors are locate regions that have low GC content. Also, virulence is highly > expressed during the interaction with roots. The file “aliens_in_scabies” contains a tabular table with more than 1000 genes (first column) with the level of change expression when > comparing growth in rich medium vs. interaction with roots (second column). Besides, the gene sequences, GC% content is provided in the third column of the table.
+> *Streptomyces scabies* is a plant pathogen that produces necrosis in potatoes. 
+> Most of the virulence factors are located in regions that have low GC content. 
+> Also, virulence is highly expressed during the interaction with roots. 
+> The file “aliens_in_scabies” contains a tabular data with more than 1000 genes 
+> (first column) along with the level of change expression when growth in rich medium 
+> vs. interaction with roots (second column). 
+> GC content% is provided in the third column of the table.
 > 
 > Using UNIX commands 
 > 1. Sort the table by expression levels (second column).  <input type="checkbox">
@@ -804,8 +810,7 @@ CM008455.1      82264380        ACC     A       intergenic_region
 {: .challenge}
 
 ## An intro to loops
-Many tasks are repetitive. It is not necessary to repeat the same command multiple times. We learn how to pipe and re-direct outputs of the commands.
-let’s learn how to use loops to repeat a task
+Many tasks are repetitive. It is not necessary to repeat the same command multiple times. Instead, we can use wildcards and loops to repeat a task.
 
 ### Wildcards
 
@@ -887,7 +892,7 @@ $ for x in {0..3}
 > copy edited command and only then, 
 > paste it into terminal or powershell.
 >
-> Or click [here](/code/for_demo.txt){: target="_blank"} to open a separate page to copy the code above.
+> Or click [here](/code/demo_for.txt){: target="_blank"} to open a separate page to copy the code above.
 {: .caution}
 
 The process between `do` and `done` enclose task to be repeated.
@@ -927,7 +932,7 @@ $ while(($x <4))
 
 As in `for` loop, the commands to be looped over are enclosed between `do` and `done`. 
 
-> Click [here](/code/while_demo.txt){: target="_blank"} to open a separate page to copy the code above.
+> Click [here](/code/demo_while.txt){: target="_blank"} to open a separate page to copy the code above.
 {: .caution}
 
 

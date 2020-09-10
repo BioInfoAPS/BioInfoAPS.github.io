@@ -74,7 +74,7 @@ $ nano slurm.sh
 
 ~~~
 -----------------------------------------------------------------------------------------------
- GNU nano 3.3 beta 02                      New Buffer
+ GNU nano 3.3 beta 02                     File: slurm.sh
 -----------------------------------------------------------------------------------------------
 #!/bin/bash
 #
@@ -103,10 +103,21 @@ The comments beginning with `#SBATCH` tell SLURM various information about the j
 The acutal commands to run appear after the comments. In this case it just returns
 current datetime at 10s interval.
 
-Change the &lt;email_address&gt; to your temporary UF email adress.
-
-Press <kbd>Ctrl</kbd>+<kbd>x</kbd> (<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
+Change the &lt;email_address&gt; to your UF email address.
+Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
+(<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
 Press <kbd>Y</kbd> to save the changes made to the file.
+
+> ## Editing in nano
+> **nano** is a commandline editor. You can only move your cursor with 
+> arrow keys: <kbd>↑</kbd>, <kbd>↓</kbd>, <kbd>←</kbd> and <kbd>→</kbd>.
+> Clicking with mouse does not change the position of the cursor. 
+> Be careful, you may be editing in wrong place.
+>
+> If you accidentally edited in wrong place, exit nano, 
+> delete the script `nano slurm.sh` and copy again from share directory.
+> Do not forget to edit the <email_address>.
+{: .caution}
 
 ## Running a job in SLURM
 
@@ -142,6 +153,11 @@ $ squeue -u <username>
 ~~~
 {: .output}
 
+> If you do not see your job, it may have already been completed.
+> Run the job again and check within a minute.
+> Also, check you email to see if you got any message from HiperGator.
+{: .tips}
+
 ~~~
 $ squeue -A general_workshop
 ~~~
@@ -158,8 +174,10 @@ $ squeue -A general_workshop
 > ## Understanding Job Status
 > Under status `ST`, `R` stands for Running and `PD` stands for pending.
 > If the job is pending, a reason may be provided in last column. Eg:
+> - **None**: Just taking a while before running.
 > - **Priority**: Higher priority jobs exist in this partition.
-> - **QOSMaxCpuPerUserLimit**: The user is already using max number of CPU that he/she is allowed to.
+> - **QOSMaxCpuPerUserLimit**: The user is already using max 
+> number of CPU that he/she is allowed to use.
 {: .tips}
 
 ### Checking the output
@@ -197,4 +215,5 @@ Tue Sep 15 02:04:55 EDT 2020
 > To autocomplete a file or directory name, press <kbd>Tab</kbd> button. 
 > Names are autocompleted until there are conflicts (e.g. files with same prefixes).
 > In case of conflict, press tab two time to view list of files and folders (equivalent to `ls`).
+> To try autocomplete, type `cat se` and press <kbd>Tab</kbd>.
 {: .tips}

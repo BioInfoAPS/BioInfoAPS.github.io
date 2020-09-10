@@ -51,7 +51,7 @@ $ ls
 {: .language-bash}
 
 ~~~
-avrBs2.fas     GEV1026.fasta     GEV1001.fasta     GEV1044.fasta     GEV1054.fasta
+avrBs2.fas     GEV1063.fasta     GEV915.fasta     GEV993.fasta     Xp.fasta
 ...
 ...
 ~~~
@@ -59,14 +59,16 @@ avrBs2.fas     GEV1026.fasta     GEV1001.fasta     GEV1044.fasta     GEV1054.fas
 
 The SLURM submission script is located in `/blue/general_workshop/share/scripts/slurm_blast_xml.sh`
 
-Warning: This is not the same script as last section. Use this script, not the last one.
+> This is not the same script as last section. Use this script, not the last one.
+{: .caution}
 
 ~~~
-$ tail -n8 ../share/scripts/slurm_blast_xml.sh
+$ tail -n9 ../../share/scripts/slurm_blast_xml.sh
 ~~~
 {: .language-bash}
 
 ~~~
+# Loop over each genome
 for genome in `ls *.fasta | sed 's/.fasta//g'`
 do
   # Make database
@@ -78,16 +80,17 @@ done
 ~~~
 {: .output}
 
-Note the new argument `-outfmt 5`. This will output the result in XML format.
-
+> This script has a new argument `-outfmt 5`. This will output the result in XML format.
 > The `.out` files you generated in previous section is not in XML format.
-{: .caution}
+{: .notes}
+
 
 
 > ## Exercise: Transfering BLAST results in personal device
 > 
 > The obejctive of this exercise is to be able to run SLURM script and transfer
-> output file to your own device.
+> output file to your own device.  
+> You can use checklist to track progress.
 > 1. Copy script to your working directory (`phylogeny`). <input type="checkbox">
 > 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
 > 3. Submit the SLURM script. <input type="checkbox">
@@ -103,7 +106,7 @@ Note the new argument `-outfmt 5`. This will output the result in XML format.
 > $ cp ../../share/scripts/slurm_blast_xml.sh ./
 > 
 > #2
-> $ nano slurm_blast.sh
+> $ nano slurm_blast_xml.sh
 > → edit email address → ctrl+x → y
 > 
 > #3
@@ -127,7 +130,6 @@ Note the new argument `-outfmt 5`. This will output the result in XML format.
 > - The steps for connecting to Hipergator using Filezilla and 
 > transferring files are available in [setup page](/setup.html).
 >
-> 
 > </details>
 {: .challenge}
 
@@ -155,7 +157,11 @@ $ cat Xeu_avrBs2.out
 <BlastOutput>
   <BlastOutput_program>blastn</BlastOutput_program>
   <BlastOutput_version>BLASTN 2.10.1+</BlastOutput_version>
+  ...
+  ...
   <𝗕𝗹𝗮𝘀𝘁𝗢𝘂𝘁𝗽𝘂𝘁_𝗱𝗯>𝗫𝗲𝘂</𝗕𝗹𝗮𝘀𝘁𝗢𝘂𝘁𝗽𝘂𝘁_𝗱𝗯>
+  ...
+  ...
 </BlastOutput>
 ...
 ...
@@ -166,10 +172,8 @@ $ cat Xeu_avrBs2.out
       <Hsp_bit-score>4170.86</Hsp_bit-score>
       <Hsp_score>2258</Hsp_score>
       <Hsp_evalue>0</Hsp_evalue>
-      <Hsp_identity>2288</Hsp_identity>
-      <Hsp_positive>2288</Hsp_positive>
-      <Hsp_gaps>0</Hsp_gaps>
-      <Hsp_align-len>2303</Hsp_align-len>
+      ...
+      ...
       <Hsp_qseq>AAGTGCTGGCAACGCGTCCAAACACGAGCAGGCCAGGCAGACCGAGACGGATTGA</Hsp_qseq>
       <𝗛𝘀𝗽_𝗵𝘀𝗲𝗾>𝗔𝗔𝗚𝗧𝗚𝗖𝗧𝗚𝗚𝗖𝗔𝗔𝗖𝗚𝗖𝗚𝗧𝗖𝗖𝗔𝗔𝗔𝗖𝗔𝗖𝗖𝗔𝗚𝗖𝗔𝗚𝗚𝗖𝗖𝗔𝗚𝗚𝗖𝗔𝗚𝗔𝗖𝗖𝗚𝗔𝗚𝗔𝗖𝗚𝗚𝗔𝗧𝗧𝗚𝗔</𝗛𝘀𝗽_𝗵𝘀𝗲𝗾>
       <Hsp_midline>||||||||||||||||||||||||| |||||||||||||||||||||||||||||</Hsp_midline>
@@ -178,6 +182,9 @@ $ cat Xeu_avrBs2.out
 </Hit>
 ~~~
 {: .output}
+
+> The output above is for demonstration purpose and the real output may look different.
+{: .notes}
 
 We will have to convert it into FASTA format which only needs two line from the XML:
 `BlastOutput_db` and `Hsp_hseq`. The FASTA format looks like:
@@ -211,13 +218,13 @@ done
 ~~~
 {: .output}
 
-What this script does is loop line by line over the file, 
-and look for keywords `BlastOutput_db` and `Hsp_hseq`.
-If it find the keywords, then it will extract the contents
+What this script does is loop line by line (`while`) over the file, 
+and look for (`grep`) keywords `BlastOutput_db` and `Hsp_hseq`.
+If it find the keywords, then it will extract (`sed`) the contents
 between those tags and output in appropriate format.
 
-> We won't cover what exactly is going on inside the while loop. 
-> This requires advanced bash knowledge of test command, ifelse shorthand, 
+> We won't cover the exact syntax of the script. 
+> This requires advanced knowledge of test command, ifelse shorthand, 
 > extended posix and here string.
 {: .tips}
 
@@ -256,11 +263,10 @@ GCATCGGTCCTCTGCAACCTTCTATCGCGCA
 ~~~
 {: .output}
 
-> The example above is for demonstration purpose and the actual output will be
-> different from the example.
+> The output above is for demonstration purpose and the real output may look different.
 {: .notes}
 
-> ##When to use SLURM?
+> ## When to use SLURM?
 > We are not using SLURM for this job because it is fast and not resource intensive.
 > Use SLURM for resource intensive or time-consuming tasks.
 {: .tips}

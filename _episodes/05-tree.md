@@ -28,7 +28,23 @@ We will use MAFFT sequence alignment tool.
 $ module load mafft
 
 $ mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
+~~~
+{: .language-bash}
 
+~~~
+nthread = 0
+generating a scoring matrix for nucleotide (dist=200) ... done
+Gap Penalty = -1.53, +0.00, +0.00
+
+Making a distance matrix ..
+    1 / 20
+done.
+...
+...
+~~~
+{: .output}
+
+~~~
 $ more avrBs2_all_genomes_aligned.fas
 ~~~
 {: .language-bash}
@@ -59,9 +75,9 @@ construct the tree that we will submit through a batch file.
 The SLURM submission script is present in `/blue/general_workshop/share/scripts/slurm_tree.sh.sh
 
 ~~~
-$ cp ../../scripts/slurm_tree.sh ./
+$ cp ../../share/scripts/slurm_tree.sh ./
 
-$ tail -n8 slurm_tree.sh.sh
+$ tail -n8 slurm_tree.sh
 ~~~
 {: .language-bash}
 
@@ -81,13 +97,17 @@ The argument `-n` allows us to name the output suffix. In our case, the output w
 be name `RAxML_bestTree.avrBs2_tree`.
 
 > ## Help with arguments
-> To understand what other arguments mean, you can check the help file `raxalHPC -h`.
+> To understand what other arguments mean, you can check the help file `ml raxml; raxmlHPC -h`.
 {: .tips}
 
 Edit the email address in the SLURM submission script and submit the job.
 
-Note: if you run bootstraps, there will be individual files for each bootstrap
-in additing to `RAxML_bestTree.<suffix>` only.
+> ## Running bootstraps
+> To bootstrap the tree, add arguments `-b -#1000` 
+> where `1000` is the number of bootstraps.
+> If you run bootstraps, the output will be in a file named `RAxML_bootstrap.<suffix>`.
+> To understand about the arguments, you can run `ml raxml; raxmlHPC -h`
+{: .tips}
 
 We can download this tree only and visualize in our own computer using ‘Figtree’. 
 Please use file transfer tool such as FileZilla or Cyberduck to download the file. 
@@ -95,6 +115,15 @@ The tree will open as follows:
 
 ![Phylogenentic tree](/fig/tree.png)
 
+> ## (Optional) Trees in ASCII!
+> To quickly visualize the tree, try this:
+> ~~~
+> $ ml newick_utils
+>
+> $ nw_display RAxML_bestTree.avrBs2_tree
+> ~~~
+> {: .language-bash}
+{: .challenge}
 ---
 
 ## Phylogenetic tree pipeline
@@ -112,7 +141,7 @@ provide external (generated outside the pipeline usch as gene and
 genome sequences) inputs and get the final result (the phylogennetic tree) 
 in return directly?
 
-Answer: YES*
+YES*
 
 For this, we will merge all the steps together into one script.
 
@@ -135,11 +164,11 @@ $ mkdir all_in_one
 
 $ cd all_in_one
 
-$ cp -r ../share/phylogeny/* ./
+$ cp -r ../../share/phylogeny/* ./
 
-$ cp ../share/scripts/slurm_pipeline.sh ./
+$ cp ../../share/scripts/slurm_pipeline.sh ./
 
-$ cp ../share/scripts/blast2fasta.sh ./
+$ cp ../../share/scripts/blast2fasta.sh ./
 
 $ ls
 ~~~
@@ -155,7 +184,7 @@ GEV1044.fasta      GEV904.fasta      GEV940.fasta     Xc.fasta
 {: .output}
 
 ~~~
-$ tail -n22 slurm_pipeline.sh
+$ tail -n23 slurm_pipeline.sh
 ~~~
 {: .language-bash}
 
@@ -169,7 +198,7 @@ module load raxml
 for genome in `ls *.fasta | sed 's/.fasta//g'`
 do
   # Make database
-   makeblastdb -in "$genome.fasta" --dbtype nucl -out "$genome"
+   makeblastdb -in "$genome.fasta" -dbtype nucl -out "$genome"
 
   # Run blastn on that database
    blastn -query avrBs2.fas -db "$genome" -out $genome"_avrBs2.out" -outfmt 5 -evalue 0.001
@@ -181,7 +210,7 @@ cat *_avrBs2.out | ./blast2fasta.sh > avrBs2_all_genomes.fas
 # Align sequences with MAAFT
 mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
 
-# Mkae tree with RAxML
+# Make tree with RAxML
 raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tree
 ~~~
 {: .output}

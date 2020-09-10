@@ -13,7 +13,7 @@ pwd; hostname; date
 # Load RAxML
 module load raxml
 
-# Mkae tree with RAxML
+# Make tree with RAxML
 raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tree
 
 # Success message

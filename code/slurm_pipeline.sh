@@ -1,5 +1,5 @@
 #!/bin/bash
-#SBATCH --job-name Phylogenetic tree  # Job name
+#SBATCH --job-name phylogenetic_tree  # Job name
 #SBATCH --account general_workshop    # Account to run the computational task
 #SBATCH --qos general_workshop        # Account allocation
 #SBATCH --mail-type END,FAIL          # Mail events (NONE, BEGIN, END, FAIL, ALL)
@@ -19,7 +19,7 @@ module load raxml
 for genome in `ls *.fasta | sed 's/.fasta//g'`
 do
   # Make database
-   makeblastdb -in "$genome.fasta" --dbtype nucl -out "$genome"
+   makeblastdb -in "$genome.fasta" -dbtype nucl -out "$genome"
 
   # Run blastn on that database
    blastn -query avrBs2.fas -db "$genome" -out $genome"_avrBs2.out" -outfmt 5 -evalue 0.001
@@ -31,5 +31,5 @@ cat *_avrBs2.out | ./blast2fasta.sh > avrBs2_all_genomes.fas
 # Align sequences with MAAFT
 mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
 
-# Mkae tree with RAxML
+# Make tree with RAxML
 raxmlHPC -d -p 12345 -m GTRGAMMAI -s avrBs2_all_genomes_aligned.fas -n avrBs2_tree

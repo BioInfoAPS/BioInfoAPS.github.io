@@ -22,7 +22,7 @@ permalink: /faq/index.html
     information regarding setting up your device.
 
 *Do I have to pay for any of the software?*
-:   No. Everything we have recommended is availabel for free.
+:   No. Everything we have recommended is available for free.
 
 *How do we ask for help if we get stuck in middle of session?*
 :   In addition to instructors, other moderators will be monitoring chats.
@@ -37,7 +37,7 @@ permalink: /faq/index.html
     relevant value such as your username or email address.
 
 *Can we use any email address to replace `<email_adress>`?*
-:   We recommending using your temporary or permanenet UF email address.
+:   We recommend using your temporary or permanent UF email address.
 
 *I do not know my username or email address?*
 :   Please stay tuned. We will provide those information 

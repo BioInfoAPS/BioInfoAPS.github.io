@@ -78,21 +78,28 @@ Before starting, copy all the required files to your working directory.
 ~~~
 $ cd /blue/general_workshop/<username>
 
-$ cp ../share/xanthomonas ./
+$ cp -r ../share/xanthomonas ./
 
 $ ls
 ~~~
 {: .language-bash}
 
 ~~~
-strep     slurm     xanthomonas
+demo     strep     slurm     xanthomonas
 ~~~
 {: .output}
 
 ~~~
 $ cd xanthomonas
+
+$ ls
 ~~~
 {: .language-bash}
+
+~~~
+avrBs2.fas     Xc.fasta     Xeu.fasta     Xg.fasta     Xp.fasta
+~~~
+{: .output}
 
 ### Loading BLAST in Hipergator cluster
 
@@ -117,7 +124,7 @@ $ makeblastdb -in Xeu.fasta -out Xeu -dbtype nucl
 {: .language-bash}
 
 ~~~
-Building a new DB, current time: 09/06/2020 23:17:22
+Building a new DB, current time: 09/15/2020 02:25:22
 New DB name:   /blue/general_workshop/<username>/xanthomonas/Xeu
 New DB title:  Xeu.fasta
 Sequence type: Nucleotide
@@ -133,9 +140,9 @@ $ ls
 {: .language-bash}
 
 ~~~
-avrBs2.fasta     Xc.fasta     Xeu.fasta     Xeu.ndb     Xeu.nhr 
-Xeu.nin          Xeu.not      Xeu.nsq       Xeu.ntf     Xeu.nto
-Xg.fasta         Xp.fasta
+avrBs2.fas     Xeu.ndb     Xeu.not     Xeu.ntf     Xg.fasta
+Xc.fasta       Xeu.nhr     Xeu.nsq     Xeu.nto     Xp.fasta
+Xeu.fasta      Xeu.nin
 ~~~
 {: .output}
 
@@ -151,12 +158,15 @@ Xg.fasta         Xp.fasta
 ### Creating BLAST database in batch
 
 Makeing database individually for all genomes will be manually laborious. 
-Instead, we can identify common patterns in the name of the genome files nad 
+Instead, we can identify common patterns in the name of the genome files and 
 execute `makeblastdb` in a loop.
 
-Exercise:
-What is one pattern that is common in all the genomes file??
-Extension - ‘.fasta’.
+> What is one pattern that is common in all the genomes file??
+> <details>
+> <summary></summary>
+> The extension - ‘.fasta’.
+> </details>
+{: .challenge}
 
 We can specify all files in current path with fasta extension by `./*.fasta`.
 
@@ -173,12 +183,23 @@ $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtyp
 ~~~
 {: .output}
 
+> `sed` command is used to remove `.fasta` extension from list of names.
+{: .notes}
+
+> For maually selecting the databases, you can use `for` loop like this:
+> `for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done`
+{: .tips}
+
 > ## One liners
 > Short loops can be written in a same line by separating commands with `;`. 
 >`;` is equivalent to pressing <kbd>Enter</kbd>.
 {: .tips}
 
-> `sed` command is used to remove `.fasta` extension from list of names.
+> ## Merging database with `blastdb_aliastool`
+> BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
+> however, it is outside the scope of this workshop.  
+> Usage:  
+> `blastdb_aliastool -dblist "Xeu Xp Xg Xc" -dbtype nucl -out Xspp -title "Xanthomonas genomic"`
 {: .notes}
 
 ### Performing BLAST search
@@ -189,22 +210,21 @@ and the database are nucleotide sequences, we will perform `blastn`.
 ~~~
 $ blastn -query avrBs2.fas -db Xeu -out Xeu_avrBs2.out -evalue 0.001
 
-$ ls
+$ ls *.out
 ~~~
 {: .language-bash}
 
 ~~~
-avrBs2.fasta      𝗫𝗲𝘂_𝗮𝘃𝗿𝗕𝘀𝟮.𝗼𝘂𝘁     Xc.fasta          Xeu.fasta         Xeu.ndb
-...
-...
+Xeu_avrBs2.out
 ~~~
 {: .output}
 
 ### Performing BLAST search in multiple databases in batch
 
-We can blast multiple databases in a lop as well. 
+We can blast multiple databases in a loop as well. 
+Let's do this in a different way from previous example.
 First lets create a list of all databases to BLAST against and save it into a file.
-We can use a small text editor program called `nano` for writing to a file.
+We can use `nano` for writing to a file.
 
 ~~~
 $ nano
@@ -236,22 +256,15 @@ Now we can run the `blastn` in loop.
 
 ~~~
 $ while read -r dbname
-$ do
-$   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -outfmt 0 -evalue 0.001
-$ done < dblist.txt
+> do
+>   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -evalue 0.001
+> done < dblist.txt
 ~~~
 {: .language-bash}
 
-> If you are copying sequence from provided material or the website, so not forget to remove the `$` sign.
+> After copying the code block, do not forget to remove the `$` or `>` sign.
+> Or click [here](/code/blastn_loop.txt){: target="_blank"} to open a separate page to copy the code.
 {: .caution}
-
-> Merging database with `blastdb_aliastool`
-> BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
-> however, it is outside the scope of this workshop.
->
-> Usage: 
-> `$ blastdb_aliastool -dblist "Xeu Xp Xg Xc" -dbtype nucl -out xanthomonas_all -title "Xanthomonas genomic"`
-{: .notes}
 
 > ## Exercise: Performing blast search in SLURM
 > 
@@ -260,6 +273,7 @@ $ done < dblist.txt
 > The SLURM submission has been prepared for your and is available as 
 > `/blue/general_workshop/share/scripts/slurm_blast.sh`. 
 > Genome and query files are available in `/blue/general_workshop/share/xanthomonas`.
+> You can use the checklist to mark progress.
 > 
 > 1. Change your location to your working directory `/blue/general_workshop/&lt;username&gt;` <input type="checkbox">
 > 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
@@ -267,8 +281,7 @@ $ done < dblist.txt
 > 4. Copy the submission script from to the current directory. <input type="checkbox">
 > 5. Open the script in nano and edit the email address. <input type="checkbox">
 > 6. Submit the job to SLURM. <input type="checkbox">
-> 7. Check status of the job as it is running. <input type="checkbox">
-> 8. After job is completed, check the list of files in current directory. <input type="checkbox">
+> 8. After job is completed, check if output files exist in current directory. <input type="checkbox">
 > 
 > <details markdown="1">
 >   <summary></summary>
@@ -283,10 +296,10 @@ $ done < dblist.txt
 > $ cd slurm_blast
 > 
 > #3
-> $ cp /blue/general_workshop/share/xanthomonas/* ./
+> $ cp ../../share/xanthomonas/* ./
 > 
 > #4
-> $ cp /blue/general_workshop/share/scripts/slurm_blast.sh ./
+> $ cp ../../share/scripts/slurm_blast.sh ./
 > 
 > #5
 > $ nano slurm_blast.sh
@@ -296,10 +309,7 @@ $ done < dblist.txt
 > $ sbatch slurm_blast.sh
 > 
 > #7
-> $ squeue -u <username>
-> 
-> #8
-> $ ls
+> $ ls *.out
 > ~~~
 > {: .language-bash}
 > 
