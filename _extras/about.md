@@ -18,10 +18,10 @@ emerging pathogens and their impact in the disease epidemilogy.
 He is also interested in developing compuational methods 
 for studying bacterial population.
 
-[Sujan Timilsina](https://sites.google.com/site/sujantimilsina) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-[Google Scholar](https://scholar.google.com/citations?user=J8JONFsAAAAJ&hl=en) &nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp; 
-Twitter: [@sujantimilsina](https://twitter.com/sujantimilsina) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-Github: [@sujan8765](https://github.com/sujan8765)
+[Sujan Timilsina](https://sites.google.com/site/sujantimilsina){: .btn} |
+[Google Scholar](https://scholar.google.com/citations?user=J8JONFsAAAAJ&hl=en){: .btn} |
+[Twitter](https://twitter.com/sujantimilsina){: .btn} |
+[Github](https://github.com/sujan8765){: .btn}
 
 ### Jose C. Huguet-Tapia 
 
@@ -33,10 +33,10 @@ that focus on computational resources and research within the Department.
 His interests are on genome evolution of plant pathogenic bacteria 
 and host pathogen interactions.
 
-[Jose C. Huguet-Tapia](https://www.researchgate.net/profile/Jose_Huguet-Tapia) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-[Google Scholar](https://scholar.google.com/citations?user=ITJtCqQAAAAJ&hl=en&oi=ao) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
-Twitter: [@Joxcar73](https://twitter.com/Joxcar73) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-Github: [@joscarhuguet](https://github.com/joscarhuguet)
+[Jose C. Huguet-Tapia](https://www.researchgate.net/profile/Jose_Huguet-Tapia){: .btn} |
+[Google Scholar](https://scholar.google.com/citations?user=ITJtCqQAAAAJ&hl=en&oi=ao){: .btn} | 
+[Twitter](https://twitter.com/Joxcar73){: .btn} |
+[Github](https://github.com/joscarhuguet){: .btn}
 
 ### Erica M. Goss
 
@@ -46,9 +46,9 @@ population structure, and migration of plant pathogens.
 She is also interested in microbial ecology and the molecular evoution 
 of virulence and host range as relates to the emergence of new pathogens.
 
-[Erica M. Goss](https://plantpath.ifas.ufl.edu/people/faculty-pages/erica-goss/) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-[Google Scholar](https://scholar.google.com/citations?user=WWiNLIEAAAAJ&hl=en&oi=ao) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
-Twitter: [@GossErica](https://twitter.com/GossErica)
+[Erica M. Goss](https://plantpath.ifas.ufl.edu/people/faculty-pages/erica-goss/){: .btn} |
+[Google Scholar](https://scholar.google.com/citations?user=WWiNLIEAAAAJ&hl=en&oi=ao){: .btn} | 
+[Twitter](https://twitter.com/GossErica){: .btn}
 
 ### Liliana M. Cano 
 
@@ -60,9 +60,9 @@ Indian River citrus production and its premier crop,
 grapefruit with a focus in plant-microbe interactions 
 and tools for pathogen-assisted breeding in crop plants.
 
-[Liliana Cano](https://irrec.ifas.ufl.edu/cano/) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp; 
-[Google Scholar](https://scholar.google.com/citations?hl=en&user=XhvJKJYAAAAJ) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-Twitter: [@Cano_Lab](https://twitter.com/Cano_Lab)
+[Liliana Cano](https://irrec.ifas.ufl.edu/cano/){: .btn} | 
+[Google Scholar](https://scholar.google.com/citations?hl=en&user=XhvJKJYAAAAJ){: .btn} |
+[Twitter](https://twitter.com/Cano_Lab){: .btn}
 
 
 ### Anuj Sharma 
@@ -73,9 +73,9 @@ His research is focuses on bacterial spot of tomato and pepper
 caused by Xanthomonas species. 
 He is currently working on mapping resistance genes, 
 developing bacterial dispersal models and 
-understanding mutation rate of bacterial effectors.
+understanding mutation rate of bacterial effectors. 
 
-[Anuj Sharma](https://anujs.com.np/) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-[Google Scholar](https://scholar.google.com/citations?hl=en&user=cNdnwIsAAAAJ) &nbsp;&nbsp;&nbsp;| &nbsp;&nbsp;&nbsp;
-Twitter: [@rknx](https://twitter.com/rknx) &nbsp;&nbsp;&nbsp; | &nbsp;&nbsp;&nbsp;
-Github: [rknx](https://github.com/rknx)
+[Anuj Sharma](https://anujs.com.np/){: .btn}  | 
+[Google Scholar](https://scholar.google.com/citations?hl=en&user=cNdnwIsAAAAJ){: .btn} | 
+[Twitter](https://twitter.com/rknx){: .btn}  | 
+[Github](https://github.com/rknx){: .btn}
