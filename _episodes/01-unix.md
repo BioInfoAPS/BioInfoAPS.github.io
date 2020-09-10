@@ -886,7 +886,9 @@ $ for x in {0..3}
 > remove staring `$` or `>` sign,
 > copy edited command and only then, 
 > paste it into terminal or powershell.
-{ .caution}
+>
+> Or click [here](/code/for_demo.txt){: target="_blank"} to open a separate page to copy the code above.
+{: .caution}
 
 The process between `do` and `done` enclose task to be repeated.
 The variable `x` will take consecutive values from array `{0..3}` in each iteration.
@@ -924,6 +926,9 @@ $ while(($x <4))
 {: .output}
 
 As in `for` loop, the commands to be looped over are enclosed between `do` and `done`. 
+
+> Click [here](/code/while_demo.txt){: target="_blank"} to open a separate page to copy the code above.
+{: .caution}
 
 
 > ## Learn more about unix commands
