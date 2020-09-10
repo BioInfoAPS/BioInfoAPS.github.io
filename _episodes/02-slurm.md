@@ -17,7 +17,7 @@ those jobs often exceed the resources available in cluster.
 To deal with this issue, many high performance clusters use schedulers 
 to manage resources allocated to those jobs.
 
-UF HiperGator uses a popular scheduler called SLURM workload manager.  
+[UF Hipergator](https://www.rc.ufl.edu/services/hipergator/) uses a popular scheduler called [SLURM](https://slurm.schedmd.com/documentation.html) workload manager.  
 Portable Batch System (PBS), Platform LSF, Moab, LoadLeveler etc. 
 are examples of other schedulers.
 
@@ -35,12 +35,12 @@ of job completion.
 
 ### SLURM scripts
 
-In order to submit a job, user must provide a scripts that will be used to specify user, 
-account, time limit, memory, job output and other information.
+In order to submit a job, user must provide a scripts that will specify user, 
+account, time limit, memory, job output, and other information.
 A common way to do this is to create a submission script. 
 A submission script, like other bash scripts, 
-contains all the commands to be run by the job. 
-However, it alsocontains extra comments which can be read by SLURM 
+contains all the commands to be run during the job. 
+However, it also contains extra comments which can be read by SLURM 
 to determine resource requests.
 
 To get started with SLURM, lets create new directory in your work directory and 
@@ -88,8 +88,8 @@ $ nano slurm.sh
 #SBATCH --time 00:05:00               # Time limit hrs:min:sec
 #SBATCH --output serial_test_%j.log   # Standard output and error log
 
-# Return current date and time every 30 seconds for 6 times
-for i in {0..5}; do printf '%s %s\n' "$(date)"; sleep 10s; done
+# Return current date and time every 3 seconds for 5 times
+for i in {0..4}; do printf '%s %s\n' "$(date)"; sleep 3s; done
 
 
 -----------------------------------------------------------------------------------------------
@@ -100,8 +100,8 @@ for i in {0..5}; do printf '%s %s\n' "$(date)"; sleep 10s; done
 {: .terminal}
 
 The comments beginning with `#SBATCH` tell SLURM various information about the job.
-The acutal commands to run appear after the comments. In this case it just returns
-current datetime at 10s interval.
+The acutal commands to run appear after these comments. In this case, it just returns
+current datetime at 3s interval.
 
 Change the &lt;email_address&gt; to your UF email address.
 Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
@@ -177,7 +177,7 @@ $ squeue -A general_workshop
 > - **None**: Just taking a while before running.
 > - **Priority**: Higher priority jobs exist in this partition.
 > - **QOSMaxCpuPerUserLimit**: The user is already using max 
-> number of CPU that he/she is allowed to use.
+> number of CPU that they are allowed to use.
 {: .tips}
 
 ### Checking the output
