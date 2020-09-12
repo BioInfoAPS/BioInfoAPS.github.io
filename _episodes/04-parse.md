@@ -24,12 +24,12 @@ File parsing simply means reading the file and facilitating the data
 transformation for subsequent analysis.
 
 Note: While file parsing does not sound important, a bioinformatician has 
-to spend significant time corectig file formats.
+to spend significant time correcting file formats.
 
 ## Running BLASTn for phytogenetic tree
 
 In next lesson, we will phylogenetically compare ‘avrBs2’ gene 
-from various strains of Xanthomonas species.
+from various strains of *Xanthomonas* species.
 The ouline of activity will be as follows:
 
 BLAST &rarr; parse to fasta format &rarr; align sequence &rarr; phylogenetic analysis

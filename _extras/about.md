@@ -83,6 +83,3 @@ understanding mutation rate of bacterial effectors.
 #### Plant Pathology Department at University of Florida
 
 Read more about the department [here](https://plantpath.ifas.ufl.edu/). 
-
-# Acknowledgement  
-Thanks to American Phytopathological Society - Annual Meeting Board for facilitating the organziation of this workshop. Very special thanks to the University of Florida - Hipergator cluster team, UF-IT for providing temporary gatorlink accounts. We would like to specifically mention *Lawrence Oshins* for patiently helping us with the cluster computing and account setup and *Megan Boatman* for assisting with the APS planning and organizing.
