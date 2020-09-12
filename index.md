@@ -11,6 +11,7 @@ latitude: "29.637690"        # decimal latitude of workshop venue (use https://w
 longitude: "-82.361710"       # decimal longitude of the workshop venue (use https://www.latlong.net)
 humandate: "Sep 15th, 2020"    # human-readable dates for the workshop (e.g., "Feb 17-18, 2020")
 humantime: "1:00 pm - 5:00 pm"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
+timezone: "Eastern time"    # human-readable times for the workshop (e.g., "9:00 am - 4:30 pm")
 startdate: 2020-09-15      # machine-readable start date for the workshop in YYYY-MM-DD format like 2015-01-01
 enddate: 2020-09-15        # machine-readable end date for the workshop in YYYY-MM-DD format like 2015-01-02
 instructor: ["Jose C. Huguet-Tapia", "Sujan Timilsina"] # boxed, comma-separated list of instructors' names as strings, like ["Kay McNulty", "Betty Jennings", "Betty Snyder"]
@@ -32,12 +33,12 @@ eventbrite: false     # optional: alphanumeric key for Eventbrite registration, 
 {% comment %} Address {% endcomment %}
 {% include intro/where.md %}
 
-{% comment %} Date {% endcomment %}
+{% comment %} Date and Time {% endcomment %}
 {: #when}
-**When:** {{page.humandate}}
+**When:** {{page.humandate}}, {{page.humantime}} {{page.timezone}}.
 
 {% comment %} Pre-requisite {% endcomment %}
-{% include intro/prereq.md %}
+{% include intro/prereq.md %} 
 
 {% comment %} Accessibility {% endcomment %}
 {: #accessibility}
