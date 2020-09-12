@@ -72,7 +72,7 @@ $ tail -n9 ../../share/scripts/slurm_blast_xml.sh
 for genome in `ls *.fasta | sed 's/.fasta//g'`
 do
   # Make database
-  makeblastdb -in "$genome.fasta" --dbtype nucl -out "$genome"
+  makeblastdb -in "$genome.fasta" -dbtype nucl -out "$genome"
 
   # Run blastn on that database
   blastn -query avrBs2.fas -db "$genome" -out $genome"_avrBs2.out" -𝗼𝘂𝘁𝗳𝗺𝘁 𝟱 -evalue 0.001
