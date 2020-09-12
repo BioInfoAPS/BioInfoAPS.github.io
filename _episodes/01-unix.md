@@ -24,7 +24,7 @@ Once you login to HiperGator through SSH, you will start using a bash shell.
 The `$` prompt shows that the bash shell is ready to accept bash commands.
 Before learning some basic commands, there are a few recommendations regarding UNIX systems.
 
-- The ternminal syntax hates spaces between names. 
+- The terminal syntax hates spaces between names. 
 For long or complex names, use connectors such “_" or ‘-’ instead of spaces.
 - Uppercase is different from lowercase. 
 ‘R’ is not the same as ‘r’ in commands, paths and arguments.
@@ -131,7 +131,7 @@ drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsi
 Lets copy a demo file and a demo folder from share folder to you current working directory.
 
 ~~~
-$ cp ../share/file1.txt ./file1.txt
+$ cp /blue/general_workshop/share/file1.txt ./file1.txt
 
 $ ls
 ~~~
@@ -155,7 +155,7 @@ file1.txt     file2.txt
 {: .output}
 
 ~~~
-$ cp -R ../share/demo ./
+$ cp -R /blue/general_workshop/share/demo ./
 
 $ ls
 ~~~
@@ -165,14 +165,6 @@ $ ls
 demo     file1.txt     file2.txt
 ~~~
 {: .output}
-
-> ## Common path symbols in linux
-> Linux uses some symbols to represent commonly used paths.
-> - `..` stands for parent directory.
-> - `.` stands for current directory.
-> - `/` at the beginning stands for root directory.
-> - `~` stands for home directory.
-{: .tips}
 
 ### Moving files
 
@@ -253,6 +245,14 @@ $ pwd
 /blue/general_workshop/<username>
 ~~~
 {: .output}
+
+> ## Common path symbols in linux
+> Linux uses some symbols to represent commonly used paths.
+> - `..` stands for parent directory.
+> - `.` stands for current directory.
+> - `/` at the beginning stands for root directory.
+> - `~` stands for home directory.
+{: .tips}
 
 ### Removing directories
 
