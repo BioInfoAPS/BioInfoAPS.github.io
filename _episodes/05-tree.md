@@ -72,7 +72,7 @@ the tree with the highest probability is shared.
 We will use [RAxML - Randomized Axelerated Maximum Likelihood](https://cme.h-its.org/exelixis/web/software/raxml/) tool to 
 construct the tree that we will submit through a batch file.
 
-The SLURM submission script is present in `/blue/general_workshop/share/scripts/slurm_tree.sh.sh
+The SLURM submission script is present in `/blue/general_workshop/share/scripts/slurm_tree.sh
 
 ~~~
 $ cp ../../share/scripts/slurm_tree.sh ./
