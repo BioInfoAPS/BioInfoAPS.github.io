@@ -20,11 +20,11 @@ title: Setup
 {% comment %} SSH Client {% endcomment %}
 {% include setup/ssh.html %}
 
-{% comment %} SSH Login {% endcomment %}
-{% include setup/login.html %}
+{% comment %} SFTP {% endcomment %}
+{% include setup/sftp.html %}
 
 {% comment %} Text editor {% endcomment %}
 {% include setup/editor.html %}
 
-{% comment %} SFTP {% endcomment %}
-{% include setup/sftp.html %}
+{% comment %} Figtree {% endcomment %}
+{% include setup/figtree.md %}

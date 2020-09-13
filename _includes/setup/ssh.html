@@ -3,7 +3,8 @@
   <p>
     University of Florida has a supercomputer cluster with latest generation
     of processors for memory intensive computings called 
-    High-Performance Cluster (or HiperGator in short).
+    High-Performance Cluster 
+    (or <a href="https://www.rc.ufl.edu/services/hipergator/">HiperGator</a> in short).
     We will connect to HiperGator from your computer using SSH.
     The SSH protocol (also referred to as Secure Shell) 
     is a method for secure remote login from one computer to another.
@@ -21,7 +22,7 @@
         <p>
           Windows does not have SSH client by default. However, 
           SSH can be added from Optional Features in recent version
-          of Windows 10. This can be performed through GUI or commandline.
+          of Windows 10. This can be performed through GUI or command line.
         </p>
         <h4>Using graphical interface</h4>
         <ol>
@@ -99,17 +100,18 @@
           you may want to pin Powershell in your taskbar for this workshop.
         </p>
         <p>
-          Note: Earlier verions of Windows 10 or previous editions of Windows
+          Note: Earlier versions of Windows 10 or previous editions of Windows
           do not have <strong>Optional Features</strong>. For such Windows devices,
           we recommend downloading Putty from 
           <a href="https://www.putty.org/">putty.org</a>.
-          Please contact the instructors prior to the workshop 
-          if you are having difficulty to access SSH Client.
+          Note: Follow 
+          <a href="https://mediatemple.net/community/products/dv/204404604/using-ssh-in-putty-(windows)">this</a> 
+          guide instead of the below if you are using <code>Putty</code>.
         </p>
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">
         <p>
-          SSH client is avilable by default in all versions of macOS, 
+          SSH client is available by default in all versions of macOS, 
           so there is no need to install anything.
         </p>
         <p>
@@ -131,7 +133,7 @@
         <p>
           To start using SSH, open the Terminal from Application list.
           Ubuntu based distros can open Terminal with 
-          keyboard shortcut <kbd>Alt</kbd>+<kbd>Ctrl</kbd>+<kbd>T</kbd>.
+          keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
         </p>
         <p>
           For ease of access, 
@@ -140,4 +142,52 @@
       </article>
     </div>
   </div>
+  <br>
+<ol>
+ <li>
+    In terminal/powershell, type (or copy and paste) the following command and press <kbd>Enter</kbd> key.
+    Do not forget to replace
+    &lt;username&gt; with your provided username.
+    <pre>ssh &lt;username&gt;@hpg.rc.ufl.edu</pre>
+ </li>
+<li>
+    If you are connecting for the first time, 
+you will be prompted to verify the ECDSA keys as shown below.
+<pre>The authenticity of host 'hpg.rc.ufl.edu (128.227.221.250)' can't be established.
+ECDSA key fingerprint is SHA256:z5zVt98Qo+rj0wiWrUhsvuTxVAjFEBePQwcRLq5g2ZI.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?</pre>
+</li>
+<li>
+    Type <code>yes</code> and press <kbd>Enter</kbd> key.
+</li>
+<li>
+Next, you will be prompted to enter password as shown below. 
+Type the provided password and hit <kbd>Enter</kbd> key.
+<pre>&lt;username&gt;@hpg.rc.ufl.edu's password:</pre>
+Note that, as you type in the password, 
+the typed characters to not appear on the screen.
+That is by design.
+</li>
+</ol>
+<p>
+ If you typed your password correctly, 
+you will be able to access HiperGator.
+The following welcome screen will appear.
+</p>
+<p>
+<pre>
+  Welcome to UF Research Computing
+  ________________________________
+
+The user agrees to comply with Research Computing's policies.
+
+https://www.rc.ufl.edu/services/procedures/
+
+...
+...
+
+[&lt;username&gt;@login1 ~]$</pre>
+  If you are unable to login to HiperGator, 
+  please contact the instructors.
+</p>
 </div>
