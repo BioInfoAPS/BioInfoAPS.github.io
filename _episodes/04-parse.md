@@ -87,7 +87,7 @@ done
 
 
 
-> ## Exercise: Transfering BLAST results in personal device
+> ## Exercise: Submit a job with BLAST script
 > 
 > The obejctive of this exercise is to be able to run SLURM script  
 > You can use checklist to track progress.
