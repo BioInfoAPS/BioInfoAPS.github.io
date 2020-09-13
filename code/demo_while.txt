@@ -1,5 +1,5 @@
 x=0
-while(($x <4))
+while(($x < 4))
 do 
   echo $x
   ((++x)) 
