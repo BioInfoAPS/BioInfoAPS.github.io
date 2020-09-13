@@ -43,7 +43,7 @@ flavor: "python"
 # Most workshops don't use extra pages. More information about extra
 # pages are included in the README:
 # https://github.com/carpentries/workshop-template#creating-extra-pages
-title: "Basic	bioinformatics	and	command-line	tools	for	
+title: "Basic	bioinformatics and command-line	tools	for	
 phytopathologists"
 
 
@@ -71,8 +71,8 @@ workshop_repo: "https://github.com/BioInfoAPS/BioInfoAPS.github.io"
 faq: "faq.html"
 survey: "survey.html"
 feedback: "feedback.html"
-owner: "Anuj Sharma"
-ownerLink: "https://anujs.com.np/"
+owner: "APS Basic Bioinformatics Workshop Team"
+ownerLink: "https://github.com/BioInfoAPS"
 
 
 # Start time in minutes (0 to be clock-independent, 540 to show a start at 09:00 am).
