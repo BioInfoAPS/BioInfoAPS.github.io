@@ -4,9 +4,9 @@
 | TIme | Particulars |
 | ------ | -------------------------------------- |
 | &nbsp;&nbsp;Before starting | [Pre-workshop survey]({{ site.survey }}){: target="_blank"} |
-| &nbsp;&nbsp;1:00 - 1:10 pm | Introduction (by Anuj Sharma) |
+| &nbsp;&nbsp;1:00 - 1:15 pm | Introduction (by Anuj Sharma) |
 | **Part 1** | **Instructor: Dr. Jose C. Huguet-Tapia** |
-| &nbsp;&nbsp;1:00 - 1:45 pm | [Basic tools and unix command line](01-unix){: target="_blank"} |
+| &nbsp;&nbsp;1:15 - 1:45 pm | [Basic tools and unix command line](01-unix){: target="_blank"} |
 | &nbsp;&nbsp;1:45 - 2:10 pm | [Running SLURM single thread script](02-slurm){: target="_blank"} |
 | &nbsp;&nbsp;2:10 - 3:00 pm | [Basic Local Alignment Search Tool (BLAST)](03-blast){: target="_blank"} |
 | &nbsp;&nbsp;3:00 - 3:10 pm | Break |
