@@ -3,11 +3,12 @@ title: "Parsing BLAST output"
 teaching: 30
 exercises: 15
 questions:
-- "Key question (FIXME)"
+- How can we modify files in UNIX?
 objectives:
-- "First learning objective. (FIXME)"
+- modify file formats 
+- Running bash script
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- You can run bash command as a script in .sh file format. 
 ---
 
 ## File parsing
@@ -88,8 +89,7 @@ done
 
 > ## Exercise: Transfering BLAST results in personal device
 > 
-> The obejctive of this exercise is to be able to run SLURM script and transfer
-> output file to your own device.  
+> The obejctive of this exercise is to be able to run SLURM script  
 > You can use checklist to track progress.
 > 1. Copy script to your working directory (`phylogeny`). <input type="checkbox">
 > 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
@@ -207,9 +207,7 @@ and look for (`grep`) keywords `BlastOutput_db` and `Hsp_hseq`.
 If it find the keywords, then it will extract (`sed`) the contents
 between those tags and output in appropriate format.
 
-> We won't cover the exact syntax of the script. 
-> This requires advanced knowledge of test command, ifelse shorthand, 
-> extended posix and here string.
+> Considering the course objective, we won't cover the exact syntax of the script at this time. 
 {: .tips}
 
 ### Running a bash script
