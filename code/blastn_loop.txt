@@ -1,4 +1,4 @@
-while read -r dbname
+for dbname in `cat dblist.txt`
 do
-   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -outfmt 0 -evalue 0.001
+  blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -evalue 0.001
 done < dblist.txt
