@@ -3,11 +3,11 @@ title: "BLAST search"
 teaching: 25
 exercises: 35
 questions:
-- "Key question (FIXME)"
+- How can we conduct local blast searches using the terminal?
 objectives:
-- "First learning objective. (FIXME)"
+- Learn how to conduct blast searches locally using the terminal
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- Using UNIX commands, we can customize blast searches.
 ---
 
 **B**asic **L**ocal **A**lignment **S**earch **T**ool ([Altschul S et al.](https://doi.org/10.1016/s0022-2836(05)80360-2){: target="_blank"}) is a set of programs 
