@@ -448,7 +448,7 @@ tail.txt
 > Writing to an existing file with `>` removes its existing contents. Use `>>` operator to append new contents to the end of exsiting file.
 {: .tips}
 
-### Concatenate/Join files
+### Concatenate files
 
 `cat` command is used for concatenation of multiple files. 
 Lets concatenate the new files created in previous step. 
