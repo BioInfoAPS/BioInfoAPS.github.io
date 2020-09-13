@@ -27,7 +27,7 @@ transformation for subsequent analysis.
 Note: While file parsing does not sound important, a bioinformatician has 
 to spend significant time correcting file formats.
 
-## Running BLASTn for phytogenetic tree
+## Running BLASTn for phylogenetic tree
 
 In next lesson, we will phylogenetically compare ‘avrBs2’ gene 
 from various strains of *Xanthomonas* species.
