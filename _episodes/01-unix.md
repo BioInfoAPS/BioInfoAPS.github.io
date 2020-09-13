@@ -3,11 +3,18 @@ title: "UNIX command line"
 teaching: 30
 exercises: 15
 questions:
-- "Key question (FIXME)"
+- How can we navigate through folder and files in the computer using a command-line interface?
+- What are the UNIX-commands to handle and edit files?
 objectives:
-- "First learning objective. (FIXME)"
+- Learn how to navigate, open, and handle files using the terminal.
+- Understand the basic commands to parse text files containing biological data. 
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- pwd, ls and cd are three main commands that allow navigation through directories
+- cat, more and less display text files
+- sed and grep are command for replacing and extracting characters in a text file.
+- cut and sort are commands to edit text files.
+- Unix commands allow handling repetitive tasks, suing for or while loops. 
+
 ---
 
 Command line interface and graphical user interaface are different ways of communicating with computer’s operating system. The shell is a program that provides the command line interface and allows to control the computer using keyboard commands. For bioinformatics tools, limited software have graphical user interface and you will have to use shell. The shell is a powerful method of communicating with the computer that can help you to do your work more efficienty and understanding how to use shell will be transformative for you to apply in bioinformatics. It can be used to connect to remote and cloud computers.
