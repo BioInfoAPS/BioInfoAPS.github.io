@@ -4,4 +4,4 @@
 Participants are expected to have some idea about genomic data, 
 sequencing platforms, and general terminologies commonly used in 
 bioinformatics such as assembly, annotation, sequencing platforms, 
-fastq, fasta, etc. No technical proficiency is expected.
+FASTQ, FASTA, etc. No technical proficiency is expected.
