@@ -306,8 +306,8 @@ $ for dbname in `cat dblist.txt`
 > 
 > 1. Change your location to your working directory `/blue/general_workshop/<username>`. <input type="checkbox">
 > 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
-> 3. Copy all genome and query fasta files to current directory. <input type="checkbox">
-> 4. Copy the submission script from to the current directory. <input type="checkbox">
+> 3. Copy all genome and query fasta files from 'blue/genral_workshop/share/xanthomonas' to current directory. <input type="checkbox">
+> 4. Copy the submission script indicated above to the current directory. <input type="checkbox">
 > 5. Open the script in nano and edit the email address. <input type="checkbox">
 > 6. Submit the job to SLURM. <input type="checkbox">
 > 8. After job is completed, check if output files exist in current directory. <input type="checkbox">
