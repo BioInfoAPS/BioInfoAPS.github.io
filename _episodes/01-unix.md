@@ -393,7 +393,7 @@ $ wc -c file1.txt
 {: .language-bash}
 
 ~~~
-7502 file1.txt
+4302 file1.txt
 ~~~
 {: .output}
 
@@ -403,7 +403,7 @@ $ wc -w file1.txt
 {: .language-bash}
 
 ~~~
-700 file1.txt
+500 file1.txt
 ~~~
 {: .output}
 
