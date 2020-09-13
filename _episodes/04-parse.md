@@ -5,7 +5,7 @@ exercises: 15
 questions:
 - How can we modify files in UNIX?
 objectives:
-- modify file formats 
+- Modify file formats 
 - Running bash script
 keypoints:
 - You can run bash command as a script in .sh file format. 
