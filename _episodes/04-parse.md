@@ -15,7 +15,7 @@ keypoints:
 
 In a bioinformatics project, it is common to use several programs in series
 i.e. output of a program is used as input to another program. 
-There are many standard data formats such as FASTA and BAM which are 
+There are many standard data formats such as [FASTA](https://en.wikipedia.org/wiki/FASTA_format) and [BAM](https://support.illumina.com/help/BS_App_RNASeq_Alignment_OLH_1000000006112/Content/Source/Informatics/BAM-Format.htm#:~:text=A%20BAM%20file%20(*.,sequences%20up%20to%20128%20Mb.&text=Alignments%E2%80%94Contains%20read%20name%2C%20read,alignment%20information%2C%20and%20custom%20tags.) which are 
 commonly accepted by most programs. 
 This makes transition from one program to another program easier.
 Unfortunately, sometimes programs output non-standard or 
