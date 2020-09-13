@@ -54,7 +54,7 @@ anything we can do to make this workshop more accessible to you.
 **Contact:**
 Please email 
 {% for email in page.email %}{% if forloop.last and page.email.size > 1 %} or {% else %}{% unless forloop.first %}, {% endunless %}{% endif %} [{{email}}](mailto:{{email}}) {% endfor %}
-for more information.
+for more information about the content.
 For technical problems regarding the website,
 email [{{ page.technical }}](mailto:{{ page.technical }}).
 
