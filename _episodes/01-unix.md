@@ -782,7 +782,7 @@ CM008460.1      5909607 A       T       downstream_gene_variant
 > Using UNIX commands 
 > 1. Sort the table by expression levels (second column).  <input type="checkbox">
 > 2. Create a new file that contains the top 10 highest expressed genes.  <input type="checkbox">
-> 3. Using the new file, create a table to sort the table by gene GC content.  <input type="checkbox">
+> 3. Using the new file, sort the table by gene GC content.  <input type="checkbox">
 > 4. Create a table with only the gene names but replace the name SCAB with SCABIES. <input type="checkbox">
 > 
 > <details markdown=1>
