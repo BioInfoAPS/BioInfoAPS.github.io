@@ -3,11 +3,12 @@ title: "Phylogenetic tree"
 teaching: 0
 exercises: 0
 questions:
-- "Key question (FIXME)"
+- How can we run other software and create an analyses pipeline in the script?
 objectives:
-- "First learning objective. (FIXME)"
+- Calling preinstalled software from the cluster computer
+- Run a genomic analyses pipeline. 
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- Don't forget to check parameters of the software. Can be viewed using '-h' followed by the software name. 
 ---
 
 ## Sequence alignment
