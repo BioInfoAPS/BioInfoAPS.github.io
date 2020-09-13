@@ -1,7 +1,7 @@
 ---
 title: "Phylogenetic tree"
-teaching: 0
-exercises: 0
+teaching: 30
+exercises: 15
 questions:
 - How can we run other software and create an analyses pipeline in the script?
 objectives:
