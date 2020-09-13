@@ -3,11 +3,13 @@ title: "SLURM workload manager"
 teaching: 10
 exercises: 15
 questions:
-- "Key question (FIXME)"
+- How can I submit job to the cluster computer?
 objectives:
-- "First learning objective. (FIXME)"
+- Run the unix command in HiPerGator
 keypoints:
-- "First key point. Brief Answer to questions. (FIXME)"
+- Don't forget to edit the memory, CPU requested, and email in the SLURM request. 
+- The job we submit here is a single thread. There are several other ways to submit the job. Multithreaded, Hybrid, GPU, and array scripts request resources depending on the job you are running.
+
 ---
 
 Unlike a personal computer, a computation cluster is used by large number 
@@ -118,7 +120,7 @@ current datetime at 10s interval.
 
 Change the &lt;email_address&gt; to your email address where you can check email.
 Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
-(<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
+(<kbd>control</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
 Press <kbd>Y</kbd> to save the changes made to the file.
 
 > ## Editing in nano
