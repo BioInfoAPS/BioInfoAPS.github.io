@@ -28,7 +28,7 @@ workload manager.
 [Workload Scheduler](https://www.ibm.com/products/z-workload-scheduler){: target="_blank"} etc. 
 are examples of other schedulers.
 
-SLURM is has three major functions:
+SLURM has three major functions:
 
 1. Allocate exclusive and/or non-exlcudisve access to resources 
 for a duration of time so they can perform a work,
@@ -121,7 +121,7 @@ current datetime at 10s interval.
 Change the &lt;email_address&gt; to your email address where you can check email.
 Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
 (<kbd>control</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
-Press <kbd>Y</kbd> to save the changes made to the file.
+Press <kbd>Y</kbd> and <dbd>Enter</kbd> to save the changes made to the file.
 
 > ## Editing in nano
 > **nano** is a commandline editor. You can only move your cursor with 
