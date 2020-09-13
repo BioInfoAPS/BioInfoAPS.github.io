@@ -883,11 +883,11 @@ $ for x in {0..3}
 {: .output}
 
 > Be careful when copying code. 
-> If you are copying the whole code block, 
-> first paste it to a text editor, 
-> remove starting `$` or `>` sign,
-> copy edited command and only then, 
-> paste it into terminal or powershell.
+> If you are copying the whole code block,  
+> - first paste it to a text editor,  
+> - remove starting `$` or `>` sign,  
+> - copy edited command and only then,  
+> - paste it into terminal or powershell.
 >
 > Or click [here](/code/demo_for.txt){: .btn target="_blank"} to open a separate page to copy the code above.
 {: .caution}
