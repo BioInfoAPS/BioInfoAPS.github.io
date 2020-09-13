@@ -15,7 +15,9 @@ keypoints:
 
 In a bioinformatics project, it is common to use several programs in series
 i.e. output of a program is used as input to another program. 
-There are many standard data formats such as [FASTA](https://en.wikipedia.org/wiki/FASTA_format) and [BAM](https://genome.sph.umich.edu/wiki/BAM) which are 
+There are many standard data formats such as 
+[FASTA](https://en.wikipedia.org/wiki/FASTA_format){: target="_blank"}, 
+[SAM and BAM](https://samtools.github.io/hts-specs/SAMv1.pdf){: target="_blank"} which are 
 commonly accepted by most programs. 
 This makes transition from one program to another program easier.
 Unfortunately, sometimes programs output non-standard or 
@@ -91,7 +93,7 @@ done
 > 
 > The obejctive of this exercise is to be able to run SLURM script  
 > You can use checklist to track progress.
-> 1. Copy script slurm_blast_xml.sh to your working directory (`phylogeny`). <input type="checkbox">
+> 1. Copy script `slurm_blast_xml.sh` to your working directory (`phylogeny`). <input type="checkbox">
 > 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
 > 3. Submit the SLURM script. <input type="checkbox">
 > 4. Make sure the all output files are present at the end of the job. <input type="checkbox">

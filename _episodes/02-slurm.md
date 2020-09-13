@@ -119,8 +119,7 @@ current datetime at 10s interval.
 {: .tips}
 
 Change the &lt;email_address&gt; to your email address where you can check email.
-Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
-(<kbd>control</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
+Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> to return to bash prompt.
 Press <kbd>Y</kbd> and <kbd>Enter</kbd> to save the changes made to the file.
 
 > ## Editing in nano

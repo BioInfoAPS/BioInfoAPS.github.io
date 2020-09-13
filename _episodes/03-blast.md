@@ -276,10 +276,10 @@ Xc
 
 You do not have to press enter and go to the next line after typing 'Xc'. The next line will be read as an empty line and give error message. Although the additional line and error message due to the empty line does not affect our outputs here, it might be relevant for other situations. 
 
-Press <kbd>Ctrl</kbd>+<kbd>o</kbd> (<kbd>control</kbd>+<kbd>o</kbd> in MacOS) to save the file.
+Press <kbd>Ctrl</kbd>+<kbd>o</kbd> to save the file.
 Give it a name `dblist.txt` and press <kbd>Enter</kbd>.
 
-Press <kbd>Ctrl</kbd>+<kbd>x</kbd> (<kbd>control</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
+Press <kbd>Ctrl</kbd>+<kbd>x</kbd> to return to bash prompt.
 
 Now we can run the `blastn` in loop.
 
@@ -306,8 +306,8 @@ $ for dbname in `cat dblist.txt`
 > 
 > 1. Change your location to your working directory `/blue/general_workshop/<username>`. <input type="checkbox">
 > 2. Make a folder in your working directory called `slurm_blast` and enter that directory. <input type="checkbox">
-> 3. Copy all genome and query fasta files from 'blue/genral_workshop/share/xanthomonas' to current directory. <input type="checkbox">
-> 4. Copy the submission script indicated above to the current directory. <input type="checkbox">
+> 3. Copy all genome and query fasta files to current directory. <input type="checkbox">
+> 4. Copy the submission script to the current directory. <input type="checkbox">
 > 5. Open the script in nano and edit the email address. <input type="checkbox">
 > 6. Submit the job to SLURM. <input type="checkbox">
 > 8. After job is completed, check if output files exist in current directory. <input type="checkbox">
