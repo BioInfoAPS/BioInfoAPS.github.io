@@ -1,6 +1,6 @@
 ---
 title: "Parsing BLAST output"
-teaching: 20
+teaching: 30
 exercises: 15
 questions:
 - "Key question (FIXME)"
@@ -80,7 +80,7 @@ done
 ~~~
 {: .output}
 
-> This script has a new argument `-outfmt 5`. This will output the result in XML format.
+> This script has a new argument `-outfmt 5` for `blastn` command. This will output the result in XML format.
 > The `.out` files you generated in previous section is not in XML format.
 {: .notes}
 
@@ -95,9 +95,6 @@ done
 > 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
 > 3. Submit the SLURM script. <input type="checkbox">
 > 4. Make sure the all output files are present at the end of the job. <input type="checkbox">
-> 5. Connect to HiperGator storage with your SFTP application (We recommend Filezilla) <input type="checkbox">
-> 6. Transfer one of the output file (`.out` extension) to your personal computer. <input type="checkbox">
-> 7. Open the contents of the output file using a text editor. <input type="checkbox">
 > 
 > <details markdown="1">
 >   <summary></summary>
@@ -111,24 +108,13 @@ done
 > 
 > #3
 > $ sbatch slurm_blast_xml.sh
-> ~~~
-> {: .language-bash}
-> 
-> - After the job is done, there should be 20 output files with `.out` extension, one from each genome. 
 >
-> ~~~
 > #4
 > $ ls *_avrBs2.out | wc -l
 > ~~~
 > {: .language-bash}
-> 
-> ~~~
-> 20
-> ~~~
-> {: .output}
-> 
-> - The steps for connecting to Hipergator using Filezilla and 
-> transferring files are available in [setup page](/setup.html).
+>
+> The output of answer #4 should be 20 if everything went fine.  
 >
 > </details>
 {: .challenge}
@@ -143,8 +129,6 @@ will subsequently use to generate a phylogenetic tree.
 BLAST XML format includes a lot of information on query and database name, 
 sequence identity, statistics, alignments and so on.
 Below, you can see what BLAST XML output looks like:
-
-Note: The example below has been abridged.
 
 ~~~
 $ cat Xeu_avrBs2.out

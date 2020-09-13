@@ -17,21 +17,29 @@ those jobs often exceed the resources available in cluster.
 To deal with this issue, many high performance clusters use schedulers 
 to manage resources allocated to those jobs.
 
-[UF Hipergator](https://www.rc.ufl.edu/services/hipergator/) uses a popular scheduler called [SLURM](https://slurm.schedmd.com/documentation.html) workload manager.  
-Portable Batch System (PBS), Platform LSF, Moab, LoadLeveler etc. 
+[UF Hipergator](https://www.rc.ufl.edu/services/hipergator/){: target="_blank"} 
+uses a popular scheduler called 
+[SLURM](https://slurm.schedmd.com/documentation.html){: target="_blank"} 
+workload manager.  
+[Portable Batch System (PBS)](https://www.openpbs.org/){: target="_blank"}, 
+[MOAB](https://adaptivecomputing.com/cherry-services/moab-hpc/){: target="_blank"}, 
+[Workload Scheduler](https://www.ibm.com/products/z-workload-scheduler){: target="_blank"} etc. 
 are examples of other schedulers.
 
 SLURM is has three major functions:
 
-1. Allocate exclusive and/or non-exlcudisve access to resources for a duration of time so they can perform a work,
+1. Allocate exclusive and/or non-exlcudisve access to resources 
+for a duration of time so they can perform a work,
 2. Provide a framework for starting, executing, and monitoring work on allocated nodes,
 3. Arbitrate contention for resources by managing a queue of pending work.
 
 Advantage of using (SLURM) scheduler:
-1. Once resources are allocated to a job, they are not taken away until job exits. If someone runs intensive
-job at the same time, the resources available to the job is not changed. This improves speed and reliability
-of job completion.
-2. Unlike interactive window, SLURM jobs do not stop when user is not logged in.
+1. Once resources are allocated to a job, they are not taken away until job exits. 
+If someone runs intensive job at the same time, 
+the resources available to the job is not changed. 
+This improves speed and reliability of job completion.
+2. It allows low priority resource-intesive jobs to run ouside peak hours.
+3. Unlike interactive window, SLURM jobs do not stop when user is not logged in.
 
 ### SLURM scripts
 
@@ -88,8 +96,8 @@ $ nano slurm.sh
 #SBATCH --time 00:05:00               # Time limit hrs:min:sec
 #SBATCH --output serial_test_%j.log   # Standard output and error log
 
-# Return current date and time every 3 seconds for 5 times
-for i in {0..4}; do printf '%s %s\n' "$(date)"; sleep 3s; done
+# Return current date and time every 10 seconds for 6 times
+for i in {0..5}; do printf '%s %s\n' "$(date)"; sleep 10s; done
 
 
 -----------------------------------------------------------------------------------------------
@@ -101,9 +109,14 @@ for i in {0..4}; do printf '%s %s\n' "$(date)"; sleep 3s; done
 
 The comments beginning with `#SBATCH` tell SLURM various information about the job.
 The acutal commands to run appear after these comments. In this case, it just returns
-current datetime at 3s interval.
+current datetime at 10s interval.
 
-Change the &lt;email_address&gt; to your UF email address.
+> ## Waiting in bash
+> To halt the execution of commands for certain period of time, 
+> `wait` command is used followed by the period of time.
+{: .tips}
+
+Change the &lt;email_address&gt; to your email address where you can check email.
 Once you are done, press <kbd>Ctrl</kbd>+<kbd>x</kbd> 
 (<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to return to bash prompt.
 Press <kbd>Y</kbd> to save the changes made to the file.
@@ -116,7 +129,7 @@ Press <kbd>Y</kbd> to save the changes made to the file.
 >
 > If you accidentally edited in wrong place, exit nano, 
 > delete the script `slurm.sh` and copy again from share directory.
-> Do not forget to edit the &lt;email_address>&gt;
+> Do not forget to edit the &lt;email_address&gt;.
 {: .caution}
 
 ## Running a job in SLURM
@@ -155,7 +168,7 @@ $ squeue -u <username>
 
 > If you do not see your job, it may have already been completed.
 > Run the job again and check within a minute.
-> Also, check you email to see if you got any message from HiperGator.
+> Also, check your email to see if you received any messages from HiperGator.
 {: .tips}
 
 ~~~

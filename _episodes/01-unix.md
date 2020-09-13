@@ -10,7 +10,7 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-Command line and graphical user interaface are different ways of communicating with computer’s operating system. The shell is a program that provides the command line interface and allowing to control the computer using keyboard commands. For bioinformatics tools, limited software have graphical user interface and you will have to use shell. The shell is a powerful method of communicating with the computer that can help you to do your work more efficienty and understanding how to use shell will be transformative for you to apply in bioinformatics. It can be used to connect to remote and cloud computers.
+Command line interface and graphical user interaface are different ways of communicating with computer’s operating system. The shell is a program that provides the command line interface and allows to control the computer using keyboard commands. For bioinformatics tools, limited software have graphical user interface and you will have to use shell. The shell is a powerful method of communicating with the computer that can help you to do your work more efficienty and understanding how to use shell will be transformative for you to apply in bioinformatics. It can be used to connect to remote and cloud computers.
 
 ## Terminal Command line
 
@@ -45,7 +45,7 @@ Enter the following command to go to your work directory
 Do not forget to replace &lt;username&gt; with the username provided to you.
 
 ~~~
-$ cd /blue/general_workshop/<username>
+$ cd /blue/general_workshop/
 ~~~
 {: .language-bash}
 
@@ -64,7 +64,7 @@ $ pwd
 {: .language-bash}
 
 ~~~
-/blue/general_workshop/<username>
+/blue/general_workshop/
 ~~~
 {: .output}
 
@@ -78,36 +78,25 @@ $ ls
 {: .language-bash}
 
 ~~~
-
-~~~
-{: .output}
-
-> Your directory is currently empty. 
-> However, we can check somewhere else.
-{: .notes}
-
-~~~
-$ ls /blue/general_workshop/
-~~~
-{: .language-bash}
-
-~~~
-anujsharma     Intro_slides.pptx     share     sujan.timilsina
+anujsharma     guest.11240     guest.11248     Intro_slides.pptx     share
+emgoss         guest.11241     guest.11249     jhuguet               sujan.timilsina
 ...
 ...
 ~~~
 {: .output}
 
-Adding argument `-l` to `ls` displays additional details such as permissions, file owner, 
+Adding argument/flag `-l` to `ls` displays additional details such as permissions, file owner, 
 size, date modified etc. 
 
 ~~~
-$ ls -l /blue/general_workshop/
+$ ls -l
 ~~~
 {: .language-bash}
 
 ~~~
 drwxr-sr-x 3 anujsharma      general_workshop    4096 Sep 10 03:47 anujsharma
+...
+...
 -rw-r----- 1 jhuguet         general_workshop 1290989 Sep  8 15:11 Intro_slides.pptx
 drwxr-sr-x 7 sujan.timilsina general_workshop    4096 Sep  8 15:27 share
 drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsina
@@ -127,15 +116,19 @@ drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsi
 
 ### Copying files
 
-`cp` is used for copying files. `cp -R` can be used for copying entire directories. `-R` stands for recursive.
-Lets copy a demo file and a demo folder from share folder to you current working directory.
+`cp` is used for copying files. Lets copy `file1.txt` from share folder to your working directory.
 
 ~~~
+$ cd <username>
+
 $ cp /blue/general_workshop/share/file1.txt ./file1.txt
 
 $ ls
 ~~~
 {: .language-bash}
+
+> `cd <username>` is for entering your working directory first. We will cover `cd` shortly.
+{: .notes}
 
 ~~~
 file1.txt
@@ -154,8 +147,11 @@ file1.txt     file2.txt
 ~~~
 {: .output}
 
+`cp -r` can be used for copying entire directories. `-R` stands for recursive.
+Copy the `demo` folder from share folder to your working directory.
+
 ~~~
-$ cp -R /blue/general_workshop/share/demo ./
+$ cp -r /blue/general_workshop/share/demo ./
 
 $ ls
 ~~~
@@ -200,7 +196,7 @@ demo     file1.txt
 
 ### Creating directories
 
-`mkdir` creates a new directory called in current path.
+`mkdir` creates a new directory in the current path.
 Lets create a new directory called `newdir` and 
 then use `ls` command to check if the directory was succesfully created.
 
@@ -219,7 +215,7 @@ demo     file1.txt     newdir
 ### Changing directories
 
 `cd` changes your current path. 
-Lets change out current path to the directory we just created. 
+Lets change current path to the directory we just created. 
 Use `pwd` to check the current path.
 
 ~~~
@@ -283,14 +279,14 @@ $ cat file1.txt
 {: .language-bash}
 
 ~~~
-CM008465.1      4979077 A       C       intergenic_region       gene26890-gene26891     4979077A>C
-CM008458.1      97095206        A       G       intergenic_region       gene11975-gene11976     97095206A>G
-CM008459.1      72668492        G       A       intergenic_region       gene14463-gene14464     72668492G>A
+CM008465.1      4979077 A       C       intergenic_region
+CM008458.1      97095206        A       G       intergenic_region
+CM008459.1      72668492        G       A       intergenic_region
 ...
 ...
-CM008463.1      16380489        T       A       intergenic_region       gene22790-gene22791     16380489T>A
-CM008463.1      123496326       T       A       intergenic_region       gene23388-gene23389     123496326T>A
-CM008457.1      21333612        G       T       intergenic_region       gene7944-gene7945       21333612G>T
+CM008463.1      16380489        T       A       intergenic_region
+CM008463.1      123496326       T       A       intergenic_region
+CM008457.1      21333612        G       T       intergenic_region
 ~~~
 {: .output}
 
@@ -318,16 +314,16 @@ $ head file1.txt
 {: .language-bash}
 
 ~~~
-CM008465.1      4979077 A       C       intergenic_region       gene26890-gene26891     4979077A>C
-CM008458.1      97095206        A       G       intergenic_region       gene11975-gene11976     97095206A>G
-CM008459.1      72668492        G       A       intergenic_region       gene14463-gene14464     72668492G>A
-CM008465.1      57718962        G       A       downstream_gene_variant gene27576       *184G>A
-CM008465.1      225524501       C       T       intergenic_region       gene28203-gene28204     225524501C>T
-CM008464.1      76483552        T       A       intergenic_region       gene25247-gene25248     76483552T>A
-CM008464.1      22690967        C       T       intergenic_region       gene25012-gene25013     22690967C>T
-CM008463.1      130960788       A       G       intergenic_region       gene23412-gene23413     130960788A>G
-CM008457.1      19966217        A       C       intergenic_region       gene7918-gene7919       19966217A>C
-CM008466.1      61441376        G       T       intergenic_region       gene30075-gene30076     61441376G>T
+CM008465.1      4979077 A       C       intergenic_region
+CM008458.1      97095206        A       G       intergenic_region
+CM008459.1      72668492        G       A       intergenic_region
+CM008465.1      57718962        G       A       downstream_gene_variant
+CM008465.1      225524501       C       T       intergenic_region
+CM008464.1      76483552        T       A       intergenic_region
+CM008464.1      22690967        C       T       intergenic_region
+CM008463.1      130960788       A       G       intergenic_region
+CM008457.1      19966217        A       C       intergenic_region
+CM008466.1      61441376        G       T       intergenic_region
 ~~~
 {: .output}
 
@@ -337,30 +333,33 @@ $ tail -n 3 file1.txt
 {: .language-bash}
 
 ~~~
-CM008463.1      16380489        T       A       intergenic_region       gene22790-gene22791     16380489T>A
-CM008463.1      123496326       T       A       intergenic_region       gene23388-gene23389     123496326T>A
-CM008457.1      21333612        G       T       intergenic_region       gene7944-gene7945       21333612G>T
+CM008463.1      16380489        T       A       intergenic_region
+CM008463.1      123496326       T       A       intergenic_region
+CM008457.1      21333612        G       T       intergenic_region
 ~~~
 {: .output}
 
-Lines from middle of a file can be extracted usng `sed -n` as follows. To extract 5th to 7th lines:
-~~~
-$ sed -n 5,7p file1.txt
-~~~
-{: .language-bash}
 
-~~~
-CM008465.1      225524501       C       T       intergenic_region       gene28203-gene28204     225524501C>T
-CM008464.1      76483552        T       A       intergenic_region       gene25247-gene25248     76483552T>A
-CM008464.1      22690967        C       T       intergenic_region       gene25012-gene25013     22690967C>T
-~~~
-{: .output}
 
-> ## `sed`
+> ## Extracting lines from the middle
+> Lines from middle of a file can be extracted usng `sed -n` as follows. To extract 5th to 7th lines:
+> ~~~
+> $ sed -n 5,7p file1.txt
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> CM008465.1      225524501       C       T       intergenic_region
+> CM008464.1      76483552        T       A       intergenic_region
+> CM008464.1      22690967        C       T       intergenic_region
+> ~~~
+> {: .output}
+>
 > `sed` is a very powerful tool in in bash and 
 > can be used to do wide range of text editing tasks.
 > Here, `-n` argument directs `sed` to pick only the lines that 
 > match the parameter `5,7p`.
+> You will see more uses of `sed` later.
 {: .tips}
 
 ### File length
@@ -411,14 +410,12 @@ $ head -n 5 file1.txt > head.txt
 
 $ tail -n 5 file1.txt > tail.txt
 
-$ sed -n 56,60p file1.txt > middle.txt
-
 $ ls
 ~~~
 {: .language-bash}
 
 ~~~
-demo     file1.txt     head.txt     middle.txt     tail.txt
+demo     file1.txt     head.txt     tail.txt
 ~~~
 {: .output}
 
@@ -436,7 +433,6 @@ demo
 file1.txt
 files.txt
 head.txt
-middle.txt
 tail.txt
 ~~~
 {: .output}
@@ -452,18 +448,18 @@ Lets concatenate the new files created in previous step.
 We can verify concatenation by checking the number of lines in concatenated file.
 
 ~~~
-$ cat head.txt middle.txt tail.txt > concat.txt
+$ cat head.txt tail.txt > concat.txt
 
 $ wc -l concat.txt
 ~~~
 {: .language-bash}
 
 ~~~
-15 concat.txt
+10 concat.txt
 ~~~
 {: .output}
 
-> `head.txt`. `middle.txt` and `tail.txt` each had 5 lines each. To confirm, you can check like this: `wc -l head.txt`.
+> `head.txt`and `tail.txt` each had 5 lines each. To confirm, you can check like this: `wc -l head.txt`.
 {: .notes}
 
 ### Print/output to screen
@@ -522,7 +518,7 @@ The first part (CM00084xx) contains the names of the chromosomes,
 which we need to extract.
 
 Since chromosome name is first 8 characters, 
-`cut -c` to extract chromosome name. 
+`cut -c` can be used to extract chromosome name. 
 `-c` specifies vertical position of characters to extract  
 
 ~~~
@@ -557,29 +553,32 @@ CM008465.1
 ~~~
 {: .output}
 
-We don't want the `.1` part. In this case, 
-we can get the chromosome name by separating columns 
-by `.` instead of space. `-d` arguemnt allows us to 
-specify delimiter to break line into columns (default is Tab).
-
-~~~
-$ cut -f 1 -d "." head.txt
-~~~
-{: .language-bash}
-
-~~~
-CM008465
-CM008458
-CM008459
-CM008465
-CM008465
-~~~
-{: .output}
+> ## Cut field delimiter
+> 
+> What if we want to define column by character other than `Tab`?
+> `-d` argument allows us to specify delimiter to break line into columns.
+> For example, suppose we don't want the `.1` part in the chromosome name in the code above. 
+> In this case, we can get the chromosome name by separating columns 
+> by `.` instead of `Tab` and extracting the first column. 
+> ~~~
+> $ cut -f 1 -d "." head.txt
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> CM008465
+> CM008458
+> CM008459
+> CM008465
+> CM008465
+> ~~~
+> {: .output}
+{: .tips}
 
 ### Sorting
 
 `sort` is used to sort lines in a file. 
-By default, `sort` sorts in alphabetical order.
+By default, `sort` sorts in alphanumeric order.
 
 ~~~
 $ sort file1.txt
@@ -587,17 +586,19 @@ $ sort file1.txt
 {: .language-bash}
 
 ~~~
-CM0084𝟓𝟓.1      𝟐𝟕261226        C       A       intergenic_region       gene1014-gene1015       27261226C>A
-CM0084𝟓𝟓.1      𝟐𝟖𝟗𝟏84259       AT      A       intron_variant  gene3639        159+2881delT
-CM0084𝟓𝟓.1      𝟐𝟖𝟗𝟒01193       G       A       intergenic_region       gene3641-gene3642       289401193G>A
+CM0084𝟓𝟓.1      𝟐𝟕261226        C       A       intergenic_region
+CM0084𝟓𝟓.1      𝟐𝟖𝟗𝟏84259       AT      A       intron_variant
+CM0084𝟓𝟓.1      𝟐𝟖𝟗𝟒01193       G       A       intergenic_region
 ...
 ...
-CM0084𝟲𝟲.1      𝟔1600177        C       T       intergenic_region       gene30075-gene30076     61600177C>T
-CM0084𝟲𝟲.1      𝟕1138968        G       A       intergenic_region       gene30124-gene30125     71138968G>A
-CM0084𝟲𝟲.1      𝟗5058324        T       C       intergenic_region       gene30199-gene30200     95058324T>C
+CM0084𝟲𝟲.1      𝟔1600177        C       T       intergenic_region
+CM0084𝟲𝟲.1      𝟕1138968        G       A       intergenic_region
+CM0084𝟲𝟲.1      𝟗5058324        T       C       intergenic_region
 ~~~
 {: .output}
 
+> The top lines now begin with CM0084**55**.1 and the bottom ones with CM0084**66**.1.
+{: .notes}
 
 `-r` argument reverses the order od sorting.
 
@@ -607,25 +608,16 @@ $ sort -r file1.txt
 {: .language-bash}
 
 ~~~
-CM0084𝟲𝟲.1      95058324        T       C       intergenic_region       gene30199-gene30200     95058324T>C
-CM0084𝟲𝟲.1      71138968        G       A       intergenic_region       gene30124-gene30125     71138968G>A
-CM0084𝟲𝟲.1      61600177        C       T       intergenic_region       gene30075-gene30076     61600177C>T
+CM0084𝟲𝟲.1      95058324        T       C       intergenic_region
+CM0084𝟲𝟲.1      71138968        G       A       intergenic_region
+CM0084𝟲𝟲.1      61600177        C       T       intergenic_region
 ...
 ...
-CM0084𝟓𝟓.1      289401193       G       A       intergenic_region       gene3641-gene3642       289401193G>A
-CM0084𝟓𝟓.1      289184259       AT      A       intron_variant  gene3639        159+2881delT
-CM0084𝟓𝟓.1      27261226        C       A       intergenic_region       gene1014-gene1015       27261226C>A
+CM0084𝟓𝟓.1      289401193       G       A       intergenic_region
+CM0084𝟓𝟓.1      289184259       AT      A       intron_variant
+CM0084𝟓𝟓.1      27261226        C       A       intergenic_region
 ~~~
 {: .output}
-
-`-n` argument is used to sort in numerical ascending order.
-
-> ## Numerical vs alphabetical order
-> Sorting by numerical order is useful when dealing with numbers.
-> In alphabetical order, 2 comes after 15 because the first character 
-> "2" comes after first character "1".
-> In numerical order, 2 comes before 15, since 2 is smaller than 15.
-{: .tips}
 
 `-k` can be used to sort by a specific column.
 
@@ -635,27 +627,36 @@ $ sort -k2 file1.txt
 {: .language-bash}
 
 ~~~
-CM008465.1      𝟭08474056       G       A       intergenic_region       gene27823-gene27824     108474056G>A
-CM008463.1      𝟭09077809       C       T       intergenic_region       gene23339-gene23340     109077809C>T
+CM008465.1      𝟭08474056       G       A       intergenic_region
+CM008463.1      𝟭09077809       C       T       intergenic_region
 ...
 ...
-CM008458.1      𝟵7095206        A       G       intergenic_region       gene11975-gene11976     97095206A>G
-CM008461.1      𝟵871059 T       C       intergenic_region       gene18895-gene18896     9871059T>C
+CM008458.1      𝟵7095206        A       G       intergenic_region
+CM008461.1      𝟵871059 T       C       intergenic_region
 ~~~
 {: .output}
 
+`-n` argument is used to sort in numerical ascending order.
+
+> ## Numerical vs alphanumeric order
+> Sorting by numerical order is useful when dealing with numbers.
+> In alphanumeric order, 2 comes after 15 because the first character 
+> "2" comes after first character "1".
+> In numerical order, 2 comes before 15, since 2 is smaller than 15.
+{: .tips}
+
 ~~~
-$ sort -k2n file1.txt
+$ sort -k2 -n file1.txt
 ~~~
 {: .language-bash}
 
 ~~~
-CM008457.1      3542278 T       G       intergenic_region       gene7359-gene7360       3542278T>G
-CM008465.1      3999373 G       A       upstream_gene_variant   gene26864       -4845C>T
+CM008457.1      3542278 T       G       intergenic_region
+CM008465.1      3999373 G       A       upstream_gene_variant
 ...
 ...
-CM008455.1      289401193       G       A       intergenic_region       gene3641-gene3642       289401193G>A
-CM008455.1      294972840       C       T       intergenic_region       gene3691-gene3692       294972840C>T
+CM008455.1      289401193       G       A       intergenic_region
+CM008455.1      294972840       C       T       intergenic_region
 ~~~
 {: .output}
 
@@ -665,12 +666,12 @@ $ sort -k2nr file1.txt
 {: .language-bash}
 
 ~~~
-CM008455.1      294972840       C       T       intergenic_region       gene3691-gene3692       294972840C>T
-CM008455.1      289401193       G       A       intergenic_region       gene3641-gene3642       289401193G>A
+CM008455.1      294972840       C       T       intergenic_region
+CM008455.1      289401193       G       A       intergenic_region
 ...
 ...
-CM008465.1      3999373 G       A       upstream_gene_variant   gene26864       -4845C>T
-CM008457.1      3542278 T       G       intergenic_region       gene7359-gene7360       3542278T>G
+CM008465.1      3999373 G       A       upstream_gene_variant
+CM008457.1      3542278 T       G       intergenic_region
 ~~~
 {: .output}
 
@@ -694,11 +695,11 @@ $ cat prettyfile.txt
 {: .language-bash}
 
 ~~~
-Chr_66.1        28255843        A       C       intergenic_region       gene29731-gene29732     28255843A>C
-Chr_65.1        236852266       C       T       intergenic_region       gene28293-gene28294     236852266C>T
-Chr_63.1        16380489        T       A       intergenic_region       gene22790-gene22791     16380489T>A
-Chr_63.1        123496326       T       A       intergenic_region       gene23388-gene23389     123496326T>A
-Chr_57.1        21333612        G       T       intergenic_region       gene7944-gene7945       21333612G>T
+Chr_66.1        28255843        A       C       intergenic_region
+Chr_65.1        236852266       C       T       intergenic_region
+Chr_63.1        16380489        T       A       intergenic_region
+Chr_63.1        123496326       T       A       intergenic_region
+Chr_57.1        21333612        G       T       intergenic_region
 ~~~
 {: .output}
 
@@ -712,13 +713,13 @@ $ grep "downstream_gene_variant" file1.txt
 {: .language-bash}
 
 ~~~
-CM008465.1      57718962        G       A       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene27576       *184G>A 
-CM008466.1      236800990       C       A       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene31013       *1241C>A
-CM008458.1      226074184       T       TA      𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene12903       *4901_*4902iT
-CM008458.1      214028749       A       C       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene12653       *2350T>G 
-CM008460.1      5909607 A       T       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene15879       *2684A>T
-CM008460.1      63781473        A       T       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene16346       *2958A>T
-CM008465.1      138360632       A       G       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭 gene27890       *3582T>C 
+CM008465.1      57718962        G       A       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008466.1      236800990       C       A       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008458.1      226074184       T       TA      𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008458.1      214028749       A       C       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008460.1      5909607 A       T       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008460.1      63781473        A       T       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
+CM008465.1      138360632       A       G       𝐝𝐨𝐰𝐧𝐬𝐭𝐫𝐞𝐚𝐦_𝐠𝐞𝐧𝐞_𝐯𝐚𝐫𝐢𝐚𝐧𝐭
 ~~~
 {: .output}
 
@@ -740,30 +741,26 @@ $ grep -c "downstream_gene_variant" file1.txt
 Piping means that the output of first command serves as input of second command and so on. 
 This eliminates need for saving intermediate results as a file.
 
-Lets sort `file1.txt` by chromosome (first column) and 
-by position (second column) within a chromosome, 
-and only display the first 5 columns in top of the sorted lines.
+Lets sort `file1.txt` numerically by second column, 
+and only display the top 5 lines.
 
 ~~~
-$ sort -k1,1 -k2,2n file1.txt | cut -f1-5 | head -n5
+$ sort -k2n file1.txt | head -n5
 ~~~
 {: .language-bash}
 
 ~~~
-CM008455.1      27261226        C       A       intergenic_region
-CM008455.1      38680477        T       G       intergenic_region
-CM008455.1      39264338        G       A       intergenic_region
-CM008455.1      75147386        C       A       intergenic_region
-CM008455.1      82264380        ACC     A       intergenic_region
+CM008457.1      3542278 T       G       intergenic_region
+CM008465.1      3999373 G       A       upstream_gene_variant
+CM008465.1      4979077 A       C       intergenic_region
+CM008457.1      5681949 G       A       intergenic_region
+CM008460.1      5909607 A       T       downstream_gene_variant
 ~~~
 {: .output}
 
-> `,1` and `,2` specify the order/hierarchy of sorting.
-{: .tips}
-
 > ## Exercise: Finding “alien genes” in the plant pathogen *Streptomyces scabies*.
 > 
-> Let’s use the commands in a simple real case. Copy a file `aliens_in_scabies` inside `share` directory using following command
+> Let’s use the commands in a simple real case. Copy the file `aliens_in_scabies` inside `share` directory using following command
 > 
 > > Make sure you are in `/blue/general_workshop/<username>` directory, 
 > > if not use `cd /blue/general_workshop/<username>` to go to your personal working directory. 
@@ -823,8 +820,8 @@ $ ls *.txt
 {: .language-bash}
 
 ~~~
-concat.txt     files.txt     middle.txt         tail.txt
-file1.txt      head.txt      prettyfile.txt
+concat.txt     files.txt     prettyfile.txt
+file1.txt      head.txt      tail.txt
 ~~~
 {: .output}
 
@@ -846,8 +843,8 @@ $ ls demo
 {: .language-bash}
 
 ~~~
-concat.txt     files.txt     middle.txt         tail.txt
-file1.txt      head.txt      prettyfile.txt
+concat.txt     files.txt     prettyfile.txt
+file1.txt      head.txt      tail.txt
 ~~~
 {: .output}
 
@@ -888,11 +885,11 @@ $ for x in {0..3}
 > Be careful when copying code. 
 > If you are copying the whole code block, 
 > first paste it to a text editor, 
-> remove staring `$` or `>` sign,
+> remove starting `$` or `>` sign,
 > copy edited command and only then, 
 > paste it into terminal or powershell.
 >
-> Or click [here](/code/demo_for.txt){: target="_blank"} to open a separate page to copy the code above.
+> Or click [here](/code/demo_for.txt){: .btn target="_blank"} to open a separate page to copy the code above.
 {: .caution}
 
 The process between `do` and `done` enclose task to be repeated.
@@ -901,8 +898,8 @@ The variable `x` will take consecutive values from array `{0..3}` in each iterat
 > Try `echo {0..3}` to see what `{0..3}` represents.
 {: .tips}
 
-> Bash prompts
-> `$` prompt specifies ready to start a commaond.
+> ## Bash prompts
+> `$` prompt specifies ready to start a command.
 > `#` replaces `$` for root user.
 > `>` specifies continuation of multiline command from previous line.
 {: .tips}
@@ -914,7 +911,7 @@ The variable `x` will take consecutive values from array `{0..3}` in each iterat
 
 ~~~
 $ x=0
-$ while(($x <4))
+$ while(($x < 4))
 > do 
 >   echo $x
 >   ((++x)) 

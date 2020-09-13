@@ -1,7 +1,7 @@
 ---
 title: "BLAST search"
-teaching: 20
-exercises: 30
+teaching: 25
+exercises: 35
 questions:
 - "Key question (FIXME)"
 objectives:
@@ -10,7 +10,7 @@ keypoints:
 - "First key point. Brief Answer to questions. (FIXME)"
 ---
 
-**B**asic **L**ocal **A**lignment **S**earch **T**ool ([Altschul S et al.](https://doi.org/10.1016/s0022-2836(05)80360-2)) is a set of programs 
+**B**asic **L**ocal **A**lignment **S**earch **T**ool ([Altschul S et al.](https://doi.org/10.1016/s0022-2836(05)80360-2){: target="_blank"}) is a set of programs 
 that search sequence database for statistically significant similarities. 
 There are five traditional BLAST programs available in BLAST+ tools in commandline:
 
@@ -22,9 +22,9 @@ There are five traditional BLAST programs available in BLAST+ tools in commandli
 | TBLASTN | compares a protein query sequence against a nucleotide sequence database dynamically translated in all reading frames. |
 | TBLASTX | compares the six-frame translations of a nucleotide query sequence against the six-frame translations of a nucleotide sequence database. |
 
-These are the same blast applications what you can see in the [NCBI blast website](https://blast.ncbi.nlm.nih.gov/Blast.cgi). 
+These are the same blast applications what you can see in the [NCBI blast website](https://blast.ncbi.nlm.nih.gov/Blast.cgi){: target="_blank"}. 
 Read more about command line [BLAST 
-here](https://open.oregonstate.education/computationalbiology/chapter/command-line-blast/).
+here](https://open.oregonstate.education/computationalbiology/chapter/command-line-blast/){: target="_blank"}.
 
 ## BLAST terminology
 
@@ -59,10 +59,14 @@ BLAST can be run online (e.g. NCBI blast) as well as locally. Few applications o
 We will use the local BLAST to identify if the bacterial genomes carry a gene of interest. 
 We will use bacterial spot causing *Xanthomonas* and one of the conserved effector ‘AvrBs2’ sequence as an example today. More information on *Xanthomonas* is [available here](https://www.nature.com/articles/s41579-020-0361-8). 
 
-Note: Effectors are proteins secreted by pathogenic bacteria into the host cells. 
-Note: *avrBs2* is one of the most studied and conserved effector gene found in multiple *Xanthomonas* species.
+> ## Effectors proteins
+> Effectors are proteins that are secreted by 
+> pathogenic bacteria into the host cells. 
+> *avrBs2* is one of the most studied and conserved 
+> effector gene found in multiple *Xanthomonas* species.
+{: .notes}
 
-In the folder `/blue/share/xanthomonas/`, there are few *Xanthomonas* species genomes.
+In the folder `/blue/share/xanthomonas/`, there are four *Xanthomonas* species genomes.
 
 - *Xanthomonas euvesicatoria* &rarr; `Xeu.fasta`
 - *Xanthomonas perforans* &rarr; `Xp.fasta`
@@ -150,9 +154,10 @@ Xeu.fasta      Xeu.nin
 {: .notes}
 
 > ## Understanding command arguments
-> For most unix commandline commands, you can use `-h` or `-help` argument to see help or options.
+> For most unix commandline commands, you can use `-h` or `--help` argument/flag to see help or options.
 > This will include list of arguments and their meanings.
-> In this case, `makeblastdb -h` command displays options avaiable for `makeblastdb`.
+> In this case, `makeblastdb -h` command displays options avaiable for `makeblastdb`.  
+> Alternatively, `man <command>` shows manual for the command.
 {: .tips}
 
 ### Creating BLAST database in batch
@@ -161,7 +166,7 @@ Making database individually for all genomes will be manually laborious.
 Instead, we can identify common patterns in the name of the genome files and 
 execute `makeblastdb` in a loop.
 
-> What is one pattern that is common in all the genomes file??
+> What is one pattern that is common in all the genome files?
 > <details>
 > <summary></summary>
 > The extension - ‘.fasta’.
@@ -170,9 +175,25 @@ execute `makeblastdb` in a loop.
 
 We can specify all files in current path with fasta extension by `./*.fasta`.
 
+> The command below has backticks `` ` ``, 
+> which is the symbol just left to <kbd>1</kbd> key and 
+> just above the <kbd>Tab</kbd> key in the keyboard. 
+> Do not mistake it for quotes.
+{: .caution}
+
 ~~~
 $ genomes=`ls *.fasta | sed 's/.fasta//g'`
 
+$ echo $genomes
+~~~
+{: .language-bash}
+
+~~~
+Xc Xeu Xg Xp
+~~~
+{: .output}
+
+~~~
 $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done
 ~~~
 {: .language-bash}
@@ -183,16 +204,22 @@ $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtyp
 ~~~
 {: .output}
 
-> `sed` command is used to remove `.fasta` extension from list of names.
-{: .notes}
-
-> For maually selecting the databases, you can use `for` loop like this:
-> `for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done`
+> ## Enclosing commands in `` ` `` (backticks)
+> `` ` `` act like brackets in math.
+> First, the commands inside backticks are executed, 
+> and then the output is used for commands outside.
 {: .tips}
 
 > ## One liners
 > Short loops can be written in a same line by separating commands with `;`. 
 >`;` is equivalent to pressing <kbd>Enter</kbd>.
+{: .tips}
+
+> `sed` command is being used to remove `.fasta` extension from list of names.
+{: .notes}
+
+> For maually selecting the databases, you can use `for` loop like this:
+> `for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done`
 {: .tips}
 
 > ## Merging database with `blastdb_aliastool`
@@ -257,7 +284,7 @@ Press <kbd>Ctrl</kbd>+<kbd>x</kbd> (<kbd>Cmd</kbd>+<kbd>x</kbd> in MacOS) to ret
 Now we can run the `blastn` in loop.
 
 ~~~
-$ while read -r dbname
+$ for dbname in `cat dblist.txt`
 > do
 >   blastn -query avrBs2.fas -db "$dbname" -out $dbname"_avrBs2.out" -evalue 0.001
 > done < dblist.txt
