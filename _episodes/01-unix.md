@@ -121,14 +121,16 @@ drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsi
 >   - 8th to 10th characters: permission for others
 {: .tips}
 
-### Copying files
+### Creating directories
 
-`cp` is used for copying files. Lets copy `file1.txt` from share folder to your working directory.
+`mkdir` creates a new directory in the current path.
+Lets create a new directory called `newdir` and 
+then use `ls` command to check if the directory was succesfully created.
 
 ~~~
 $ cd <username>
 
-$ cp /blue/general_workshop/share/file1.txt ./file1.txt
+$ mkdir newdir
 
 $ ls
 ~~~
@@ -138,84 +140,7 @@ $ ls
 {: .notes}
 
 ~~~
-file1.txt
-~~~
-{: .output}
-
-~~~
-$ cp file1.txt file2.txt
-
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-file1.txt     file2.txt
-~~~
-{: .output}
-
-`cp -r` can be used for copying entire directories. `-R` stands for recursive.
-Copy the `demo` folder from share folder to your working directory.
-
-~~~
-$ cp -r /blue/general_workshop/share/demo ./
-
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-demo     file1.txt     file2.txt
-~~~
-{: .output}
-
-### Moving files
-
-`mv` is used for moving files or directories. Unlike copying, moving deletes the original copy.
-
-~~~
-$ mv file2.txt newfile.txt
-
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-demo     file1.txt     newfile.txt
-~~~
-{: .output}
-
-### Deleting files
-
-`rm` can be used for deleting files (and directories too with `-r` recursive argument)
-
-~~~
-$ rm newfile.txt
-
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-demo     file1.txt
-~~~
-{: .output}
-
-### Creating directories
-
-`mkdir` creates a new directory in the current path.
-Lets create a new directory called `newdir` and 
-then use `ls` command to check if the directory was succesfully created.
-
-~~~
-$ mkdir newdir
-
-$ ls
-~~~
-{: .language-bash}
-
-~~~
-demo     file1.txt     newdir
+newdir
 ~~~
 {: .output}
 
@@ -256,6 +181,83 @@ $ pwd
 > - `/` at the beginning stands for root directory.
 > - `~` stands for home directory.
 {: .tips}
+
+### Copying files
+
+`cp` is used for copying files. Lets copy `file1.txt` from share folder to your working directory.
+
+~~~
+$ cp /blue/general_workshop/share/file1.txt ./file1.txt
+
+$ ls
+~~~
+{: .language-bash}
+
+
+~~~
+file1.txt
+~~~
+{: .output}
+
+~~~
+$ cp file1.txt file2.txt
+
+$ ls
+~~~
+{: .language-bash}
+
+~~~
+newdir     file1.txt     file2.txt
+~~~
+{: .output}
+
+`cp -r` can be used for copying entire directories. `-R` stands for recursive.
+Copy the `demo` folder from share folder to your working directory.
+
+~~~
+$ cp -r /blue/general_workshop/share/demo ./
+
+$ ls
+~~~
+{: .language-bash}
+
+~~~
+demo     newdir     file1.txt     file2.txt
+~~~
+{: .output}
+
+### Moving files
+
+`mv` is used for moving files or directories. Unlike copying, moving deletes the original copy.
+
+~~~
+$ mv file2.txt newfile.txt
+
+$ ls
+~~~
+{: .language-bash}
+
+~~~
+demo     newdir     file1.txt     newfile.txt
+~~~
+{: .output}
+
+### Deleting files
+
+`rm` can be used for deleting files (and directories too with `-r` recursive argument)
+
+~~~
+$ rm newfile.txt
+
+$ ls
+~~~
+{: .language-bash}
+
+~~~
+demo     newdir     file1.txt
+~~~
+{: .output}
+
 
 ### Removing directories
 
