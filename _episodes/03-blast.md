@@ -59,11 +59,14 @@ BLAST can be run online (e.g. NCBI blast) as well as locally. Few applications o
 We will use the local BLAST to identify if the bacterial genomes carry a gene of interest. 
 We will use bacterial spot causing *Xanthomonas* and one of the conserved effector ‘AvrBs2’ sequence as an example today. More information on *Xanthomonas* is [available here](https://www.nature.com/articles/s41579-020-0361-8). 
 
-> ## Effectors proteins
+> ## Pathogen effectors proteins
 > Effectors are proteins that are secreted by 
-> pathogenic bacteria into the host cells. 
-> *avrBs2* is one of the most studied and conserved 
-> effector gene found in multiple *Xanthomonas* species.
+> pathogenic bacteria into the plant cells to. 
+> manipulate host prcoesses and achieve colonization. 
+> The effector gene we are analyzing in this course 
+> named [*avrBs2*](https://journals.plos.org/plospathogens/article?id=10.1371/journal.ppat.1002408) is one of the most studied bacterial effectors 
+> because of its significant virulence contribution and is 
+> conserved across multiple *Xanthomonas* species.
 {: .notes}
 
 In the folder `/blue/share/xanthomonas/`, there are four *Xanthomonas* species genomes.
