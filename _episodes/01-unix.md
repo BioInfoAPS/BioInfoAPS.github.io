@@ -668,7 +668,7 @@ CM008455.1      294972840       C       T       intergenic_region
 {: .output}
 
 ~~~
-$ sort -k2nr file1.txt
+$ sort -k2 -n -r file1.txt
 ~~~
 {: .language-bash}
 
@@ -685,7 +685,7 @@ CM008457.1      3542278 T       G       intergenic_region
 > ## Argument shortcuts in bash
 > Multiple argument, and sometimes expected values of arguments
 > can be written together in bash.
-> In above example, `-k2nr` is shortcut for `-k 2 -n -r`. 
+> In above example, you can replace the above command `-k2 -n -r` as `-k2nr`. 
 > Guess what `sort -k2nr file1.txt` does.
 {: .tips}
 
@@ -752,7 +752,7 @@ Lets sort `file1.txt` numerically by second column,
 and only display the top 5 lines.
 
 ~~~
-$ sort -k2n file1.txt | head -n5
+$ sort -k2 -n file1.txt | head -n 5
 ~~~
 {: .language-bash}
 
