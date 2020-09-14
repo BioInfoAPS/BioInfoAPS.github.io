@@ -106,7 +106,7 @@ done
 > 
 > #2
 > $ nano slurm_blast_xml.sh
-> → edit email address → ctrl+x → y
+> → edit email address → ctrl+x → y → press enter
 > 
 > #3
 > $ sbatch slurm_blast_xml.sh
