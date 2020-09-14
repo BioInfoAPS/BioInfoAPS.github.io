@@ -59,6 +59,7 @@ in all the sample genomes used here as seen from blast results.
 However, aligning the sequence prior to phylogenetic reconstruction is always valuable.
 Now, we have an input file ready to use for a software that can run a 
 [maximum likelihood phylogentic analysis](https://www.ncbi.nlm.nih.gov/Class/NAWBIS/Modules/Phylogenetics/phylo15.html). 
+Read more about phylogenetic trees [here](https://www.nature.com/scitable/topicpage/reading-a-phylogenetic-tree-the-meaning-of-41956/). 
 
 ## Phylogenetic tree
 
