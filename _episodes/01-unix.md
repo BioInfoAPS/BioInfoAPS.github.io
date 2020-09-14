@@ -1,7 +1,7 @@
 ---
 title: "UNIX command line"
-teaching: 30
-exercises: 15
+teaching: 20
+exercises: 10
 questions:
 - How can we navigate through folder and files in the computer using a command-line interface?
 - What are the UNIX-commands to handle and edit files?
