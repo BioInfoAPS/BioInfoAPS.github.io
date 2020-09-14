@@ -94,7 +94,7 @@ done
 > The obejctive of this exercise is to be able to run SLURM script  
 > You can use checklist to track progress.
 > 1. Copy script `slurm_blast_xml.sh` to your working directory (`phylogeny`). <input type="checkbox">
-> 2. Edit <email_address> with your own address in SLURM submission script. <input type="checkbox">
+> 2. Edit email address in SLURM submission script. <input type="checkbox">
 > 3. Submit the SLURM script. <input type="checkbox">
 > 4. Make sure the all output files are present at the end of the job. <input type="checkbox">
 > 
