@@ -13,7 +13,7 @@
 | **Part 2** | **Instructor: Dr. Sujan Timilsina** |
 | &nbsp;&nbsp;3:10 - 4:00 pm | [Parsing BLAST output](04-parse){: target="_blank"} |
 | &nbsp;&nbsp;4:00 - 4:45 pm | [Running Phylogenetic tools](05-tree){: target="_blank"} |
-| &nbsp;&nbsp;4:45 - 5:00 pm | [Closing remarks (by Dr.Erica M. Goss) and Post-workshop survey]({{ site.feedback }}){: target="_blank"} |
+| &nbsp;&nbsp;4:45 - 5:00 pm | Closing remarks (by Dr. Erica M. Goss) and [Post-workshop survey]({{ site.feedback }}){: target="_blank"} |
 
 </div>
 </div>
