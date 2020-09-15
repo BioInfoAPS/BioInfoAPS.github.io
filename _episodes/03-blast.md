@@ -32,7 +32,7 @@ here](https://open.oregonstate.education/computationalbiology/chapter/command-li
   - The sequence for which the search is performed.
 
 - Database
-  - A set of sequences on which search is performed to find mathces for the query sequence.
+  - A set of sequences on which search is performed to find matches for the query sequence.
 
 - Subject
   - A single sequence within the database.
