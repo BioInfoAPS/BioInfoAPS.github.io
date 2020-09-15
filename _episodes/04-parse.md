@@ -185,7 +185,7 @@ AAGTGCTGGCAACGCGTCCAAACACCAGCAGGCCAGGCAGACCGAGACGGATTGA
 
 We will now use a bash script to parse the BLAST output to 
 extract the file as a multiFASTA file.
-THe script is located in path `/blue/general_workshop/share/scripts/blast2fasta.sh`
+The script is located in path `/blue/general_workshop/share/scripts/blast2fasta.sh`
 
 ~~~
 $ cp ../../share/scripts/blast2fasta.sh ./   
