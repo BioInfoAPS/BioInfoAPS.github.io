@@ -98,11 +98,19 @@ echo 'ML tree output in RAxML_bestTree.avrBs2_tree'
 The argument `-n` allows us to name the output suffix. In our case, the output will
 be name `RAxML_bestTree.avrBs2_tree`.
 
+
 > ## Help with arguments
 > To understand what other arguments mean, you can check the help file `ml raxml; raxmlHPC -h`.
 {: .tips}
 
 Edit the email address in the SLURM submission script and submit the job.
+
+~~~
+$ nano slurm_tree.sh
+
+$ sbatch slurm_tree.sh
+~~~
+{: .language-bash}
 
 > ## Running bootstraps
 > To bootstrap the tree, add arguments `-b -#1000` 
