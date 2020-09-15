@@ -157,7 +157,7 @@ For this, we will merge all the steps together into one script.
 
 Warning: *Chaining multiple steps is not always straightforward. 
 We have to be vigilant for what might change when the steps are automated and 
-intermediate  results are not evlauated.
+intermediate results are not evaluated.
 For example, we have to make sure that the genes of interest are actually in the genome. 
 Otherwise, the BLAST may output match to different closely related gene, 
 gene sequence alignment may add gaps and give us a wrong output and so on. 
