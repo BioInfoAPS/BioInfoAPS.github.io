@@ -71,6 +71,11 @@ email [{{ page.technical }}](mailto:{{ page.technical }}).
 {% include intro/schedule.md %}
 <hr/>
 
+{% comment %} Optional exercises {% endcomment %}
+<h2 id="optional">Optional excercises</h2>
+{% include intro/optional.md %}
+<hr/>
+
 {% comment %} Setup {% endcomment %}
 <h2 id="setup">Setup</h2>
 <p>Go to <a href="setup.html">this page</a> for setup instructions.

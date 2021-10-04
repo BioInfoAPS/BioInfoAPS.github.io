@@ -102,6 +102,17 @@ Manual ordering of Episodes begins here
 
 
 {% comment %}
+Manual ordering of Optionals begins here
+{% endcomment %}
+
+{% if site.optionals_order %}
+    {% assign lesson_optionals = site.optionals_order %}
+{% else %}
+    {% assign lesson_optionals = site.optionals %}
+{% endif %}
+
+
+{% comment %}
 Manual ordering of Extras begins here
 {% endcomment %}
 

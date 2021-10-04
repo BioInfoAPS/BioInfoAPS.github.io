@@ -83,6 +83,9 @@ collections:
   episodes:
     output: true
     permalink: /:path/index.html
+  optionals:
+    output: true
+    permalink: /:path/index.html
   extras:
     output: true
     permalink: /:path/index.html
@@ -95,6 +98,12 @@ defaults:
   - scope:
       path: ""
       type: episodes
+    values:
+      root: ..
+      layout: episode
+  - scope:
+      path: ""
+      type: optionals
     values:
       root: ..
       layout: episode
