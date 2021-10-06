@@ -5,7 +5,7 @@
 | ------ | -------------------------------------- |
 | &nbsp;&nbsp;Before starting | [Pre-workshop survey]({{ site.survey }}){: target="_blank"} |
 | &nbsp;&nbsp;12:00 - 12:03 | Welcome remarks
-| &nbsp;&nbsp;12:00 - 12:15 pm | Introduction (by [Dr. Anuj Sharma](https://anujs.com.np/){: target="_blank"}) |
+| &nbsp;&nbsp;12:03 - 12:15 pm | Introduction (by [Dr. Anuj Sharma](https://anujs.com.np/){: target="_blank"}) |
 | **Part 1** | **Instructor: Dr. Jose C. Huguet-Tapia** |
 | &nbsp;&nbsp;12:15 - 1:30 pm | [Basic tools and unix command line](01-unix){: target="_blank"} |
 | &nbsp;&nbsp;1:30 - 1:40 pm | Break |
