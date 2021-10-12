@@ -13,9 +13,11 @@
 | &nbsp;&nbsp;1:55 - 2:30 pm | [Basic Local Alignment Search Tool (BLAST)](03-blast){: target="_blank"} |
 | &nbsp;&nbsp;2:30 - 2:45 pm | Break |
 | **Part 2** | **Instructor: Dr. Sujan Timilsina** |
-| &nbsp;&nbsp;3:10 - 4:00 pm | [Parsing BLAST output](04-parse){: target="_blank"} |
-| &nbsp;&nbsp;4:00 - 4:45 pm | [Running Phylogenetic tools](05-tree){: target="_blank"} |
-| &nbsp;&nbsp;4:45 - 5:00 pm | Closing remarks (by Dr. Erica M. Goss) and [Post-workshop survey]({{ site.feedback }}){: target="_blank"} |
+| &nbsp;&nbsp;2:45 - 3:40 pm | [Parsing BLAST output](04-parse){: target="_blank"} |
+| &nbsp;&nbsp;3:40 - 3:50 pm | Break | 
+| &nbsp;&nbsp;3:50 - 4:30 pm | [Running Phylogenetic tools](05-tree){: target="_blank"} |
+| &nbsp;&nbsp;4:30 - 4:45 pm | Follow up questions during workshop |
+| &nbsp;&nbsp;4:55 - 5:00 pm | Closing remarks (by Dr. Erica M. Goss) and [Post-workshop survey]({{ site.feedback }}){: target="_blank"} |
 
 </div>
 </div>
