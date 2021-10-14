@@ -15,6 +15,165 @@ The optional sections are targeted for more advanced users
 (psa: more advanced than regular sections, but still for beginners). 
 Feel free to try these sections once you are done with regular lesson.
 
+## Conditionals
+
+A conditional expression consists of commands that are executed only if some
+conditions are satisfied. 
+In bash, the general syntax for conditional statement looks like:
+
+~~~
+$ if [ condiiton ]
+  then
+      commands if condition is true ...
+      ...
+  elif [ another condition]
+      commands if new condition is true but previous conditions are false ...
+      ...
+  else
+      commands if condition is false ...
+      ...
+  fi
+~~~
+{: .terminal}
+
+> `elif` and `else` sections are optional. 
+> `elif` section can be repeated multiple times.
+{: .notes}
+
+Let's look as a simple example:
+
+~~~
+$ if [ 1<2 ]
+  then
+      echo "true"
+  else
+      echo "false"
+  fi
+~~~
+{: .language-bash}
+
+~~~
+true
+~~~
+{: .output}
+
+~~~
+$ if [ 1>2 ]
+  then
+      echo "true"
+  else
+      echo "false"
+  fi
+~~~
+{: .language-bash}
+
+~~~
+false
+~~~
+{: .output}
+
+### Operators
+
+Instead of commonly used operators symbols such as `=` or `>=`, 
+it is preferable to use test operators for numeric comparisons, 
+especially when working with variables that have not been declared as numbers.
+- `-eq` for **equal to**, 
+- `-gt` for **greater than**
+- `-lt` for **greater than**, 
+- `-ge` for **greater than or equal to**
+- `-le` for **less than or equal to**
+
+~~~
+$ a=1
+
+$ b=2
+
+$ if [ $a -gt $b ]
+  then
+      echo "a is greater than b."
+  elif [ $a -lt $b ]
+      echo "a is lesser than b."
+  else
+      echo "a is equal to b."
+  fi
+~~~
+{: .language-bash}
+
+~~~
+a is lesser than b.
+~~~
+{: .output}
+
+Other useful operators are
+- `!condition` for checking if the condition is false.
+- `-z STRING` for checking if string (or variable) is empty.
+- `-v VARIABLE` for checking if variable is defined.
+- `-d /path/to/DIR` for checking if a directory exists.
+- `-f /path/to/FILE` for checking if a file exists.
+- `-s /path/to/FILE` for checking if a file exists and is not empty.
+
+### Single line conditional statement
+
+For shorter commands, conditional statements can be written as one-liner
+using double brackerts `[[...]]`.
+
+The general syntax is:
+~~~
+$ [[ CONDITION ]] && COMMANDS IF TRUE || COMMANDS IF FALSE
+~~~
+{: .language-bash}
+
+Let's look at some examples.
+
+~~~
+$ ls files/fasta
+~~~
+{: .language-bash}
+
+~~~
+example.fasta
+~~~
+{: .output}
+
+~~~
+$ [[ -f files/demo/example.txt ]] && echo "file exists".
+~~~
+{: .language-bash}
+
+~~~
+~~~
+{: .output}
+
+~~~
+$ [[ -f files/demo/example.txt ]] && echo "file exists" || echo "file does not exist"
+~~~
+{: .language-bash}
+
+~~~
+file does not exist
+~~~
+{: .output}
+
+~~~
+$ [[ -f files/demo/example.fasta ]] && echo "file exists" || echo "file does not exist"
+~~~
+{: .language-bash}
+
+~~~
+file exists
+~~~
+{: .output}
+
+~~~
+$ [[ ! -f files/demo/example.fasta ]] && echo "file exists" || echo "file does not exist"
+~~~
+{: .language-bash}
+
+~~~
+file does not exist
+~~~
+{: .output}
+
 ## An intro to functions
 
 Functions are scoped, reusable and often portable chunks of code.
@@ -33,7 +192,7 @@ $ function_name ()
       ...
   }
 ~~~
-{: .language-bash}
+{: .terminal}
 
 > `function_name` is the name of the function, that will be used to call it later.
 >
@@ -139,6 +298,57 @@ is awesome.
 >
 {: .notes}
 
+> ## Exercise: Write your own script
+> 
+> 1. Write a function to find the maximum of two input numbers.
+> 2. Run the function with 1 and 2.
+> 3. Run the function with 4 and 3.
+> 
+> <details markdown=1>
+>   <summary></summary>
+> 
+> ~~~
+> # 1
+> $ max_num() {
+>     if [ $1 -gt $2 ]
+>     then
+>         echo $1
+>     else
+>         echo $2
+>     fi
+>   }
+>
+> #1 alternative one-liner
+> $ max_num() {
+>     [[ $1 -gt $2 ]] && echo $1 || echo $2
+>   }
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> # 2
+> $ max_num 1 2
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> 2
+> ~~~
+> {: .output}
+> 
+> ~~~
+> # 3
+> $ max_num 4 3
+> ~~~
+> {: .language-bash}
+> 
+> ~~~
+> 4
+> ~~~
+> {: .output}
+> </details>
+{: .challenge}
+
 ## An intro to scripting
 
 Scripts are another way of writing reusable portable code.
@@ -174,7 +384,7 @@ your code here ...
 > is available from path `/bin/bash`.
 > - `zsh`, `fish`, `ksh`, `dash` etc. are other popular unix shells.
 > - Many programming languages provide their shells. 
-> Python scripts can be run from `/usr/bin/env python` or 
+> For example, python scripts can be run from `/usr/bin/env python` or 
 > `/usr/bin/env python3` etc. and R scripts from `/usr/bin/env Rscript`.
 >
 > If you are not sure about shell selection, 
