@@ -1,6 +1,6 @@
 ---
 title: "Parsing BLAST output"
-teaching: 30
+teaching: 35
 exercises: 15
 questions:
 - How can we modify files in UNIX?
@@ -121,7 +121,7 @@ done
 > </details>
 {: .challenge}
 
-## BLAST XML output Vs FASTA format
+## BLAST XML output vs FASTA format
 
 Now, we can convert the BLAST `XML` output in a more common format
 that can be read by multiple software to run analyses. 
@@ -255,7 +255,7 @@ GCATCGGTCCTCTGCAACCTTCTATCGCGCA
 > Use SLURM for resource intensive or time-consuming tasks.
 {: .tips}
 
-Now we have a multiFASTA file with sequence id for each genome database 
+Now we have a multiFASTA file with sequence id for each genome 
 we used along with their respective sequence. 
 We can now use this FASTA formatted file to run sequence alignment and 
 subsequently construct a tree.
