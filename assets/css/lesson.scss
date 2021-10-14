@@ -300,6 +300,18 @@ span.fold-unfold {
   opacity: 0.5;
 }
 
+input[type="text"] {
+  border-radius: 5px;
+  border: 1px #333 solid;
+  padding: 2px 5px;
+  background-color: #eef;
+}
+
+ul.dropdown-menu {
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
 
 //----------------------------------------
 // Life cycle box
