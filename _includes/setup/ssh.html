@@ -12,7 +12,8 @@
 
   <div>
     <ul class="nav nav-tabs" role="tablist">
-      <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows 11</a></li>
+      <li role="presentation"><a data-os="windows10" href="#shell-win10" aria-controls="Windows10" role="tab" data-toggle="tab">Windows 10</a></li>
       <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
       <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
     </ul>
@@ -20,7 +21,90 @@
     <div class="tab-content">
       <article role="tabpanel" class="tab-pane active" id="shell-windows">
         <p>
-          Windows does not have SSH client by default. However, 
+          Windows 11 does not have SSH client by default. However, 
+          SSH can be added from Optional Features.
+          This can be performed through GUI or command line.
+        </p>
+        <h4>Using graphical interface</h4>
+        <ol>
+          <li>
+            Search for <code>optional</code> in windows search 
+            (<kbd>Win</kbd> + <kbd>S</kbd>) and click on 
+            <strong>Manage Optional features</strong>.
+          </li>
+          <li>
+            Check if <strong>OpenSSH Client</strong> is present in the 
+            list of installed features. If it is present, SSH client is installed, 
+            so you can skip rest of the steps.
+          </li>
+          <li>
+            Click on <strong>Add a feature</strong>. 
+            Search for <code>ssh</code>. Click checkbox next to 
+            <strong>OpenSSH Client</strong> and click <strong>Install</strong>.
+          </li>
+          <li>
+            Wait for the install to complete.
+          </li>
+        </ol>
+
+        <h4>Using command line interface</h4>
+        <ol>
+          <li>
+            Open <strong>Windows Terminal</strong> in administrative mode.
+            <ul>
+              <li>
+                Method 1: Search for <code>terminal</code> in windows search 
+                (<kbd>Win</kbd>+<kbd>S</kbd>). Right-click on 
+                <strong>Windows Terminal</strong> and click 
+                <strong>Run as administrator</strong>.
+              </li>
+              <li>
+                Method 2: Right click on start button, then click 
+                <strong>Windows Terminal (Admin)</strong>.
+              </li>
+              <li>
+                Method 3: Press keyboard shortcut <kbd>Win</kbd>+<kbd>X</kbd>, then click 
+                <strong>Windows Terminal (Admin)</strong>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Click <strong>Yes</strong> button in UAC prompt.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</pre>
+          <li>
+            If the value of <code>state</code> under <code>OpenSSH.Client</code> 
+            is <code>Installed</code>, SSH client is present and you can skip next steps.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0</pre>
+          <li>
+            If the output includes <code>Online: True</code>, then SSH Client is
+            successfuly installed.
+          </li>
+          <p>You can close <strong>Windows Terminal</strong> now.</p>
+        </ol>
+        <p>
+          To start using SSH, Open <strong>Windows Terminal</strong>. For this, 
+          search for <code>terminal</code> in windows search 
+          (<kbd>Win</kbd>+<kbd>S</kbd>) and click on 
+          <strong>Windows Terminal</strong>. Alternatively, 
+          right-click start button or press <kbd>Win</kbd>+<kbd>X</kbd> and 
+          click <strong>Windows Terminal</strong>.
+        </p>
+        <p>
+          For ease of access, 
+          you may want to pin Windows Terminal in your taskbar for this workshop.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="shell-win10">
+        <p>
+          Windows 10 does not have SSH client by default. However, 
           SSH can be added from Optional Features in recent version
           of Windows 10. This can be performed through GUI or command line.
         </p>
@@ -100,13 +184,14 @@
           you may want to pin Powershell in your taskbar for this workshop.
         </p>
         <p>
-          Note: Earlier versions of Windows 10 or previous editions of Windows
-          do not have <strong>Optional Features</strong>. For such Windows devices,
+          Note: Earlier versions of Windows 10 
+          do not have <strong>Optional Features</strong>.
+          For such Windows devices,
           we recommend downloading Putty from 
           <a href="https://www.putty.org/">putty.org</a>.
           Note: Follow 
           <a href="https://mediatemple.net/community/products/dv/204404604/using-ssh-in-putty-(windows)">this</a> 
-          guide instead of the below if you are using <code>Putty</code>.
+          guide instead of the instructions below if you are using <code>Putty</code>.
         </p>
       </article>
       <article role="tabpanel" class="tab-pane" id="shell-macos">

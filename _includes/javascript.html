@@ -12,6 +12,7 @@ var show_instructions = function() {
     $('.nav-tabs li').removeClass('active');
 
     //get all nav tabs matching the os and set to active
+    console.log($('.nav-tabs li a[href*="'+localStorage.os+'"]'))
     $('.nav-tabs li a[href*="'+localStorage.os+'"]').closest('li').addClass('active');
 
     //set all tabs to inactive
