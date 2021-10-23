@@ -8,17 +8,15 @@ permalink: /about/
 
 ### Sujan Timilsina 
 
-Sujan is a postdoctoral researcher in the Plant Pathology Department 
-at the University of Florida. 
-His interests are on population and molecular genomics, 
-bacterial evolution and ecology, host-pathogen interactions and 
-microbial ecology, and computational biology. 
-His research is focused on understanding bacterial evolution and 
-emerging pathogens and their impact in the disease epidemilogy. 
-He is also interested in developing computational methods 
-for studying bacterial population.
+Sujan is a Research Scientist at Charles River Laboratories, 
+Newark, Delaware. He completed his graduate school at University 
+of Florida and has wide range of experience working with microbial 
+sequences related to population and molecular genetics. His current 
+work revolves around microbial sequence database management. His 
+interests are on population and molecular genomics, bacterial 
+evolution and ecology, host-pathogen interactions and microbial 
+ecology, and computational biology. 
 
-[Sujan Timilsina](https://sites.google.com/site/sujantimilsina){: .btn} |
 [Google Scholar](https://scholar.google.com/citations?user=J8JONFsAAAAJ&hl=en){: .btn} |
 [Twitter](https://twitter.com/sujantimilsina){: .btn} |
 [Github](https://github.com/sujan8765){: .btn}
