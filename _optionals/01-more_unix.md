@@ -22,15 +22,15 @@ conditions are satisfied.
 In bash, the general syntax for conditional statement looks like:
 
 ~~~
-$ if [ condiiton ]
+$ if [ condition ]
   then
-      commands if condition is true ...
+      commands if given condition is true ...
       ...
   elif [ another condition]
       commands if new condition is true but previous conditions are false ...
       ...
   else
-      commands if condition is false ...
+      commands if all conditions is false ...
       ...
   fi
 ~~~
@@ -40,7 +40,7 @@ $ if [ condiiton ]
 > `elif` section can be repeated multiple times.
 {: .notes}
 
-Let's look as a simple example:
+Let's look at a simple example:
 
 ~~~
 $ if [ 1<2 ]
@@ -74,7 +74,7 @@ false
 
 ### Operators
 
-Instead of commonly used operators symbols such as `=` or `>=`, 
+Instead of commonly used operator symbols such as `=` or `>=`, 
 it is preferable to use test operators for numeric comparisons, 
 especially when working with variables that have not been declared as numbers.
 - `-eq` for **equal to**, 
@@ -115,7 +115,7 @@ Other useful operators are
 ### Single line conditional statement
 
 For shorter commands, conditional statements can be written as one-liner
-using double brackerts `[[...]]`.
+using double brackets `[[...]]`.
 
 The general syntax is:
 ~~~
@@ -194,9 +194,9 @@ $ function_name ()
 ~~~
 {: .terminal}
 
-> `function_name` is the name of the function, that will be used to call it later.
+> `function_name` is the name of the function, and it will be used to call the function later.
 >
-> `()` decalres the variable `function_name` stores a function, 
+> `()` declares the variable `function_name` stores a function, 
 > rather than string or another data.
 >
 > `{...}` delimits the scope of the function, i.e., it encloses the code that are
@@ -234,7 +234,7 @@ The code `echo ...` was executed when you called the function.
 
 Another important component of functions are arguments. 
 Arguments are values passed to the function
-(from interactive prompt or from ) parent script. 
+from interactive prompt or from parent script. 
 Arguments enable the function to use different input data in different calls.
 
 You can pass arguments to a function by simply 
@@ -285,9 +285,9 @@ is awesome.
 > but rather return a status.
 >
 > Instead values can be saved to a global variable or a file.
-> This part won't be discussed here.
+> This part will not be discussed here.
 >
-> Alternatively, standard output, e.g. `echo`, can be captured as follows.
+> Alternatively, standard output, e.g., `echo`, can be captured as follows.
 >
 > ~~~
 > $ echo $(myfunc2) | wc -c
@@ -361,7 +361,7 @@ many other scripts.
 
 ### Writing a script
 
-A typical unix script looks like this:
+A typical UNIX script looks like this:
 
 ~~~
 #!/bin/sh
@@ -376,19 +376,19 @@ your code here ...
 > followed by the shell to run the script.
 >
 > A shell is an interpreter, which converts user command to machine language.
-> - The Bourne shell `sh` is available in all modern unix systems 
+> - The Bourne shell `sh` is available in all modern UNIX systems 
 > and is available from path `/bin/sh`.
-> - The Bourne-Again shell `bash` is present in most modern unix systems 
+> - The Bourne-Again shell `bash` is present in most modern UNIX systems 
 > and is the default shell in many of them. 
 > It is [slightly feature rich](https://www.gnu.org/software/bash/manual/html_node/Major-Differences-From-The-Bourne-Shell.html) than `sh` and 
 > is available from path `/bin/bash`.
-> - `zsh`, `fish`, `ksh`, `dash` etc. are other popular unix shells.
+> - `zsh`, `fish`, `ksh`, `dash` etc. are other popular UNIX shells.
 > - Many programming languages provide their shells. 
 > For example, python scripts can be run from `/usr/bin/env python` or 
 > `/usr/bin/env python3` etc. and R scripts from `/usr/bin/env Rscript`.
 >
 > If you are not sure about shell selection, 
-> `bash` is the safest choice for unix scripting.
+> `bash` is the safest choice for UNIX scripting.
 {: .tips}
 
 Let's write a simple script. 
@@ -536,7 +536,7 @@ $1, $2 and so on.
 
 ## Parallelization
 
-In computer science, parallelization is the execucation of multiple, 
+In computer science, parallelization is the execution of multiple, 
 often similar/repeated tasks concurrently.
 
 Parallelization is important in bioinformatics because of:
@@ -544,7 +544,7 @@ Parallelization is important in bioinformatics because of:
 - similar processing for each unit of data, e.g., alignment of each read to reference genome using identical processes.
 - availability of computing clusters with large computing resources.
 
-Let's look at a demo example of parallelization useing [GNU parallel](https://www.gnu.org/software/parallel/).
+Let's look at a demo example of parallelization using [GNU parallel](https://www.gnu.org/software/parallel/).
 
 First let's define function that takes some time to complete.
 
@@ -557,7 +557,7 @@ $ myfunc3()
 ~~~
 {: .language-bash}
 
-We can execute this n times function sequenctially, i.e., not in parallel using a for loop.
+We can execute this n times function sequentially, i.e., not in parallel using a for loop.
 ~~~
 $ for i in {1..10}; do myfunc3 $1; done
 ~~~
@@ -590,7 +590,7 @@ Execution time is 20 seconds.
 ~~~
 {: .output}
 
-Now let's parallelize.
+Now let us parallelize.
 
 ## Parallelization with background tasks
 
@@ -631,17 +631,17 @@ Execution time is 2 seconds.
 
 ## GNU parallel
 
-However, inbuilt parallelization methods in unix system are not
+However, inbuilt parallelization methods in UNIX system are not
 very user-intuitive and flexible, and sometime vary slightly between different
-unix distros. GNU `parallel` is a great alternative for parallelization.
-Among other benefits, it can set number of cpu cores per job based on number of jobs
+UNIX distros. GNU `parallel` is a great alternative for parallelization.
+Among other benefits, it can set number of CPU cores per job based on number of jobs
 and has options to specify minimum memory for a job,
 which make sit a useful tool in bioinformatics.
 
 In a personal computer,
 parallel needs to be installed [source](https://ftp.gnu.org/gnu/parallel/). 
 However, GNU `parallel` is available in HiperGator –
-it only needs to to be loaded.
+it only needs to be loaded.
 
 ~~~
 $ ml parallel

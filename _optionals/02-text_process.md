@@ -17,8 +17,8 @@ One of the most common file format when working in bioinformatics is
 the FASTA file. FASTA format holds a nucleotide or amino acid sequences,
 following a (unique) identifier, called a description line.
 A FASTA file is a text file, often with extension `.fasta`, `.fas`, or `.fa`
-for both nucletide and proteins, `.fna` for nucletide only,
-`.faa` for animo acid sequence only.
+for both nucleotide and proteins, `.fna` for nucleotide only,
+`.faa` for amino acid sequence only.
 A multiFASTA file is the concatenation of multiple
 FASTA sequences of one type (nucleotide or amino acid).
 
@@ -65,23 +65,23 @@ GATTCGCCTTCGAAATTGAAGGTGGCGCTGCCGCTGCTGGCCATGCCCAGCGTG
 AAATCCTGGGCGTATCAGACCGCTGCCGAGCGTTTGCTTTGGTACCGCCTGCGTGATCGGCGTCCCCCC/àùbä';ç3cC
 ¦Å¼OÈ’LäÖ’sëmôzÒÒ${–-ÃêFY;+ã}:ãž0}%ÂZDÅì9D‹Rž÷D×ç°:âñÆó²9h‰ÐžæK¼ë™XÕJK¥·—(ü7¢]ÃÆ
 Ño5®o&ÇDçJ^ÃŒZòsÀš‹Ü´†ü¿ÄŒ—xÎ—¸¬µ»?à=Of±)2?îP3ñLapÈëY_{DŸm)ã}ž[Êº„ódMÅbóSl¤ÌŽÑ‚¼
-Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k÷yxÙgH2/ÂžQ,[@ûIß
+Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k ÷yxÙgH2/ÂžQ,[@ûIß
 €|Ë²Ï2,ôCÆ
 ~~~
 {: .output}
 
 ### FASTA file processing
 
-The simplicity of FASTA file makes it a good target for learing text processing
+The simplicity of FASTA file makes it a good target for learning text processing
 for beginner bioinformaticians. To be clear, there are plethora of tools and 
 programs that can be used to achieve all kinds of processing
 (such as filtration, editing, metadata computation, etc.).
 Rather, the objective of this section is to learn to do those processing 
-by ownself.
+by writing your own code.
 
 There are many tools which can be achieve same processing steps.
 In this section, we will use a powerful text processing utility called `awk`, 
-which is available by default in all modern unix systems.
+which is available by default in all modern UNIX systems.
 
 ## Processing a file in `awk`
 
@@ -103,9 +103,9 @@ $ cat input_file | awk '
 ### Processing one FASTA sequence at a time
 
 Despite its simple structure, processing a FASTA using `awk`
-(or most other unix tools) poses one important challenge.
+(or most other UNIX tools) poses one important challenge.
 `Awk` processes one line at a time, but ideally,
-we'd like to process one fasta sequence at a time.
+we'd like to process one FASTA sequence at a time.
 Fortunately, there are ways to handle this in `awk`.
 
 Consider a simple table:
@@ -113,7 +113,7 @@ Consider a simple table:
 ~~~
 abc def ghi
 jkl mno pqr
-stu vwy yz
+stu vwx yz
 ~~~
 {: .language-bash}
 
@@ -132,7 +132,7 @@ They are stored in following variables within `awk`:
 | RS | Record separator (input, and output too if ORS not specified) |
 | ORS | Output record separator |
 
-A individual FASTA record starts with a `>` charcater, so if we use `>` as 
+A individual FASTA record starts with a `>` character, so if we use `>` as 
 the record separator, then `awk` would process one entire FASTA at a time.
 
 > ## Accessing fields in `awk`
@@ -146,11 +146,11 @@ the record separator, then `awk` would process one entire FASTA at a time.
 {: .notes}
 
 Similarly, if we assign newline character as the field separator, 
-then each line for that FASTA record will act as differnet columns.
+then each line for that FASTA record will act as different columns.
 The first column would be the description line, and the remaining columns
-would be the sequences for that fasta record.
+would be the sequences for that FASTA record.
 
-In order to accomplish with option `-v` which allows setting a variable.
+This can be accomplished with option `-v` which allows setting a variable.
 
 ~~~
 $ awk -vRS=">" -vORS="\n" -vFS="\n" -vOFS="\t" '
@@ -166,7 +166,7 @@ Xanthomonas perforans strain GV872 contig_51    CCCTCCACAGGAAGCGGACCGGACAATGACGC
 Xanthomonas perforans strain GV872 contig_52    CGCCAGCGCAGCCGACCACGACGCCCGAATCCAGCGTGCCGGCCTCGTTGCCGCCCGCGTCCACGTCGGGCAATTAAGCC        GCGCCCCGCGTTTCCGGTCATGGAACTTCGCCCAGAGCAGCTGGCCGGCCAGTCCAGCCAGCCATTGCAGCCGGTGTATC    TGATCGCCGGCCCCGAGACCTTGCGTGTGCTTGAGGCCGCCGATGCGGTGCGCGCGCGCGCGCGCGC
 Xanthomonas perforans strain GV872 plasmid_contig_53    GGCGTTGTTCCAGCCCAGCACCATTTCCAACAGATTCAGGGCCTGCGCCGGCGACACCGGATTGGGCGTGGCCAAGGTCA        CGGTGCCCTGCACGCCCGGCGCGATGACGTAGTTCTGGCCGAGCATGTCGCCCAGGATCGCCTTGACCACCGCCTGCAGC    GATTCGCCTTCGAAATTGAAGGTGGCGCTGCCGCTGCTGGCCATGCCCAGCGTG
 Xanthomonas perforans strain GV872 plasmid_contig_54    AAATCCTGGGCGTATCAGACCGCTGCCGAGCGTTTGCTTTGGTACCGCCTGCGTGATCGGCGTCCCCCC/àùbä';ç3cC
-¦Å¼OÈ’LäÖ’sëmôzÒÒ${–-ÃêFY;+ã}:ãž0}%ÂZDÅì9D‹Rž÷D×ç°:âñÆó²9h‰ÐžæK¼ë™XÕJK¥·—(ü7¢]ÃÆ    Ño5®o&ÇDçJ^ÃŒZòsÀš‹Ü´†ü¿ÄŒ—xÎ—¸¬µ»?à=Of±)2?îP3ñLapÈëY_{DŸm)ã}ž[Êº„ódMÅbóSl¤ÌŽÑ‚¼    Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k÷yxÙgH2/ÂžQ,[@ûIß    €|Ë²Ï2,ôCÆ
+¦Å¼OÈ’LäÖ’sëmôzÒÒ${–-ÃêFY;+ã}:ãž0}%ÂZDÅì9D‹Rž÷D×ç°:âñÆó²9h‰ÐžæK¼ë™XÕJK¥·—(ü7¢]ÃÆ    Ño5®o&ÇDçJ^ÃŒZòsÀš‹Ü´†ü¿ÄŒ—xÎ—¸¬µ»?à=Of±)2?îP3ñLapÈëY_{DŸm)ã}ž[Êº„ódMÅbóSl¤ÌŽÑ‚¼    Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k ÷yxÙgH2/ÂžQ,[@ûIß    €|Ë²Ï2,ôCÆ
 ~~~
 {: .output}
 
@@ -201,7 +201,7 @@ $ awk -vRS=">" -vORS="\n" -vFS="\n" -vOFS="\t" '
 If is often necessary to remove one or more FASTA record from a multiFASTA file.
 Small files can be edited manually,
 but large files or files with a large number of records
-can be better handled programmetrically.
+can be better handled programmatically.
 
 FASTA filtration is often done using two criteria.
 1. Sequence ID, i.e., the description line
@@ -226,7 +226,7 @@ variable `$1`. Here are a few conditions for string matching.
 - `^.a`: sequence ID with `a` as the second character.
     - `.` can be resolved into any single character.
 - `^\.a`: sequence ID starts with `.a`.
-    - `\` is an escape charcater, thus `.` is used in literal fashion.
+    - `\` is an escape character, thus `.` is used in literal fashion.
 - `$1~/[a-c]/`: sequence ID contains `a`, `b`, or `c`.
     - `[...]` is resolved to character group.
 - `$1~/^[2-4]/`: sequence ID starts with `2`, `3`, or `4`.
@@ -240,9 +240,9 @@ variable `$1`. Here are a few conditions for string matching.
     - `.*` is resolved to any characters, including nothing.
 - `$1~/^key1.*key2$/`: sequence ID starts with `key1` and ends with `key2`.
 
-The example fasta above has two plasmid contigs, 
-which can be separated witht he term "plasmid" in description line.
-To remove palsmid seuqences, we can do:
+The example FASTA above has two plasmid contigs, 
+which can be separated with the term "plasmid" in description line.
+To remove plasmid sequences, we can do:
 
 ~~~
 $ awk -vRS=">" -vORS="" -vFS="\n" -vOFS="\n" '
@@ -279,7 +279,7 @@ TGATCGCCGGCCCCGAGACCTTGCGTGTGCTTGAGGCCGCCGATGCGGTGCGCGCGCGCGCGCGCGC
 FASTA filtration by length is necessary cases such as removal of contigs
 smaller than a threshold length.
 
-The numbers of characters in a fasta record can be derived by `awk` function, 
+The numbers of characters in a FASTA record can be derived by `awk` function, 
 `length`. 
 Of course, this way, all characters, 
 including those not standard in FASTA are counted.
@@ -308,7 +308,7 @@ Xanthomonas perforans strain GV872 plasmid_contig_54    331
 {: .notes}
 
 Next, we can do filtration.
-To remove contigs smaller than 300 basepairs, we can do:
+To remove contigs smaller than 300 base pairs, we can do:
 
 ~~~
 $ awk -vRS=">" -vORS="" -vFS="\n" -vOFS="\n" '
@@ -329,7 +329,7 @@ AACAGGTGGTCGAGTGATACGCCCAGGGTTC
 AAATCCTGGGCGTATCAGACCGCTGCCGAGCGTTTGCTTTGGTACCGCCTGCGTGATCGGCGTCCCCCC/àùbä';ç3cC
 ¦Å¼OÈ’LäÖ’sëmôzÒÒ${–-ÃêFY;+ã}:ãž0}%ÂZDÅì9D‹Rž÷D×ç°:âñÆó²9h‰ÐžæK¼ë™XÕJK¥·—(ü7¢]ÃÆ
 Ño5®o&ÇDçJ^ÃŒZòsÀš‹Ü´†ü¿ÄŒ—xÎ—¸¬µ»?à=Of±)2?îP3ñLapÈëY_{DŸm)ã}ž[Êº„ódMÅbóSl¤ÌŽÑ‚¼
-Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k÷yxÙgH2/ÂžQ,[@ûIß
+Óh+¶\Éz½/­Z¹â²kgfSû%äÖÿzvŽ#?69éhÎÔøK×‰Êí¨/4ŠSVfÍõÔûÁÒ&½ûE÷kÑ²:k ÷yxÙgH2/ÂžQ,[@ûIß
 €|Ë²Ï2,ôCÆ
 ~~~
 {: .output}
@@ -338,7 +338,7 @@ AAATCCTGGGCGTATCAGACCGCTGCCGAGCGTTTGCTTTGGTACCGCCTGCGTGATCGGCGTCCCCCC/àùbä';�
 {: .notes}
 
 If the FASTA contains non-standard characters, and we only want to count and 
-filter using standard bases, we can use `gsub` fucntion.
+filter using standard bases, we can use `gsub` function.
 
 ~~~
 $ awk -vRS=">" -vORS="\n" -vFS="\n" -vOFS="\t" '
@@ -391,4 +391,4 @@ AACAGGTGGTCGAGTGATACGCCCAGGGTTC
 {: .challenge}
 
 Using what you learned from optional lessons 1 and 2, 
-you can now write a script to filter FASTA files, and distribute it to others.
+you can now write a script to filter FASTA files and distribute it to others.
