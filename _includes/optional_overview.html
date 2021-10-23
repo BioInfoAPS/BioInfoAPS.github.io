@@ -1,0 +1,41 @@
+{% comment %}
+    Display episode's learning objectives.
+
+    Regarding the `if page.*** == nil` below:
+    all-in-one page combines all episodes into one.
+    It, therefore, does not define its own objectives, exercises,
+    and questions, which 'normal' episodes define in the front matter.
+
+    To display episodes' objectives, we pass them as parameters to the Liquid's
+    `include` statement when we generate the page:
+
+	 include optional_overview.html teaching_time=e.teaching ...
+
+    Here we obtain the information we need either from the episode itself or
+    from the parameters passed in.
+{% endcomment %}
+
+{% if page.objectives == nil %}
+{% assign episode_objectives = include.episode_objectives %}
+{% else %}
+{% assign episode_objectives = page.objectives %}
+{% endif %}
+
+
+<blockquote class="objectives">
+  <h2>Overview</h2>
+
+  <div class="row">
+    <div class="col-md-3">
+    </div>
+    <div class="col-md-9">
+      <strong>Objectives</strong>
+      <ul>
+	{% for objective in episode_objectives %}
+	<li>{{ objective|markdownify }}</li>
+	{% endfor %}
+      </ul>
+    </div>
+  </div>
+
+</blockquote>

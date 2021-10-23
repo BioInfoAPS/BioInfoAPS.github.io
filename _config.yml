@@ -106,7 +106,7 @@ defaults:
       type: optionals
     values:
       root: ..
-      layout: episode
+      layout: optional
   - scope:
       path: ""
       type: extras

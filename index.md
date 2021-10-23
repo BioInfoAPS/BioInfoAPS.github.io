@@ -73,7 +73,7 @@ email [{{ page.technical }}](mailto:{{ page.technical }}).
 
 {% comment %} Optional exercises {% endcomment %}
 <h2 id="optional">Optional excercises</h2>
-{% include intro/optional.md %}
+{% include intro/optional_schedule.md %}
 <hr/>
 
 {% comment %} Setup {% endcomment %}
