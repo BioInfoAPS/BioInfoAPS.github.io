@@ -421,3 +421,8 @@ details[open] > summary:after {
 
     h1, :not(blockquote) > h2 {page-break-before: always;}
 }
+
+// To prevent awesome bioinfo h1 from showing up
+body{
+  min-width: 425px;
+}
