@@ -1,13 +1,10 @@
 ---
 title: "More UNIX commands"
-teaching: 0
-exercises: 0
-questions:
-- 
 objectives:
-- 
-keypoints:
-- 
+- To understand UNIX conditional statements.
+- To learn about functions in bash.
+- To get started with bash scripting.
+- Parallelization in bash with GNU parallel.
 
 ---
 

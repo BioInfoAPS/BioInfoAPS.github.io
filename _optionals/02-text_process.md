@@ -1,13 +1,7 @@
 ---
 title: "FASTA manipulation with awk"
-teaching: 
-exercises: 
-questions:
-- 
 objectives:
-- 
-keypoints:
-- 
+- To process FASTA records, specifically FASTA filtration using awk.
 
 ---
 
