@@ -65,13 +65,12 @@ and tools for pathogen-assisted breeding in crop plants.
 
 ### Anuj Sharma 
 
-Anuj is a graduate student at University of Florida 
+Anuj is a postdoctoral associate at University of Florida 
 in the Plant Pathology Department. 
 His research is focuses on bacterial spot of tomato and pepper 
-caused by Xanthomonas species. 
-He is currently working on mapping resistance genes, 
-developing bacterial dispersal models and 
-understanding mutation rate of bacterial effectors. 
+caused by *Xanthomonas* species. 
+He is currently working on understanding bacterial fitness and
+developing bioinformatic pipelines for genomic and transcriptomic analyses. 
 
 [Anuj Sharma](https://anujs.com.np/){: .btn}  | 
 [Google Scholar](https://scholar.google.com/citations?hl=en&user=cNdnwIsAAAAJ){: .btn} | 
