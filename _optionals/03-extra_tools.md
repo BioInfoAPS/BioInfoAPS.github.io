@@ -1,7 +1,7 @@
 ---
 title: "Another bioinformatic tool: PyANI" 
 objectives:
-- To calculated average nucleotide identity of a genome with other related genomes. 
+- To calculate average nucleotide identity of a genome with related genomes. 
 
 ---
 
