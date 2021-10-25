@@ -43,6 +43,10 @@ in UFRC OnDemand homepage and click **/blue/general_workshop**.
 Double click on directory named as your username to find your files.
 </div>
 
+> To view instructions for connection using terminal, click [here](setup-old.html).
+> Note that this method does not work with guest accounts in Hipergator.
+{: .notes}
+
 {% comment %} Text editor {% endcomment %}
 {% include setup/editor.html %}
 
