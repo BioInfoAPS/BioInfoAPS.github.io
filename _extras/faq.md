@@ -18,7 +18,7 @@ permalink: /faq/index.html
     or [mail us](mailto:anujsharma@ufl.edu).
 
 *Where is the information about setting up the computer?*
-:   Please check the [setup page](setup.html) for the 
+:   Please check the [setup page]({{site.baseSite}}setup) for the 
     information regarding setting up your device.
 
 *Do I have to pay for any of the software?*
