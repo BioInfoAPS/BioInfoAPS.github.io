@@ -1,27 +1,42 @@
 @charset "UTF-8";
-.error { color: #bd2c00; border: solid 1px #bd2c00; border-left: solid 5px #bd2c00; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+@font-face { font-family: "Mulish"; src: url("/assets/fonts/mulish-vf.ttf") format("truetype-variations"); src: url("/assets/fonts/mulish-vf.woff2") format("woff2-variations"); font-weight: 400 600; }
+@font-face { font-family: "Mulish"; src: url("/assets/fonts/mulish-vf-ital.ttf") format("truetype-variations"); src: url("/assets/fonts/mulish-vf-ital.woff2") format("woff2-variations"); font-weight: 400 600; font-style: italic; }
+@font-face { font-family: "Cascadia"; src: url("/assets/fonts/cascadiacode-vf.ttf") format("truetype-variations"); src: url("/assets/fonts/cascadiacode-vf.woff2") format("woff2-variations"); font-weight: 300 700; }
+body { font-family: "Mulish", Arial, Helvetica, sans-serif; font-weight: 400; font-variation-settings: 'wght' 400; font-size: 16px; }
 
-.warning { color: #cda01d; border: solid 1px #cda01d; border-left: solid 5px #cda01d; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+h1, h2, h3 { font-weight: 600; font-variation-settings: 'wght' 600; }
 
-.output { color: #303030; border: solid 1px #303030; border-left: solid 5px #303030; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+b, strong { font-weight: 900; font-variation-settings: 'wght' 900; }
 
-.source { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+em { font-style: italic; font-weight: 600; font-variation-settings: 'wght' 600; }
 
-.bash, .language-bash { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+pre, code { font-family: "Cascadia", "Consolas", 'Courier New', monospace; font-size: inherit; font-size: 15px; }
 
-.terminal { color: #303030; border: solid 1px #303030; border-left: solid 5px #303030; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+code strong, code b { font-weight: 700; font-variation-settings: 'wght' 700; }
 
-.make, .language-make { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+.error { color: #bd2c00; border: solid 1px #bd2c00; border-left: solid 5px #bd2c00; margin: 15px 5px 10px 0; border-radius: 5px; }
 
-.matlab, .language-matlab { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+.warning { color: #cda01d; border: solid 1px #cda01d; border-left: solid 5px #cda01d; margin: 15px 5px 10px 0; border-radius: 5px; }
 
-.python, .language-python { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+.output { color: #303030; border: solid 1px #303030; border-left: solid 5px #303030; margin: 15px 5px 10px 0; border-radius: 5px; }
 
-.r, .language-r { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+.source { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
 
-.sql, .language-sql { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 4px 0 0 4px; }
+.bash, .language-bash { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
 
-.error::before, .warning:before, .output::before, .source::before, .bash::before, .language-bash::before, .terminal::before, .make::before, .language-make::before, .matlab::before, .language-matlab::before, .python::before, .language-python::before, .r::before, .language-r::before, .sql::before, .language-sql::before { background-color: #f2eff6; display: block; font-weight: bold; padding: 5px 10px; }
+.terminal, .output { color: #303030; border: solid 1px #303030; border-left: solid 5px #303030; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.make, .language-make { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.matlab, .language-matlab { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.python, .language-python { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.r, .language-r { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.sql, .language-sql { color: #360084; border: solid 1px #360084; border-left: solid 5px #360084; margin: 15px 5px 10px 0; border-radius: 5px; }
+
+.error::before, .warning:before, .output::before, .source::before, .bash::before, .language-bash::before, .terminal::before, .make::before, .language-make::before, .matlab::before, .language-matlab::before, .python::before, .language-python::before, .r::before, .language-r::before, .sql::before, .language-sql::before { background-color: #f2eff6; display: block; font-weight: 700; font-variation-settings: 'wght' 700; padding: 5px 10px; border-radius: 0 5px 0 0; }
 
 .error::before { background-color: #ffebe6; content: "Error"; }
 
@@ -33,7 +48,7 @@
 
 .bash::before, .language-bash::before { content: "Bash"; }
 
-.terminal::before { content: "Terminal"; }
+.terminal::before { background-color: #efefef; content: "Terminal"; }
 
 .make::before, .language-make::before { content: "Make"; }
 
@@ -61,51 +76,51 @@ a { color: #204A6F; }
 .yt-frame { height: 100%; left: 0; position: absolute; top: 0; width: 100%; }
 
 .callout { padding: 0 0 5px 5px; border: 1px solid; border-color: #f4fd9c; border-radius: 4px; margin: 15px 5px 10px 0; }
-.callout h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #f4fd9c, #f5fda6); border-color: #f4fd9c; margin-top: 0px; margin-left: -5px; }
+.callout h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #f4fd9c, #f5fda6); border-color: #f4fd9c; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .callout h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .caution { padding: 0 0 5px 5px; border: 1px solid; border-color: #ee3440; border-radius: 4px; margin: 15px 5px 10px 0; }
-.caution h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ee3440, #f04853); border-color: #ee3440; margin-top: 0px; margin-left: -5px; }
+.caution h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ee3440, #f04853); border-color: #ee3440; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .caution h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .challenge { padding: 0 0 5px 5px; border: 1px solid; border-color: #eec275; border-radius: 4px; margin: 15px 5px 10px 0; }
-.challenge h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #eec275, #f0c883); border-color: #eec275; margin-top: 0px; margin-left: -5px; }
+.challenge h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #eec275, #f0c883); border-color: #eec275; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .challenge h2:before { font-family: 'Glyphicons Halflings'; content: "✏"; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .checklist { padding: 0 0 5px 5px; border: 1px solid; border-color: #dfd2a0; border-radius: 4px; margin: 15px 5px 10px 0; }
-.checklist h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #dfd2a0, #e2d7aa); border-color: #dfd2a0; margin-top: 0px; margin-left: -5px; }
+.checklist h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #dfd2a0, #e2d7aa); border-color: #dfd2a0; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .checklist h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .discussion { padding: 0 0 5px 5px; border: 1px solid; border-color: #eec275; border-radius: 4px; margin: 15px 5px 10px 0; }
-.discussion h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #eec275, #f0c883); border-color: #eec275; margin-top: 0px; margin-left: -5px; }
+.discussion h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #eec275, #f0c883); border-color: #eec275; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .discussion h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .keypoints { padding: 0 0 5px 5px; border: 1px solid; border-color: #7ae78e; border-radius: 4px; margin: 15px 5px 10px 0; }
-.keypoints h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #7ae78e, #87e999); border-color: #7ae78e; margin-top: 0px; margin-left: -5px; }
+.keypoints h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #7ae78e, #87e999); border-color: #7ae78e; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .keypoints h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .objectives { padding: 0 0 5px 5px; border: 1px solid; border-color: #daee84; border-radius: 4px; margin: 15px 5px 10px 0; }
-.objectives h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #daee84, #def090); border-color: #daee84; margin-top: 0px; margin-left: -5px; }
+.objectives h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #daee84, #def090); border-color: #daee84; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .objectives h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .prereq { padding: 0 0 5px 5px; border: 1px solid; border-color: #9cd6dc; border-radius: 4px; margin: 15px 5px 10px 0; }
-.prereq h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #9cd6dc, #a6dae0); border-color: #9cd6dc; margin-top: 0px; margin-left: -5px; }
+.prereq h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #9cd6dc, #a6dae0); border-color: #9cd6dc; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .prereq h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .solution { padding: 0 0 5px 5px; border: 1px solid; border-color: #ded4b9; border-radius: 4px; margin: 15px 5px 10px 0; }
-.solution h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ded4b9, #e1d8c0); border-color: #ded4b9; margin-top: 0px; margin-left: -5px; }
+.solution h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ded4b9, #e1d8c0); border-color: #ded4b9; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .solution h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .testimonial { padding: 0 0 5px 5px; border: 1px solid; border-color: #fc8dc1; border-radius: 4px; margin: 15px 5px 10px 0; }
-.testimonial h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #fc8dc1, #fc98c7); border-color: #fc8dc1; margin-top: 0px; margin-left: -5px; }
+.testimonial h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #fc8dc1, #fc98c7); border-color: #fc8dc1; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .testimonial h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .tips { padding: 0 0 5px 5px; border: 1px solid; border-color: #ee9775; border-radius: 4px; margin: 15px 5px 10px 0; }
-.tips h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ee9775, #f0a183); border-color: #ee9775; margin-top: 0px; margin-left: -5px; }
+.tips h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #ee9775, #f0a183); border-color: #ee9775; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .tips h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .notes { padding: 0 0 5px 5px; border: 1px solid; border-color: #47acf0; border-radius: 4px; margin: 15px 5px 10px 0; }
-.notes h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #47acf0, #59b4f2); border-color: #47acf0; margin-top: 0px; margin-left: -5px; }
+.notes h2 { padding-top: 5px; padding-bottom: 5px; font-size: 20px; background: linear-gradient(to bottom, #47acf0, #59b4f2); border-color: #47acf0; margin-top: 0px; margin-left: -5px; border-radius: 5px 5px 0 0; }
 .notes h2:before { font-family: 'Glyphicons Halflings'; content: ""; float: left; padding-left: 5px; padding-right: 5px; display: inline-block; -webkit-font-smoothing: antialiased; }
 
 .callout h3, .challenge h3, .checklist h3, .discussion h3, .keypoints h3, .objectives h3, .prereq h3, .solution h3, .testimonial h3, .tips h3, .notes h3 { font-size: 18px; }
@@ -144,7 +159,7 @@ blockquote { font-size: inherit; }
 
 a code { color: #006cad; }
 
-code { white-space: nowrap; padding: 2px 5px; color: #24292e; background-color: #e7e7e7; }
+:not(pre) > code { white-space: nowrap; padding: 2px 5px; color: #24292e; background-color: #e7e7e7; border: solid 1px #c6c6c6; }
 
 samp { hyphens: none; }
 
@@ -209,7 +224,7 @@ details[open] > summary:after { content: "Click here to hide the answer."; }
   h1, :not(blockquote) > h2 { page-break-before: always; } }
 body { min-width: 425px; }
 
-.highlight .gp { /* Prompt */ color: #000080; font-weight: bold; user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none; -o-user-select: none; pointer-events: none; }
+.highlight .gp { /* Prompt */ user-select: none; -webkit-user-select: none; -moz-user-select: none; -ms-user-select: none; -webkit-touch-callout: none; -o-user-select: none; pointer-events: none; }
 
 .language-bash, .language-console { position: relative; }
 
