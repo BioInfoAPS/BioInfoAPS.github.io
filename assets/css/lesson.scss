@@ -426,3 +426,17 @@ details[open] > summary:after {
 body{
   min-width: 425px;
 }
+
+// prevent selection of '$' sign from codeblock
+// see syntax.css for classes within code
+.highlight .gp {/* Prompt */
+  color: #000080;
+  font-weight: bold;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  -webkit-touch-callout: none;
+  -o-user-select: none;
+  pointer-events:none;
+}
