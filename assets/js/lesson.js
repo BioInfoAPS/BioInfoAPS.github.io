@@ -54,3 +54,40 @@ $(window).scroll(function(){
         }
     }
 });
+
+// add copy button to codeblocks
+
+// Copy text as text
+function executeCopy(text) {
+    var input = document.createElement('textarea');
+    document.body.appendChild(input);
+    input.value = text;
+    input.focus();
+    input.select();
+    navigator.clipboard.writeText("Hello World!")
+    input.remove();
+}
+
+// Copy HTML as text (without HTML tags)
+
+document.querySelectorAll(".language-bash").forEach((block) => {
+    if (navigator.clipboard) {
+        child_code = block.querySelector('pre').innerHTML;
+        var doc = new DOMParser().parseFromString(child_code, 'text/html');
+        doc.querySelectorAll('.gp').forEach((gp) => {gp.remove()});
+        text = doc.body.textContent.replace(/^\s*[\r\n]/gm,"").replace(/^[$>]\s/gm,"");
+    
+        let button = document.createElement("button");
+        button.classList.add('button-cp');
+        button.setAttribute('data-cp', text);
+        block.appendChild(button);
+    }
+});
+  
+document.querySelectorAll('.button-cp').forEach((button) => {
+    button.addEventListener('click', () => {
+        navigator.clipboard.writeText(button.getAttribute('data-cp'));
+        button.classList.add('clicked');
+        setTimeout(() => button.classList.remove('clicked'), 1000);
+    })
+});
