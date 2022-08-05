@@ -693,3 +693,8 @@ Execution time is 5 seconds.
 {: .output}
 
 Thus, with parallelization, we were able to reduce the execution time.
+
+
+> ## Become a shellscript pro
+> [Advanced Bash-Scripting Guide](https://tldp.org/LDP/abs/html/)
+{: .notes}
