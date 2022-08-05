@@ -22,7 +22,7 @@
   font-family: "Cascadia";
   src: url('/assets/fonts/cascadiacode-vf.ttf') format('truetype-variations');
   src: url('/assets/fonts/cascadiacode-vf.woff2') format('woff2-variations');
-  font-weight: 300 600;
+  font-weight: 300 700;
 }
 
 body {
@@ -51,9 +51,12 @@ em {
 pre, code {
   font-family: "Cascadia", "Consolas", 'Courier New', monospace;
   font-size: inherit;
-  font-weight: 300;
-  font-variation-settings: 'wght' 300;
-  font-size:15px;
+  font-size: 15px;
+}
+
+code strong, code b {
+  font-weight: 700;
+  font-variation-settings: 'wght' 700;
 }
 
 //----------------------------------------
@@ -92,7 +95,7 @@ $color-notes:       #47acf0 !default;
     border: solid 1px $color;
     border-left: solid 5px $color;
     margin: 15px 5px 10px 0;
-    border-radius: 4px 0 0 4px;
+    border-radius: 5px;
 }
 
 .error   { @include cdSetup($color-error); }
@@ -101,7 +104,7 @@ $color-notes:       #47acf0 !default;
 .source  { @include cdSetup($color-source); }
 
 .bash, .language-bash     { @include cdSetup($color-source); }
-.terminal                 { @include cdSetup($color-output); }
+.terminal, .output        { @include cdSetup($color-output); }
 .make, .language-make     { @include cdSetup($color-source); }
 .matlab, .language-matlab { @include cdSetup($color-source); }
 .python, .language-python { @include cdSetup($color-source); }
@@ -121,8 +124,10 @@ $color-notes:       #47acf0 !default;
 .sql::before, .language-sql::before {
     background-color: #f2eff6;
     display: block;
-    font-weight: bold;
+    font-weight: 700 ;
+    font-variation-settings: 'wght' 700;
     padding: 5px 10px;
+    border-radius: 0 5px 0 0;
 }
 
 .error::before  { background-color: #ffebe6; content: "Error"; }
@@ -130,7 +135,7 @@ $color-notes:       #47acf0 !default;
 .output::before { background-color: #efefef; content: "Output"; }
 .source::before { content: "Code"; }
 .bash::before, .language-bash::before { content: "Bash"; }
-.terminal::before { content: "Terminal"; }
+.terminal::before { background-color: #efefef; content: "Terminal"; }
 .make::before, .language-make::before { content: "Make"; }
 .matlab::before, .language-matlab::before { content: "Matlab"; }
 .python::before, .language-python::before { content: "Python"; }
@@ -208,6 +213,7 @@ $codeblock-padding: 5px !default;
     border-color: $color;
     margin-top: 0px;
     margin-left: -$codeblock-padding; // to move back to the left margin of the enclosing blockquote
+    border-radius: 5px 5px 0 0;
   }
   h2:before {
     font-family: 'Glyphicons Halflings';
@@ -279,11 +285,12 @@ a code {
   color: #006cad;
 }
 
-code {
+:not(pre) > code {
   white-space: nowrap;
   padding: 2px 5px;
   color: #24292e;
   background-color: #e7e7e7;
+  border: solid 1px #c6c6c6;
 }
 
 samp { hyphens: none; }
@@ -485,8 +492,6 @@ body{
 // prevent selection of '$' sign from codeblock
 // see syntax.css for classes within code
 .highlight .gp {/* Prompt */
-  color: #000080;
-  font-weight: bold;
   user-select: none;
   -webkit-user-select: none;
   -moz-user-select: none;
@@ -498,7 +503,7 @@ body{
 
 // copy button
 .language-bash, .language-console {
-  position:relative
+  position:relative;
 }
 
 .button-cp {
@@ -521,22 +526,4 @@ body{
 .button-cp.clicked {
   background-color: #9952f6;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2L4.8 12l-1.4 1.4L9 19L21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
-}
-
-// Add a nicer font
-@font-face {
-  font-family: Mulish;
-  src: url('assets/fonts/vf.woff2') format(woff2-variations);
-  font-weight: 300 600;
-}
-
-body{
-  font-family: Mulish, Arial, Helvetica, sans-serif;
-  font-weight: 300;
-  font-variation-settings: 'wght' 300;
-}
-
-h1, h2, h3, b {
-  font-weight: 600;
-  font-variation-settings: 'wght' 600;
 }
