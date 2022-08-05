@@ -1,0 +1,442 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2022-08-05 00:43:44 -0400">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./assets/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./assets/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./assets/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Basic	bioinformatics and command-line	tools	for phytopathologists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="./assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="./assets/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="./assets/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="./assets/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="./assets/favicons/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Setup &ndash; Basic	bioinformatics and command-line	tools	for phytopathologists
+  </title>  
+
+  </head>
+  <body>
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      <a href="" class="pull-left">
+        <img class="navbar-logo" src="./assets/logo/icon.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="./">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	      
+        <li><a href="./setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="./01-unix/index.html">UNIX command line</a></li>
+            
+            
+            <li><a href="./02-slurm/index.html">SLURM workload manager</a></li>
+            
+            
+            <li><a href="./03-blast/index.html">BLAST search</a></li>
+            
+            
+            <li><a href="./04-parse/index.html">Parsing BLAST output</a></li>
+            
+            
+            <li><a href="./05-tree/index.html">Phylogenetic tree</a></li>
+            
+          </ul>
+        </li>
+
+        
+
+      
+
+      <li class="dropdown">
+        <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Optional <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+            <li><a href="./01-more_unix/index.html">More UNIX commands</a></li>
+          
+            <li><a href="./02-text_process/index.html">FASTA manipulation with awk</a></li>
+          
+            <li><a href="./03-extra_tools/index.html">Another bioinformatic tool: PyANI</a></li>
+          
+            <li><a href="./04-awesome_bioinfo/index.html">Awesome bioinformatics</a></li>
+          
+            <li><a href="./05-multiple_gene_copies/index.html">Multiple gene copies</a></li>
+          
+        </ul>
+      </li>
+
+      
+
+      <li class="dropdown">
+      <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+            <li><a href="./about/">Authors</a></li>
+          
+            <li><a href="./acknowledgments/">Acknowledgements</a></li>
+          
+            <li><a href="./faq/index.html">FAQ</a></li>
+          
+            <li><a href="./intro_slides/index.html">Intro Slides</a></li>
+          
+        </ul>
+      </li>
+
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" title="Google search" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="maintitle">Setup</h1>
+
+
+
+<article>
+
+<h2 id="setup">Setup</h2>
+<p>
+  To participate in a this workshop, you will need access to UF Hipergator and the software described below.
+</p>
+<p>
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href="https://bioinfoaps.github.io/faq.html">FAQ page</a>.
+</p>
+
+<h3 id="zoom">Install the videoconferencing client</h3>
+
+<p>
+  If you haven't used Zoom before, go to the
+  <a href="https://zoom.us/download">official website</a>
+  to download and install the Zoom client for your computer.
+</p>
+
+<h4>Set up your workspace</h4>
+
+<p>
+  Like other bioinformatics workshops,
+  you will be learning by "coding along" with the Instructors.
+  To do this, you will need to have three windows open at the same time,
+  one for the command line shell (powershell/terminal),
+  one for the website (to copy commands),
+  and one window for the Zoom video conference client.
+  In order to see all three at once,
+  we recommend using one of the following set up options:
+  <ul>
+    <li><strong>Two monitors:</strong> If you have two monitors,
+      plan to have your terminal and website up on one monitor and
+      the video conferencing software on the other.</li>
+    <li><strong>Two devices:</strong> If you don't have two monitors,
+      do you have another device (tablet, smartphone) with a medium to large
+      sized screen? If so, try using the smaller device as your video
+      conference connection and your larger device (laptop or desktop)
+      to follow along with the terminal and the website.</li>
+    <li><strong>Divide your screen:</strong> If you only have one device
+      and one screen, practice having three windows
+      (the zoom window, a terminal/powershell and the website) open together.
+      How can you best fit both on your screen?
+      Try it out in advance to decide what will work best for you.</li>
+  </ul>
+</p>
+
+<div id="vpn">
+  <h3 id="connecting-to-gatorlink-vpn">Connecting to Gatorlink VPN</h3>
+  <p>Gatorlink VPN is required to access University if Florida Research Computing OnDemand
+service, which will provide access to HiperGator cluster.</p>
+  <ol>
+    <li>Visit <a href="https://vpn.ufl.edu" target="_blank">UF VPN webpage (vpn.ufl.edu)</a>.</li>
+    <li>Login using the username and password that was emailed to you.</li>
+    <li>In the next page, download <strong>Cisco Anyconnect</strong> software and install it.</li>
+    <li>Once installed, run <strong>Cisco Anyconnect</strong> and click <strong>Connect</strong>.</li>
+    <li>Enter the username and password provided and click <strong>OK</strong>. 
+You should now be connected to Gatorlink VPN.</li>
+  </ol>
+</div>
+
+<div id="shell">
+  <h3 id="connecting-to-hipergator">Connecting to HiperGator</h3>
+  <p>Make sure you are connected to Gatorlink VPN before the following steps.</p>
+  <ol>
+    <li>In you web browser, navigate to <a href="https://ood.rc.ufl.edu/" target="_blank">UFRC OnDemand (ood.rc.ufl.edu)</a>.</li>
+    <li>Login using provided username and password. You will be redirected to UFRC OnDemand homepage.</li>
+    <li>To connect to remote shell, click on <strong>Clusters</strong> in navbar and click 
+<strong>Hipergator Shell Access</strong>. Note that the shell will open in new tab.</li>
+    <li>To view and transfer your files, click on <strong>Files</strong> in navbar 
+in UFRC OnDemand homepage and click <strong>/blue/general_workshop</strong>.
+Double click on directory named as your username to find your files.</li>
+  </ol>
+</div>
+
+<blockquote class="notes">
+  <p>To view instructions for connection using terminal, click <a href="setup-old.html">here</a>.
+Note that this method does not work with guest accounts in Hipergator.</p>
+</blockquote>
+
+<div id="editor">
+  <h3>(Recommended) Text Editor</h3>
+
+  <p>
+    When you're writing code, it's nice to have a text editor that is
+    optimized for writing code, with features like automatic
+    color-coding of key words. Installation of one of the suggested 
+    text editors is recommended but not necessary.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#editor-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#editor-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#editor-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="editor-windows">
+        <p>
+          You can use 
+          <a href="https://notepad-plus-plus.org/">Notepad++</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>
+          to edit the code. You can access download page by clicking the
+          the name above.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="editor-macos">
+        <p>
+          You can use 
+          <a href="https://www.barebones.com/products/bbedit/">BBedit</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>
+          to edit the code. You can access download page by clicking the
+          the name above.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="editor-linux">
+        <p>
+          You can use one of the following text editors in linux.
+          <ul>
+            <li>
+              <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>
+              <pre>sudo apt-get install gedit</pre>
+            </li>
+            <li>
+              <a href="https://kate-editor.org/">Kate</a>
+              <pre>sudo apt-get install kate</pre>
+            </li>
+            <li>
+              <a href="https://www.sublimetext.com/">Sublime Text</a>
+              <pre>sudo apt-get install sublime-text</pre>
+            </li>
+          </ul>
+          You can access download page by clicking the
+          the name above or install using command line from respective commands.
+        </p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<h3 class="figtree" id="optional-figtree-for-tree-visualization">(Optional) Figtree for tree visualization</h3>
+<p>We will generate a tree in Newick format. 
+You can download a tree viewing software such as 
+<a href="http://tree.bio.ed.ac.uk/software/figtree/">Figtree</a> to visualize the tree.
+Figtree is available for download for Windows, MacOS and Linux from 
+its <a href="https://github.com/rambaut/figtree/releases">github repository</a>.</p>
+
+</article>
+
+      
+      
+<footer>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	      Copyright &copy; 2020–2022 <a href="https://github.com/BioInfoAPS">APS Basic Bioinformatics Workshop Team</a>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/lesson.js"></script>
+
+<script>
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+var show_instructions = function() {
+     //set all nav tabs to inactive
+    $('.nav-tabs li').removeClass('active');
+
+    //get all nav tabs matching the os and set to active
+    $('.nav-tabs li a[href*="'+localStorage.os+'"]').closest('li').addClass('active');
+
+    //set all tabs to inactive
+    $('.tab-pane').removeClass('active');
+
+    //get all tabs matching the os and set to active
+    $('.tab-pane[id*="'+localStorage.os+'"]').addClass('active');
+}
+
+if (typeof(Storage) !== "undefined") {
+    if (localStorage.os == "undefined") {
+        localStorage.os = "windows";
+    }
+    show_instructions();
+} else {
+    console.log("No localStorage");
+}
+
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+$('.nav-tabs li a').click(function(){
+    //get selected os
+    localStorage.os = $(this)[0].dataset.os;
+    show_instructions();
+});
+
+  // detect misssing iframe for Eventbrite
+  $(document).ready(function(){
+      if ($('iframe').height() == 0) {
+          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid=&ref=etckt">https://www.eventbrite.com/tickets-external?eid=&ref=etckt</a> to register.</p>');
+      }
+  });
+
+  // hide alerts when site is rendered on carpentries.github.io
+  $(document).ready(function() {
+      if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
+          $("div.alert").hide();
+      }
+  });
+
+</script>
+
+  </body>
+</html>

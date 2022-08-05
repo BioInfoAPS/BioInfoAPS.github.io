@@ -5,10 +5,12 @@
 .sass-cache
 .jekyll-cache/
 __pycache__
-_site
 .Rproj.user
 .Rhistory
 .RData
+_site/pyani/
+_site/files/
+_site/codecheck/
 .bundle/
 .vendor/
 vendor/

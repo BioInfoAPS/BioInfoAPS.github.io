@@ -1,0 +1,781 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="last-modified" content="2022-08-05 00:43:44 -0400">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- meta "search-domain" used for google site search function google_search() -->
+    <meta name="search-domain" value="">
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/bootstrap-theme.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/lesson.css" />
+    <link rel="stylesheet" type="text/css" href="./assets/css/syntax.css" />
+    <link rel="license" href="#license-info" />
+
+    
+
+    <!-- Favicons for everyone -->
+    <link rel="apple-touch-icon-precomposed" sizes="57x57" href="./assets/favicons/apple-touch-icon-57x57.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="./assets/favicons/apple-touch-icon-114x114.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="./assets/favicons/apple-touch-icon-72x72.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="./assets/favicons/apple-touch-icon-144x144.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="60x60" href="./assets/favicons/apple-touch-icon-60x60.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="./assets/favicons/apple-touch-icon-120x120.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="./assets/favicons/apple-touch-icon-76x76.png" />
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="./assets/favicons/apple-touch-icon-152x152.png" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-196x196.png" sizes="196x196" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-32x32.png" sizes="32x32" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-16x16.png" sizes="16x16" />
+    <link rel="icon" type="image/png" href="./assets/favicons/favicon-128.png" sizes="128x128" />
+    <meta name="application-name" content="Basic	bioinformatics and command-line	tools	for phytopathologists"/>
+    <meta name="msapplication-TileColor" content="#FFFFFF" />
+    <meta name="msapplication-TileImage" content="./assets/favicons/mstile-144x144.png" />
+    <meta name="msapplication-square70x70logo" content="./assets/favicons/mstile-70x70.png" />
+    <meta name="msapplication-square150x150logo" content="./assets/favicons/mstile-150x150.png" />
+    <meta name="msapplication-wide310x150logo" content="./assets/favicons/mstile-310x150.png" />
+    <meta name="msapplication-square310x310logo" content="./assets/favicons/mstile-310x310.png" />
+
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+	<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+	<![endif]-->
+
+  <title>
+  Setup &ndash; Basic	bioinformatics and command-line	tools	for phytopathologists
+  </title>  
+
+  </head>
+  <body>
+
+    <div class="container">
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      
+      <a href="" class="pull-left">
+        <img class="navbar-logo" src="./assets/logo/icon.svg" alt="Data Carpentry logo" />
+      </a>
+      
+
+      
+      <a class="navbar-brand" href="./">Home</a>
+
+    </div>
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav">
+
+	      
+        <li><a href="./setup.html">Setup</a></li>
+
+        
+        <li class="dropdown">
+          <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Lessons <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            
+            
+            <li><a href="./01-unix/index.html">UNIX command line</a></li>
+            
+            
+            <li><a href="./02-slurm/index.html">SLURM workload manager</a></li>
+            
+            
+            <li><a href="./03-blast/index.html">BLAST search</a></li>
+            
+            
+            <li><a href="./04-parse/index.html">Parsing BLAST output</a></li>
+            
+            
+            <li><a href="./05-tree/index.html">Phylogenetic tree</a></li>
+            
+          </ul>
+        </li>
+
+        
+
+      
+
+      <li class="dropdown">
+        <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Optional <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+            <li><a href="./01-more_unix/index.html">More UNIX commands</a></li>
+          
+            <li><a href="./02-text_process/index.html">FASTA manipulation with awk</a></li>
+          
+            <li><a href="./03-extra_tools/index.html">Another bioinformatic tool: PyANI</a></li>
+          
+            <li><a href="./04-awesome_bioinfo/index.html">Awesome bioinformatics</a></li>
+          
+            <li><a href="./05-multiple_gene_copies/index.html">Multiple gene copies</a></li>
+          
+        </ul>
+      </li>
+
+      
+
+      <li class="dropdown">
+      <a href="./" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Extras <span class="caret"></span></a>
+        <ul class="dropdown-menu">
+          
+            <li><a href="./about/">Authors</a></li>
+          
+            <li><a href="./acknowledgments/">Acknowledgements</a></li>
+          
+            <li><a href="./faq/index.html">FAQ</a></li>
+          
+            <li><a href="./intro_slides/index.html">Intro Slides</a></li>
+          
+        </ul>
+      </li>
+
+      </ul>
+      <form class="navbar-form navbar-right" role="search" id="search" onsubmit="google_search(); return false;">
+        <div class="form-group">
+          <input type="text" title="Google search" id="google-search" placeholder="Search..." aria-label="Google site search">
+        </div>
+      </form>
+    </div>
+  </div>
+</nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<h1 class="maintitle">Setup</h1>
+
+
+
+<article>
+
+<h2 id="setup">Setup</h2>
+<p>
+  To participate in a this workshop, you will need access to the software described below.
+</p>
+<p>
+  We maintain a list of common issues that occur during installation as a reference for instructors
+  that may be useful on the
+  <a href="https://bioinfoaps.github.io/faq.html">FAQ page</a>.
+</p>
+
+<h3 id="zoom">Install the videoconferencing client</h3>
+
+<p>
+  If you haven't used Zoom before, go to the
+  <a href="https://zoom.us/download">official website</a>
+  to download and install the Zoom client for your computer.
+</p>
+
+<h4>Set up your workspace</h4>
+
+<p>
+  Like other bioinformatics workshops,
+  you will be learning by "coding along" with the Instructors.
+  To do this, you will need to have three windows open at the same time,
+  one for the command line shell (powershell/terminal),
+  one for the website (to copy commands),
+  and one window for the Zoom video conference client.
+  In order to see all three at once,
+  we recommend using one of the following set up options:
+  <ul>
+    <li><strong>Two monitors:</strong> If you have two monitors,
+      plan to have your terminal and website up on one monitor and
+      the video conferencing software on the other.</li>
+    <li><strong>Two devices:</strong> If you don't have two monitors,
+      do you have another device (tablet, smartphone) with a medium to large
+      sized screen? If so, try using the smaller device as your video
+      conference connection and your larger device (laptop or desktop)
+      to follow along with the terminal and the website.</li>
+    <li><strong>Divide your screen:</strong> If you only have one device
+      and one screen, practice having three windows
+      (the zoom window, a terminal/powershell and the website) open together.
+      How can you best fit both on your screen?
+      Try it out in advance to decide what will work best for you.</li>
+  </ul>
+</p>
+
+<div id="ssh-client">
+  <h3>Accessing SSH</h3>
+  <p>
+    University of Florida has a supercomputer cluster with latest generation
+    of processors for memory intensive computings called 
+    High-Performance Cluster 
+    (or <a href="https://www.rc.ufl.edu/services/hipergator/">HiperGator</a> in short).
+    We will connect to HiperGator from your computer using SSH.
+    The SSH protocol (also referred to as Secure Shell) 
+    is a method for secure remote login from one computer to another.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows 11</a></li>
+      <li role="presentation"><a data-os="windows10" href="#shell-win10" aria-controls="Windows10" role="tab" data-toggle="tab">Windows 10</a></li>
+      <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="shell-windows">
+        <p>
+          Windows 11 does not have SSH client by default. However, 
+          SSH can be added from Optional Features.
+          This can be performed through GUI or command line.
+        </p>
+        <h4>Using graphical interface</h4>
+        <ol>
+          <li>
+            Search for <code>optional</code> in windows search 
+            (<kbd>Win</kbd> + <kbd>S</kbd>) and click on 
+            <strong>Manage Optional features</strong>.
+          </li>
+          <li>
+            Check if <strong>OpenSSH Client</strong> is present in the 
+            list of installed features. If it is present, SSH client is installed, 
+            so you can skip rest of the steps.
+          </li>
+          <li>
+            Click on <strong>Add a feature</strong>. 
+            Search for <code>ssh</code>. Click checkbox next to 
+            <strong>OpenSSH Client</strong> and click <strong>Install</strong>.
+          </li>
+          <li>
+            Wait for the install to complete.
+          </li>
+        </ol>
+
+        <h4>Using command line interface</h4>
+        <ol>
+          <li>
+            Open <strong>Windows Terminal</strong> in administrative mode.
+            <ul>
+              <li>
+                Method 1: Search for <code>terminal</code> in windows search 
+                (<kbd>Win</kbd>+<kbd>S</kbd>). Right-click on 
+                <strong>Windows Terminal</strong> and click 
+                <strong>Run as administrator</strong>.
+              </li>
+              <li>
+                Method 2: Right click on start button, then click 
+                <strong>Windows Terminal (Admin)</strong>.
+              </li>
+              <li>
+                Method 3: Press keyboard shortcut <kbd>Win</kbd>+<kbd>X</kbd>, then click 
+                <strong>Windows Terminal (Admin)</strong>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Click <strong>Yes</strong> button in UAC prompt.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</pre>
+          <li>
+            If the value of <code>state</code> under <code>OpenSSH.Client</code> 
+            is <code>Installed</code>, SSH client is present and you can skip next steps.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0</pre>
+          <li>
+            If the output includes <code>Online: True</code>, then SSH Client is
+            successfuly installed.
+          </li>
+          <p>You can close <strong>Windows Terminal</strong> now.</p>
+        </ol>
+        <p>
+          To start using SSH, Open <strong>Windows Terminal</strong>. For this, 
+          search for <code>terminal</code> in windows search 
+          (<kbd>Win</kbd>+<kbd>S</kbd>) and click on 
+          <strong>Windows Terminal</strong>. Alternatively, 
+          right-click start button or press <kbd>Win</kbd>+<kbd>X</kbd> and 
+          click <strong>Windows Terminal</strong>.
+        </p>
+        <p>
+          For ease of access, 
+          you may want to pin Windows Terminal in your taskbar for this workshop.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="shell-win10">
+        <p>
+          Windows 10 does not have SSH client by default. However, 
+          SSH can be added from Optional Features in recent version
+          of Windows 10. This can be performed through GUI or command line.
+        </p>
+        <h4>Using graphical interface</h4>
+        <ol>
+          <li>
+            Search for <code>optional</code> in windows search 
+            (<kbd>Win</kbd> + <kbd>S</kbd>) and click on 
+            <strong>Manage Optional features</strong>.
+          </li>
+          <li>
+            Check if <strong>OpenSSH Client</strong> is present in the 
+            list of installed features. If it is present, SSH client is installed, 
+            so you can skip rest of the steps.
+          </li>
+          <li>
+            Click on <strong>Add a feature</strong>. 
+            Search for <code>ssh</code>. Click checkbox next to 
+            <strong>OpenSSH Client</strong> and click <strong>Install</strong>.
+          </li>
+          <li>
+            Wait for the install to complete.
+          </li>
+        </ol>
+
+        <h4>Using command line interface</h4>
+        <ol>
+          <li>
+            Open <strong>PowerShell</strong> in administrative mode.
+            <ul>
+              <li>
+                Method 1: Search for <code>powershell</code> in windows search 
+                (<kbd>Win</kbd>+<kbd>S</kbd>). Right-click on 
+                <strong>Windows powershell</strong> and click 
+                <strong>Run as administrator</strong>.
+              </li>
+              <li>
+                Method 2: Right click on start button, then click 
+                <strong>Windows Powershell (Admin)</strong>.
+              </li>
+              <li>
+                Method 3: Press keyboard shortcut <kbd>Win</kbd>+<kbd>X</kbd>, then click 
+                <strong>Windows Powershell (Admin)</strong>.
+              </li>
+            </ul>
+          </li>
+          <li>
+            Click <strong>Yes</strong> button in UAC prompt.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Get-WindowsCapability -Online | ? Name -like 'OpenSSH*'</pre>
+          <li>
+            If the value of <code>state</code> under <code>OpenSSH.Client</code> 
+            is <code>Installed</code>, SSH client is present and you can skip next steps.
+          </li>
+          <li>
+            Enter the following:
+          </li>
+          <pre>Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0</pre>
+          <li>
+            If the output includes <code>Online: True</code>, then SSH Client is
+            successfuly installed.
+          </li>
+        </ol>
+        <p>
+          To start using SSH, Open <strong>Powershell</strong>. For this, 
+          search for <code>powershell</code> in windows search 
+          (<kbd>Win</kbd>+<kbd>S</kbd>) and click on 
+          <strong>Windows powershell</strong>. Alternatively, 
+          right-click start button or press <kbd>Win</kbd>+<kbd>X</kbd> and 
+          click <strong>Windows Powershell</strong>.
+        </p>
+        <p>
+          For ease of access, 
+          you may want to pin Powershell in your taskbar for this workshop.
+        </p>
+        <p>
+          Note: Earlier versions of Windows 10 
+          do not have <strong>Optional Features</strong>.
+          For such Windows devices,
+          we recommend downloading Putty from 
+          <a href="https://www.putty.org/">putty.org</a>.
+          Note: Follow 
+          <a href="https://mediatemple.net/community/products/dv/204404604/using-ssh-in-putty-(windows)">this</a> 
+          guide instead of the instructions below if you are using <code>Putty</code>.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="shell-macos">
+        <p>
+          SSH client is available by default in all versions of macOS, 
+          so there is no need to install anything.
+        </p>
+        <p>
+          To start using SSH, open the Terminal either from 
+          <code>/Applications/Utilities</code> or by searching for
+          <code>terminal</code> in 
+          Spotlight (<kbd>Cmd</kbd>+<kbd>Space</kbd>).
+        </p>
+        <p>
+          For ease of access, 
+          you may want to pin Terminal in your dock for this workshop.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="shell-linux">
+        <p>
+          SSH client is avilable by default in most linux distros, 
+          so there is no need to install anything.
+        </p>
+        <p>
+          To start using SSH, open the Terminal from Application list.
+          Ubuntu based distros can open Terminal with 
+          keyboard shortcut <kbd>Ctrl</kbd>+<kbd>Alt</kbd>+<kbd>T</kbd>.
+        </p>
+        <p>
+          For ease of access, 
+          you may want to pin Terminal in desktop panel for this workshop.
+        </p>
+      </article>
+    </div>
+  </div>
+  <br />
+<ol>
+ <li>
+    In terminal/powershell, type (or copy and paste) the following command and press <kbd>Enter</kbd> key.
+    Do not forget to replace
+    &lt;username&gt; with your provided username.
+    <pre>ssh &lt;username&gt;@hpg.rc.ufl.edu</pre>
+ </li>
+<li>
+    If you are connecting for the first time, 
+you will be prompted to verify the ECDSA keys as shown below.
+<pre>The authenticity of host 'hpg.rc.ufl.edu (128.227.221.250)' can't be established.
+ECDSA key fingerprint is SHA256:z5zVt98Qo+rj0wiWrUhsvuTxVAjFEBePQwcRLq5g2ZI.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?</pre>
+</li>
+<li>
+    Type <code>yes</code> and press <kbd>Enter</kbd> key.
+</li>
+<li>
+Next, you will be prompted to enter password as shown below. 
+Type the provided password and hit <kbd>Enter</kbd> key.
+<pre>&lt;username&gt;@hpg.rc.ufl.edu's password:</pre>
+Note that, as you type in the password, 
+the typed characters to not appear on the screen.
+That is by design.
+</li>
+</ol>
+<p>
+ If you typed your password correctly, 
+you will be able to access HiperGator.
+The following welcome screen will appear.
+</p>
+<p>
+<pre>
+  Welcome to UF Research Computing
+  ________________________________
+
+The user agrees to comply with Research Computing's policies.
+
+https://www.rc.ufl.edu/services/procedures/
+
+...
+...
+
+[&lt;username&gt;@login1 ~]$</pre>
+  If you are unable to login to HiperGator, 
+  please contact the instructors.
+</p>
+</div>
+
+<div id="sftp">
+    <h3>Transferring files</h3>
+    <p>
+    Transfering files to and from remote server and your local computer
+    requires a separate transfer protocol, such as Samba or SFTP.
+    The complete list of data transfer methods available for HiperGator 
+    is listed in its 
+    <a href="https://help.rc.ufl.edu/doc/Transfer_Data">wiki page</a>.
+    We recommend use of SFTP (Secure File Transfer Protocol) for 
+    accessing files for this workshop. 
+    Although commandline version of SFTP are often bundled with SSH, 
+    we recommend use of graphical softwares for ease of use if you 
+    are not familiar with <code>sftp</code> commands.
+    </p>
+
+    <div>
+        <ul class="nav nav-tabs" role="tablist">
+            <li role="presentation" class="active"><a data-os="windows" href="#shell-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+            <li role="presentation"><a data-os="macos" href="#shell-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+            <li role="presentation"><a data-os="linux" href="#shell-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <article role="tabpanel" class="tab-pane active" id="shell-windows">
+                <p>
+                    You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
+                    <a href="hhttps://winscp.net/">WinSCP</a> for uploading or downloading 
+                    data from remote SFTP server.
+                </p>
+            </article>
+            <article role="tabpanel" class="tab-pane" id="shell-macos">
+                <p>
+                    You can use <a href="https://filezilla-project.org/">Filezilla</a> and 
+                    <a href="https://cyberduck.io/">Cyberduck</a> for uploading or downloading 
+                    data from remote SFTP server. 
+                </p>
+            </article>
+            <article role="tabpanel" class="tab-pane" id="shell-linux">
+                <p>
+                    You can mount SFTP as virtual filesystem using sshfs 
+                    and access the files using file any file manager. 
+                </p>
+                <pre>
+sudo apt install sshfs
+mkdir /&lt;mountpoint&gt;
+sshfs &lt;username&gt;@hpg.rc.ufl.edu:/blue/general_workshop/&lt;username&gt; /opt/&lt;mountpoint&gt;</pre>
+                <p>
+                    Alternatively, you can use <a href="https://filezilla-project.org/">Filezilla</a> 
+                    for uploading or downloading data from remote SFTP server. 
+                </p>
+            </article>
+        </div>
+    </div>
+    <br />
+    <p>
+        The following instructions are for Filezilla.
+    </p>
+    <ol>
+        <li>
+            Download Filezilla using 
+            <a href="https://filezilla-project.org/download.php?type=client">this link</a>.
+        </li>
+        <li>
+            Install Filezilla and then run the program.
+        </li>
+        <li>
+            Fill the following information in quickconnect panel and press 
+            <strong>Quickconnect</strong> button.
+            <ul>
+                <li>Host: <code>hpg.rc.ufl.edu</code></li>
+                <li>Username: provided username</li>
+                <li>Password: provided passsowd</li>
+                <li>Port: <code>22</code></li>
+            </ul>
+            <img src="fig/quickconnect.jpg" alt="Filezilla Quickconnect" />
+        </li>
+        <li>
+            Click <code>OK</code> if prompted to certify the RSA key fingerprint.
+        </li>
+        <li>Change remote site to the following. Do not forget to replace
+            &lt;username&gt; with the provided username.
+                <pre>/blue/general_workshop/&lt;username&gt;</pre>
+        </li>
+    </ol>
+    <h3>Video instruction for logging in using Filezilla</h3>
+    <div style="max-width: 720px;">
+        <div style="position:relative; width:100%; height: 0; padding-bottom: 75%;">
+            <iframe style="position:absolute; width:100%; height: 100%;" src="https://mediasite.video.ufl.edu/Mediasite/Play/873a2b08bf1d4ccda49a51f5c84692491d" frameborder="0">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<div id="editor">
+  <h3>(Recommended) Text Editor</h3>
+
+  <p>
+    When you're writing code, it's nice to have a text editor that is
+    optimized for writing code, with features like automatic
+    color-coding of key words. Installation of one of the suggested 
+    text editors is recommended but not necessary.
+  </p>
+
+  <div>
+    <ul class="nav nav-tabs" role="tablist">
+      <li role="presentation" class="active"><a data-os="windows" href="#editor-windows" aria-controls="Windows" role="tab" data-toggle="tab">Windows</a></li>
+      <li role="presentation"><a data-os="macos" href="#editor-macos" aria-controls="MacOS" role="tab" data-toggle="tab">MacOS</a></li>
+      <li role="presentation"><a data-os="linux" href="#editor-linux" aria-controls="Linux" role="tab" data-toggle="tab">Linux</a></li>
+    </ul>
+
+    <div class="tab-content">
+      <article role="tabpanel" class="tab-pane active" id="editor-windows">
+        <p>
+          You can use 
+          <a href="https://notepad-plus-plus.org/">Notepad++</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>
+          to edit the code. You can access download page by clicking the
+          the name above.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="editor-macos">
+        <p>
+          You can use 
+          <a href="https://www.barebones.com/products/bbedit/">BBedit</a> or
+          <a href="https://www.sublimetext.com/">Sublime Text</a>
+          to edit the code. You can access download page by clicking the
+          the name above.
+        </p>
+      </article>
+      <article role="tabpanel" class="tab-pane" id="editor-linux">
+        <p>
+          You can use one of the following text editors in linux.
+          <ul>
+            <li>
+              <a href="https://wiki.gnome.org/Apps/Gedit">Gedit</a>
+              <pre>sudo apt-get install gedit</pre>
+            </li>
+            <li>
+              <a href="https://kate-editor.org/">Kate</a>
+              <pre>sudo apt-get install kate</pre>
+            </li>
+            <li>
+              <a href="https://www.sublimetext.com/">Sublime Text</a>
+              <pre>sudo apt-get install sublime-text</pre>
+            </li>
+          </ul>
+          You can access download page by clicking the
+          the name above or install using command line from respective commands.
+        </p>
+      </article>
+    </div>
+  </div>
+</div>
+
+<h3 class="figtree" id="optional-figtree-for-tree-visualization">(Optional) Figtree for tree visualization</h3>
+<p>We will generate a tree in Newick format. 
+You can download a tree viewing software such as 
+<a href="http://tree.bio.ed.ac.uk/software/figtree/">Figtree</a> to visualize the tree.
+Figtree is available for download for Windows, MacOS and Linux from 
+its <a href="https://github.com/rambaut/figtree/releases">github repository</a>.</p>
+
+</article>
+
+      
+      
+<footer>
+  <hr/>
+  <div class="row">
+    <div class="col-md-6" align="left">
+      <h4>
+	      Copyright &copy; 2020–2022 <a href="https://github.com/BioInfoAPS">APS Basic Bioinformatics Workshop Team</a>
+    </div>
+  </div>
+</footer>
+
+      
+    </div>
+    
+<script src="./assets/js/jquery.min.js"></script>
+<script src="./assets/js/bootstrap.min.js"></script>
+<script src="./assets/js/lesson.js"></script>
+
+<script>
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+var show_instructions = function() {
+     //set all nav tabs to inactive
+    $('.nav-tabs li').removeClass('active');
+
+    //get all nav tabs matching the os and set to active
+    $('.nav-tabs li a[href*="'+localStorage.os+'"]').closest('li').addClass('active');
+
+    //set all tabs to inactive
+    $('.tab-pane').removeClass('active');
+
+    //get all tabs matching the os and set to active
+    $('.tab-pane[id*="'+localStorage.os+'"]').addClass('active');
+}
+
+if (typeof(Storage) !== "undefined") {
+    if (localStorage.os == "undefined") {
+        localStorage.os = "windows";
+    }
+    show_instructions();
+} else {
+    console.log("No localStorage");
+}
+
+/* Based on https://stackoverflow.com/a/30894829/1802726 */
+$('.nav-tabs li a').click(function(){
+    //get selected os
+    localStorage.os = $(this)[0].dataset.os;
+    show_instructions();
+});
+
+  // detect misssing iframe for Eventbrite
+  $(document).ready(function(){
+      if ($('iframe').height() == 0) {
+          $('iframe').before('<p>Looks like your adblocker blocked the registration window. Please navigate to <a href="https://www.eventbrite.com/tickets-external?eid=&ref=etckt">https://www.eventbrite.com/tickets-external?eid=&ref=etckt</a> to register.</p>');
+      }
+  });
+
+  // hide alerts when site is rendered on carpentries.github.io
+  $(document).ready(function() {
+      if (location.href.startsWith("https://carpentries.github.io/workshop-template/")) {
+          $("div.alert").hide();
+      }
+  });
+
+</script>
+
+  </body>
+</html>
