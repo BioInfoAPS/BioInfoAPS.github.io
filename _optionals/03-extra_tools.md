@@ -86,7 +86,7 @@ ANIm_alignment_lengths.tab   ANIm_percentage_identity.tab
 You can now transfer `ANIm_percentage_identity.png` 
 to your computer to view the heatmap.
 
-<img src="/fig/ANIm_percentage_identity.png" height="500px">
+<img src="/assets/img/ANIm_percentage_identity.png" height="500px">
 
 You can also get numeric ANI values from the `ANIm_percentage_identity.tab` file.
 

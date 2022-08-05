@@ -123,7 +123,7 @@ We can download this tree only and visualize in our own computer using ‘Figtre
 Please use file transfer tool such as FileZilla or Cyberduck to download the file. 
 The tree will open as follows:
 
-![Phylogenentic tree](/fig/tree.png)
+![Phylogenentic tree](/assets/img/tree.png)
 
 > ## (Optional) Trees in ASCII!
 > To quickly visualize the tree, try this:
