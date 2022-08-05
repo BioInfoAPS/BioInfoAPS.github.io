@@ -62,7 +62,7 @@
 	<![endif]-->
 
   <title>
-  Basic	bioinformatics and command-line	tools	for phytopathologists
+  FAQ &ndash; Basic	bioinformatics and command-line	tools	for phytopathologists
   </title>  
 
   </head>
@@ -216,159 +216,50 @@
 
 
 
-<h1 class="maintitle"></h1>
+<h1 class="maintitle">FAQ</h1>
 
 
 
 <article>
+<h2 id="general">General</h2>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  
-  
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<h2>Key Points</h2>
-<table class="table table-striped">
-
-  
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="../01-unix/index.html">UNIX command line</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>pwd, ls and cd are three main commands that allow navigation through directories</p>
-</li>
-        
-        <li><p>cat, more and less display text files</p>
-</li>
-        
-        <li><p>sed and grep are command for replacing and extracting characters in a text file.</p>
-</li>
-        
-        <li><p>cut and sort are commands to edit text files.</p>
-</li>
-        
-        <li><p>Unix commands allow handling repetitive tasks, suing for or while loops.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="../02-slurm/index.html">SLURM workload manager</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>Don’t forget to edit the memory, CPU requested, and email in the SLURM request.</p>
-</li>
-        
-        <li><p>The job we submit here is a single thread. There are several other ways to submit the job. Multithreaded, Hybrid, GPU, and array scripts request resources depending on the job you are running.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="../03-blast/index.html">BLAST search</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>Using UNIX commands, we can customize blast searches.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="../04-parse/index.html">Parsing BLAST output</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>You can run bash command as a script in .sh file format.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-  
-  
-    <tr>
-      <td class="col-md-3">
-        <a href="../05-tree/index.html">Phylogenetic tree</a>
-      </td>
-      <td class="col-md-9">
-        <ul>
-        
-        <li><p>Don’t forget to check parameters of the software. Can be viewed using ‘-h’ followed by the software name.</p>
-</li>
-        
-        </ul>
-      </td>
-    </tr>
-  
-
-</table>
-
-
-
+<dl>
+  <dt><em>Where can I get help before the session?</em></dt>
+  <dd>Mail us at <a href="mailto:anujsharma@ufl.edu">anujsharma@ufl.edu</a>,
+or send a tweet to 
+<a href="https://twitter.com/sujantimilsina">@sujantimilsina</a>,
+<a href="https://twitter.com/Joxcar73">@Joxcar73</a> or
+<a href="https://twitter.com/rknx">@rknx</a>.</dd>
+  <dt><em>Where can I report problems or suggest improvements?</em></dt>
+  <dd>Please file an issue against <a href="https://github.com/BioInfoAPS/BioInfoAPS.github.io">this repository</a>
+or <a href="mailto:anujsharma@ufl.edu">mail us</a>.</dd>
+  <dt><em>Where is the information about setting up the computer?</em></dt>
+  <dd>Please check the <a href="https://bioinfoaps.github.io/setup">setup page</a> for the 
+information regarding setting up your device.</dd>
+  <dt><em>Do I have to pay for any of the software?</em></dt>
+  <dd>No. Everything we have recommended is available for free.</dd>
+  <dt><em>How do we ask for help if we get stuck in middle of session?</em></dt>
+  <dd>In addition to instructors, other moderators will be monitoring chats.
+Send us a message with the step number that you are facing 
+problem with, and also any error messages if applicable.</dd>
+  <dt><em>Can I just copy and paste the codes from the website?</em></dt>
+  <dd>Yes, but be careful. Only copy the lines with <code class="language-plaintext highlighter-rouge">$</code> sign. 
+The rest of the lines are output of the command. 
+The <code class="language-plaintext highlighter-rouge">$</code> sign itself should not be copied. 
+Also you will have to replace any code enclosed by <code class="language-plaintext highlighter-rouge">&lt; &gt;</code> with
+relevant value such as your username or email address.</dd>
+  <dt><em>Can we use any email address to replace <code class="language-plaintext highlighter-rouge">&lt;email_adress&gt;</code>?</em></dt>
+  <dd>We recommend using your temporary or permanent UF email address.</dd>
+  <dt><em>I do not know my username or email address?</em></dt>
+  <dd>Please stay tuned. We will provide those information 
+as they become available.</dd>
+  <dt><em>How can I share the workshop to social media?</em></dt>
+  <dd>You can 
+<a href="https://www.facebook.com/sharer/sharer.php?u=http%3A//bioinfoaps.github.io/" target="_blank" class="btn">Share on Facebook</a>,
+<a href="https://twitter.com/intent/tweet?text=http%3A//bioinfoaps.github.io/" target="_blank" class="btn">Tweet about it</a>,
+<a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=http%3A//bioinfoaps.github.io/&amp;title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists&amp;summary=&amp;source=" target="_blank" class="btn">Post to LinkedIn</a> or
+<a href="http://www.reddit.com/submit?url=https://bioinfoaps.github.io/&amp;title=Basic%20Bioinformatics%20Workshop%20for%20Plant%20Pathologists" target="_blank" class="btn">Submit to reddit</a>.</dd>
+</dl>
 
 </article>
 
