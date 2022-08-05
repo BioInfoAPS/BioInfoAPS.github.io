@@ -8,9 +8,7 @@ __pycache__
 .Rproj.user
 .Rhistory
 .RData
-_site/pyani/
-_site/files/
-_site/codecheck/
+files/
 .bundle/
 .vendor/
 vendor/
