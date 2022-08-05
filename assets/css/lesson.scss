@@ -1,6 +1,61 @@
 ---
 ---
 
+// new fonts
+
+@font-face {
+  font-family: "Mulish";
+  src: url('/assets/fonts/mulish-vf.ttf') format('truetype-variations');
+  src: url('/assets/fonts/mulish-vf.woff2') format('woff2-variations');
+  font-weight: 400 600;
+}
+
+@font-face {
+  font-family: "Mulish";
+  src: url('/assets/fonts/mulish-vf-ital.ttf') format('truetype-variations');
+  src: url('/assets/fonts/mulish-vf-ital.woff2') format('woff2-variations');
+  font-weight: 400 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Cascadia";
+  src: url('/assets/fonts/cascadiacode-vf.ttf') format('truetype-variations');
+  src: url('/assets/fonts/cascadiacode-vf.woff2') format('woff2-variations');
+  font-weight: 300 600;
+}
+
+body {
+  font-family: "Mulish", Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  font-variation-settings: 'wght' 400;
+  font-size:16px;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+  font-variation-settings: 'wght' 600;
+}
+
+b, strong {
+  font-weight: 900;
+  font-variation-settings: 'wght' 900;
+}
+
+em {
+  font-style: italic;
+  font-weight: 600;
+  font-variation-settings: 'wght' 600;
+}
+
+pre, code {
+  font-family: "Cascadia", "Consolas", 'Courier New', monospace;
+  font-size: inherit;
+  font-weight: 300;
+  font-variation-settings: 'wght' 300;
+  font-size:15px;
+}
+
 //----------------------------------------
 // Colors.
 //----------------------------------------
@@ -466,4 +521,22 @@ body{
 .button-cp.clicked {
   background-color: #9952f6;
   background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='white' d='M9 16.2L4.8 12l-1.4 1.4L9 19L21 7l-1.4-1.4L9 16.2z'/%3E%3C/svg%3E");
+}
+
+// Add a nicer font
+@font-face {
+  font-family: Mulish;
+  src: url('assets/fonts/vf.woff2') format(woff2-variations);
+  font-weight: 300 600;
+}
+
+body{
+  font-family: Mulish, Arial, Helvetica, sans-serif;
+  font-weight: 300;
+  font-variation-settings: 'wght' 300;
+}
+
+h1, h2, h3, b {
+  font-weight: 600;
+  font-variation-settings: 'wght' 600;
 }
