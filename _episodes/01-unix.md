@@ -37,6 +37,8 @@ For long or complex names, use connectors such “_" or ‘-’ instead of space
 ‘R’ is not the same as ‘r’ in commands, paths and arguments.
 - UNIX system uses `/` for path, unlike windows, which uses `\`.
 
+![UNIX filesystem](/assets/img/filesystem.svg)
+
 We will be working on ‘blue’ storage in HiperGator 
 for our workshop under a group name ‘general_workshop’. 
 Each user has a directory in the ‘general_workshop’ folder. 
@@ -111,6 +113,8 @@ drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsi
 {: .output}
 
 > ## Permissions in linux
+>
+>![Permissions in UNIX](/assets/img/permissions.svg)
 >
 > Linux permissions look like this: `d  r w x  r w −  r − −`
 >

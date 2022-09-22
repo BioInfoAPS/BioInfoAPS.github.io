@@ -1,5 +1,5 @@
 <div class="row">
-<div class="col-md-6" markdown="1">
+<div class="col-md-8" markdown="1">
 
 | Time | Particulars |
 | ------ | -------------------------------------- |

@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-08-05 18:39:18 -0400">
+    <meta http-equiv="last-modified" content="2022-09-21 16:05:38 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -62,7 +62,7 @@
 	<![endif]-->
 
   <title>
-  Another bioinformatic tool: PyANI &ndash; Basic	bioinformatics and command-line	tools	for phytopathologists
+  Awesome bioinformatics &ndash; Basic	bioinformatics and command-line	tools	for phytopathologists
   </title>  
 
   </head>
@@ -160,15 +160,15 @@
         <a href="../" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Optional <span class="caret"></span></a>
         <ul class="dropdown-menu">
           
-            <li><a href="../01-more_unix/index.html">More UNIX commands</a></li>
+            <li><a href="../10-more_unix/index.html">More UNIX commands</a></li>
           
-            <li><a href="../02-text_process/index.html">FASTA manipulation with awk</a></li>
+            <li><a href="../20-text_process/index.html">FASTA manipulation with awk</a></li>
           
-            <li><a href="../03-extra_tools/index.html">Another bioinformatic tool: PyANI</a></li>
+            <li><a href="../30-extra_tools/index.html">Another bioinformatic tool: PyANI</a></li>
           
-            <li><a href="../04-awesome_bioinfo/index.html">Awesome bioinformatics</a></li>
+            <li><a href="../40-awesome_bioinfo/index.html">Awesome bioinformatics</a></li>
           
-            <li><a href="../05-multiple_gene_copies/index.html">Multiple gene copies</a></li>
+            <li><a href="../50-multiple_gene_copies/index.html">Multiple gene copies</a></li>
           
         </ul>
       </li>
@@ -249,7 +249,7 @@
   <div class="col-xs-1">
     <h3 class="text-left">
       
-      <a href="../02-text_process/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      <a href="../30-extra_tools/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
       
     </h3>
   </div>
@@ -261,7 +261,7 @@
   <div class="col-xs-1">
     <h3 class="text-right">
       
-      <a href="../04-awesome_bioinfo/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      <a href="../50-multiple_gene_copies/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
       
     </h3>
   </div>
@@ -272,7 +272,7 @@
   <div class="col-md-1">
   </div>
   <div class="col-md-10">
-    <h1 class="maintitle">Another bioinformatic tool: PyANI</h1>
+    <h1 class="maintitle">Awesome bioinformatics</h1>
   </div>
   <div class="col-md-1">
   </div>
@@ -293,7 +293,7 @@
       <strong>Objectives</strong>
       <ul>
 	
-	<li><p>To calculate average nucleotide identity of a genome with related genomes.</p>
+	<li><p>To explore the list of common tools for various bioinformatic operations.</p>
 </li>
 	
       </ul>
@@ -302,101 +302,13 @@
 
 </blockquote>
 
-<p>In the regular lessons, we implemented three bioinformatic tools: 
-<code class="language-plaintext highlighter-rouge">blast</code> for homology search,
-<code class="language-plaintext highlighter-rouge">maaft</code> for sequence alignment, and
-<code class="language-plaintext highlighter-rouge">raxml</code> for phylogenetic analysis.</p>
+<p>This section lists the bioinformatic tools and resources collected at 
+<a href="https://github.com/danielecook/Awesome-Bioinformatics" target="_blank">Danielecook/Awesome-Bioinformatics</a>.</p>
 
-<p>In this section, we will discuss two more tools.</p>
+<div id="awesome_wrapper" style="overflow:hidden; width:100%; height:70vh">
+    <iframe width="100%" height="100%" src="https://www.danielecook.com/Awesome-Bioinformatics/" frameborder="0" marginwidth="0" marginheight="0" style="border: none; position: relative; top: -100px; height:calc(70vh + 100px)" allowfullscreen="" webkitallowfullscreen="" mozallowfullscreen="" msallowfullscreen=""> </iframe>
+</div>
 
-<h2 id="pyani">PyANI</h2>
-<p>PyANI is an open-source python-based tool for calculating 
-Average Nucleotide Identity (ANI) between two or more sequences.
-When comparing two genomes, first syntenic regions are identified
-using tools such as <code class="language-plaintext highlighter-rouge">mummer</code> or <code class="language-plaintext highlighter-rouge">blast</code>.
-Then the nucleotide identity is calculated in the syntenic regions.</p>
-
-<p>The source code for <strong>PyANI</strong> is available at 
-<a href="https://github.com/widdowquinn/pyani" target="_blank">widdowquinn/pyani</a>.
-The documentation for basic usage is available 
-<a href="https://github.com/widdowquinn/pyani/blob/master/README_v_0_2_x.md" target="_blank">here</a>.</p>
-
-<p>The first stage of PyANI is</p>
-
-<p><strong>PyANI</strong> v2 is available in Hipergator, but has to be loaded.
-The dependencies, <code class="language-plaintext highlighter-rouge">mummer</code> and <code class="language-plaintext highlighter-rouge">blast+</code> will be loaded together with <code class="language-plaintext highlighter-rouge">pyani</code>.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span>ml pyani
-</code></pre></div></div>
-
-<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Lmod is automatically replacing "python/3.8" with "pyani/0.2.10".
-</code></pre></div></div>
-
-<p>We will be using the genomes present in <code class="language-plaintext highlighter-rouge">files/ani</code> for computing ANI.
-The file <code class="language-plaintext highlighter-rouge">UXhortspp.fasta</code> contains genome of a unknown <em>X. hortorum</em> species.
-The other sequences are genome of some <em>X. hortorum</em> pathovars 
-downloaded from NCBI.</p>
-
-<blockquote class="tips">
-  <h2 id="getting-genome-sequences-from-ncbi">Getting genome sequences from NCBI</h2>
-  <p>PyANI has a script called <code class="language-plaintext highlighter-rouge">genbank_get_genomes_by_taxon.py</code> to download 
-all genomes for a taxon from NCBI.
-For usage, check the documentation linked above.</p>
-</blockquote>
-
-<p>The objective now is to perform pairwise comparisons of all reference genomes
-and calculate ANI. This can be performed with following command.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>average_nucleotide_identity.py <span class="nt">-i</span> files/ani <span class="nt">-o</span> ani <span class="nt">-m</span> ANIm <span class="nt">-g</span> <span class="nt">--gformat</span> png,pdf
-</code></pre></div></div>
-
-<blockquote class="notes">
-  <ul>
-    <li><code class="language-plaintext highlighter-rouge">average_nucleotide_identity.py</code> is the name of the script</li>
-    <li><code class="language-plaintext highlighter-rouge">-i</code> is used to specify directory containing input genomes/sequences.</li>
-    <li><code class="language-plaintext highlighter-rouge">-o</code> is used to specify output directory.
-Note that the program will exit if this directory preexists.</li>
-    <li><code class="language-plaintext highlighter-rouge">-m</code> is used to specify mode for alignment of syntenic region. 
-<code class="language-plaintext highlighter-rouge">ANIm</code> specifies <code class="language-plaintext highlighter-rouge">mummer</code> and <code class="language-plaintext highlighter-rouge">ANIb</code> specifies <code class="language-plaintext highlighter-rouge">blast+</code>.</li>
-    <li><code class="language-plaintext highlighter-rouge">-g</code> is used to generate graphic output, i.e., heatmap.
-<code class="language-plaintext highlighter-rouge">--gformat</code> specifies the graphic output formats.</li>
-  </ul>
-</blockquote>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">ls </span>ani
-</code></pre></div></div>
-
-<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ANIm_alignment_coverage.pdf  ANIm_hadamard.pdf             ANIm_similarity_errors.pdf
-ANIm_alignment_coverage.png  ANIm_hadamard.png             ANIm_similarity_errors.png
-ANIm_alignment_coverage.tab  ANIm_hadamard.tab             ANIm_similarity_errors.tab
-ANIm_alignment_lengths.pdf   ANIm_percentage_identity.pdf  nucmer_output.tar.gz
-ANIm_alignment_lengths.png   ANIm_percentage_identity.png
-ANIm_alignment_lengths.tab   ANIm_percentage_identity.tab
-</code></pre></div></div>
-
-<p>You can now transfer <code class="language-plaintext highlighter-rouge">ANIm_percentage_identity.png</code> 
-to your computer to view the heatmap.</p>
-
-<p><img src="/assets/img/ANIm_percentage_identity.png" height="500px" /></p>
-
-<p>You can also get numeric ANI values from the <code class="language-plaintext highlighter-rouge">ANIm_percentage_identity.tab</code> file.</p>
-
-<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">awk</span> <span class="s1">'NR==1{print "-"$0; next}{for (i=2; i&lt;=NF; i++) {$i=substr($i,1,5)}; print $0}'</span> ani8/ANIm_percentage_identity.tab | column <span class="nt">-t</span>
-</code></pre></div></div>
-
-<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-             Xpopuli  Xhgardneri  Xhcynarae  Xhhederae  Xhvitians  Xhunknown  Xhcarotae  Xhtaraxaci  Xhpelargonii
-Xpopuli       1.0      0.913       0.913      0.912      0.912      0.913      0.913      0.912       0.913
-Xhgardneri    0.913    1.0         0.993      0.960      0.982      0.999      0.961      0.974       0.958
-Xhcynarae     0.913    0.993       1.0        0.960      0.984      0.993      0.961      0.975       0.958
-Xhhederae     0.912    0.960       0.960      1.0        0.960      0.960      0.965      0.955       0.961
-Xhvitians     0.912    0.982       0.984      0.960      1.0        0.982      0.961      0.976       0.958
-Xhunknown     0.913    0.999       0.993      0.960      0.982      1.0        0.961      0.974       0.958
-Xhcarotae     0.913    0.961       0.961      0.965      0.961      0.961      1.0        0.956       0.961
-Xhtaraxaci    0.912    0.974       0.975      0.955      0.976      0.974      0.956      1.0         0.954
-Xhpelargonii  0.913    0.958       0.958      0.961      0.958      0.958      0.961      0.954       1.0
-</code></pre></div></div>
-
-<p>Based on ANI, the unknown strain seems closest to <em>X. hortorum pv. gardneri</em>.</p>
 
 </article>
 
@@ -448,7 +360,7 @@ Xhpelargonii  0.913    0.958       0.958      0.961      0.958      0.958      0
   <div class="col-xs-1">
     <h3 class="text-left">
       
-      <a href="../02-text_process/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
+      <a href="../30-extra_tools/index.html"><span class="glyphicon glyphicon-menu-left" aria-hidden="true"></span><span class="sr-only">previous episode</span></a>
       
     </h3>
   </div>
@@ -458,7 +370,7 @@ Xhpelargonii  0.913    0.958       0.958      0.961      0.958      0.958      0
   <div class="col-xs-1">
     <h3 class="text-right">
       
-      <a href="../04-awesome_bioinfo/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
+      <a href="../50-multiple_gene_copies/index.html"><span class="glyphicon glyphicon-menu-right" aria-hidden="true"></span><span class="sr-only">next episode</span></a>
       
     </h3>
   </div>

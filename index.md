@@ -1,7 +1,7 @@
 ---
 layout: workshop      # DON'T CHANGE THIS.
 # Detailed instructions -> https://carpentries.github.io/workshop-template/customization/index.html
-venue: "Plant health 2021"        # brief name of the institution
+venue: "Plant health 2022"        # brief name of the institution
 address: "https://bioinfoaps.github.io/"      # full street address or videoconferencing URL
 country: "us"      # lowercase two-letter ISO country code
 language: "en"     # lowercase two-letter ISO language code
@@ -10,11 +10,11 @@ longitude: "-82.361710"       # longitude of the workshop venue
 humandate: "Oct 26th, 2021"    # human-readable dates for the workshop 
 humantime: "12:00 pm - 5:00 pm"    # human-readable times for the workshop 
 timezone: "Eastern time"    # human-readable times for the workshop
-startdate: 2021-10-26      # machine-readable start date in YYYY-MM-DD
-enddate: 2021-10-26        # machine-readable end date in YYYY-MM-DD
-instructor: ["Jose C. Huguet-Tapia", "Sujan Timilsina"] # boxed, comma-separated list of instructors
-moderator: ["Liliana Cano", "Anuj Sharma", "Erica M. Goss", "Braham Dhillon"]     # boxed, comma-separated list of helpers
-email: ["jhuguet@ufl.edu", "sujan.timilsina@ufl.edu"]    # boxed, comma-separated list of contact email addresses
+startdate: 2022-10-18      # machine-readable start date in YYYY-MM-DD
+enddate: 2022-10-18        # machine-readable end date in YYYY-MM-DD
+instructor: ["Jose C. Huguet-Tapia", "Braham Dhillon"] # boxed, comma-separated list of instructors
+moderator: ["Liliana Cano", "Anuj Sharma", "Erica M. Goss"]     # boxed, comma-separated list of helpers
+email: ["jhuguet@ufl.edu", "dhillonb@ufl.edu"]    # boxed, comma-separated list of contact email addresses
 technical: "anujsharma@ufl.edu"    # email addresss for technical help
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
 eventbrite: false     # optional: alphanumeric key for Eventbrite registration, e.g., "1234567890AB" (if Eventbrite is being used)
