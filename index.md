@@ -7,7 +7,7 @@ country: "us"      # lowercase two-letter ISO country code
 language: "en"     # lowercase two-letter ISO language code
 latitude: "29.637690"        # latitude of workshop venue
 longitude: "-82.361710"       # longitude of the workshop venue 
-humandate: "Oct 26th, 2021"    # human-readable dates for the workshop 
+humandate: "Oct 18th, 2022"    # human-readable dates for the workshop 
 humantime: "12:00 pm - 5:00 pm"    # human-readable times for the workshop 
 timezone: "Eastern time"    # human-readable times for the workshop
 startdate: 2022-10-18      # machine-readable start date in YYYY-MM-DD
