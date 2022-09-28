@@ -9,7 +9,7 @@ objectives:
 - Learn how to navigate, open, and handle files using the terminal.
 - Understand the basic commands to parse text files containing biological data. 
 keypoints:
-- pwd, ls and cd are three main commands that allow navigation through directories
+- pwd, ls, and cd are three main commands that allow navigation through directories
 - cat, more and less display text files
 - sed and grep are command for replacing and extracting characters in a text file.
 - cut and sort are commands to edit text files.

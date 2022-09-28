@@ -8,12 +8,12 @@ language: "en"     # lowercase two-letter ISO language code
 latitude: "29.637690"        # latitude of workshop venue
 longitude: "-82.361710"       # longitude of the workshop venue 
 humandate: "Oct 18th, 2022"    # human-readable dates for the workshop 
-humantime: "12:00 pm - 5:00 pm"    # human-readable times for the workshop 
+humantime: "11:00 am - 4:00 pm"    # human-readable times for the workshop 
 timezone: "Eastern time"    # human-readable times for the workshop
 startdate: 2022-10-18      # machine-readable start date in YYYY-MM-DD
 enddate: 2022-10-18        # machine-readable end date in YYYY-MM-DD
 instructor: ["Jose C. Huguet-Tapia", "Braham Dhillon"] # boxed, comma-separated list of instructors
-moderator: ["Liliana Cano", "Anuj Sharma", "Erica M. Goss"]     # boxed, comma-separated list of helpers
+moderator: ["Liliana Cano", "Erica M. Goss", "Anuj Sharma"]     # boxed, comma-separated list of helpers
 email: ["jhuguet@ufl.edu", "dhillonb@ufl.edu"]    # boxed, comma-separated list of contact email addresses
 technical: "anujsharma@ufl.edu"    # email addresss for technical help
 collaborative_notes:  # optional: URL for the workshop collaborative notes, e.g. an Etherpad or Google Docs document (e.g., https://pad.carpentries.org/2015-01-01-euphoria)
