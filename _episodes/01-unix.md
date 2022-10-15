@@ -29,6 +29,7 @@ Once you login to HiperGator through SSH, you will start using a bash shell.
 {: .terminal}
 
 The `$` prompt shows that the bash shell is ready to accept bash commands.
+
 Before learning some basic commands, there are a few recommendations regarding UNIX systems.
 
 - The terminal syntax hates spaces between names. 
@@ -58,7 +59,8 @@ $ cd /blue/general_workshop/
 ~~~
 {: .language-bash}
 
-> Do not copy `$` sign.
+> When copying code, do not copy the `$` or `>` prompt signs.
+> Selection of prompt is disabled in **this** website.
 {: .caution}
 
 ## Basic Commands
@@ -895,16 +897,6 @@ $ for x in {0..3}
 ~~~
 {: .output}
 
-> Be careful when copying code. 
-> If you are copying the whole code block,  
-> - first paste it to a text editor,  
-> - remove starting `$` or `>` sign,  
-> - copy edited command and only then,  
-> - paste it into terminal or powershell.
->
-> Or click [here](/code/demo_for.txt){: .btn target="_blank"} to open a separate page to copy the code above.
-{: .caution}
-
 The process between `do` and `done` enclose task to be repeated.
 The variable `x` will take consecutive values from array `{0..3}` in each iteration.
 
@@ -941,9 +933,6 @@ $ while(($x < 4))
 {: .output}
 
 As in `for` loop, the commands to be looped over are enclosed between `do` and `done`. 
-
-> Click [here](/code/demo_while.txt){: target="_blank"} to open a separate page to copy the code above.
-{: .caution}
 
 
 > ## Learn more about unix commands

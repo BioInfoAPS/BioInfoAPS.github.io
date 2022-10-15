@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-09-28 15:34:03 -0400">
+    <meta http-equiv="last-modified" content="2022-10-14 20:46:01 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -426,21 +426,44 @@ If you run bootstraps, the output will be in a file named <code class="language-
 To understand about the arguments, you can run <code class="language-plaintext highlighter-rouge">ml raxml; raxmlHPC -h</code></p>
 </blockquote>
 
-<p>We can download this tree only and visualize in our own computer using ‘Figtree’. 
-Please use file transfer tool such as FileZilla or Cyberduck to download the file. 
-The tree will open as follows:</p>
+<h2 id="tree-visualization">Tree visualization</h2>
 
-<p><img src="/assets/img/tree.png" alt="Phylogenentic tree" /></p>
+<p>We can download this tree file in our own computer and 
+visualize using ‘Figtree’.</p>
+
+<p>Alternatively, we can use commandline-based utilities to generate image.
+We’ll use <code class="language-plaintext highlighter-rouge">ggtree</code> package in <code class="language-plaintext highlighter-rouge">R</code> programming language.</p>
+
+<p><code class="language-plaintext highlighter-rouge">R</code> and all necessary packages are already installed in Hipergator.
+A helper R script is available from scripts directory.
+Run the script as follows:</p>
+
+<p><code class="language-plaintext highlighter-rouge">Rscript &lt;script&gt; &lt;input file&gt; &lt;output name&gt;</code></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span>ml R
+
+<span class="gp">$ </span>Rscript ../../share/scripts/ggtree.R RAxML_bestTree.avrBs2_tree tree_avrbs2.pdf
+
+<span class="gp">$ </span><span class="nb">ls </span>tree_avrbs2.pdf
+</code></pre></div></div>
+
+<div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tree_avrbs2.pdf
+</code></pre></div></div>
+
+<p>Now we can navigate to OpenDemand dashboard to <strong>Files</strong> &gt; 
+<strong>/blue/general_workshop</strong> &gt; <strong><code class="language-plaintext highlighter-rouge">username</code>/phylogeny/</strong>.
+Select the file <strong>tree_avrbs2.pdf</strong> and click the <strong>Download</strong> button.</p>
+
+<p><img src="/assets/img/tree.jpg" alt="Phylogenentic tree" /></p>
 
 <blockquote class="challenge">
   <h2 id="optional-trees-in-ascii">(Optional) Trees in ASCII!</h2>
-  <p>To quickly visualize the tree, try this:</p>
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span>ml newick_utils
+  <p>To quickly visualize the tree within commandline, try this:</p>
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span>ml newick_utils/1.6
 
 <span class="gp">$ </span>nw_display RAxML_bestTree.avrBs2_tree
 </code></pre></div>  </div>
 </blockquote>
-<hr />
 
 <h2 id="phylogenetic-tree-pipeline">Phylogenetic tree pipeline</h2>
 

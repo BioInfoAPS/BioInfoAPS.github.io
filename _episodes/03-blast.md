@@ -294,10 +294,6 @@ $ for dbname in `cat dblist.txt`
 ~~~
 {: .language-bash}
 
-> After copying the code block, do not forget to remove the `$` or `>` sign.
-> Or click [here](/code/blastn_loop.txt){: target="_blank"} to open a separate page to copy the code.
-{: .caution}
-
 > ## Exercise: Performing blast search in SLURM
 > 
 > We can also run `blast` as a SLURM job, which is useful for long and resource intensive search.
