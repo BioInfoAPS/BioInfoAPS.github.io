@@ -119,22 +119,49 @@ $ sbatch slurm_tree.sh
 > To understand about the arguments, you can run `ml raxml; raxmlHPC -h`
 {: .tips}
 
-We can download this tree only and visualize in our own computer using ‘Figtree’. 
-Please use file transfer tool such as FileZilla or Cyberduck to download the file. 
-The tree will open as follows:
+## Tree visualization
 
-![Phylogenentic tree](/assets/img/tree.png)
+We can download this tree file in our own computer and 
+visualize using ‘Figtree’.
+
+Alternatively, we can use commandline-based utilities to generate image.
+We'll use `ggtree` package in `R` programming language.
+
+`R` and all necessary packages are already installed in Hipergator.
+A helper R script is available from scripts directory.
+Run the script as follows:
+
+`Rscript <script> <input file> <output name>` 
+
+~~~
+$ ml R
+
+$ Rscript ../../share/scripts/ggtree.R RAxML_bestTree.avrBs2_tree tree_avrbs2.pdf
+
+$ ls tree_avrbs2.pdf
+~~~
+{: .language-bash}
+
+~~~
+tree_avrbs2.pdf
+~~~
+{: .output}
+
+Now we can navigate to OpenDemand dashboard to **Files** > 
+**/blue/general_workshop** > **`username`/phylogeny/**.
+Select the file **tree_avrbs2.pdf** and click the **Download** button.
+
+![Phylogenentic tree](/assets/img/tree.jpg)
 
 > ## (Optional) Trees in ASCII!
-> To quickly visualize the tree, try this:
+> To quickly visualize the tree within commandline, try this:
 > ~~~
-> $ ml newick_utils
+> $ ml newick_utils/1.6
 >
 > $ nw_display RAxML_bestTree.avrBs2_tree
 > ~~~
 > {: .language-bash}
 {: .challenge}
----
 
 ## Phylogenetic tree pipeline
 
