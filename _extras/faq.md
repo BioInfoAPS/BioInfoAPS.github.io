@@ -9,7 +9,6 @@ permalink: /faq/index.html
 *Where can I get help before the session?*
 :   Mail us at [{{site.email}}](mailto:{{site.email}}),
     or send a tweet to 
-    [@sujantimilsina](https://twitter.com/sujantimilsina),
     [@Joxcar73](https://twitter.com/Joxcar73) or
     [@rknx](https://twitter.com/rknx).
 

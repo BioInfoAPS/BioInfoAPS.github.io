@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-10-14 20:46:01 -0400">
+    <meta http-equiv="last-modified" content="2022-10-17 14:45:52 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -396,7 +396,7 @@ Selection of prompt is disabled in <strong>this</strong> website.</p>
 </code></pre></div></div>
 
 <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>anujsharma     guest.11240     guest.11248     Intro_slides.pptx     share
-emgoss         guest.11241     guest.11249     jhuguet               sujan.timilsina
+emgoss         guest.11241     guest.11249     jhuguet               emgoss
 ...
 ...
 </code></pre></div></div>
@@ -410,9 +410,9 @@ size, date modified etc.</p>
 <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>drwxr-sr-x 3 anujsharma      general_workshop    4096 Sep 10 03:47 anujsharma
 ...
 ...
--rw-r----- 1 jhuguet         general_workshop 1290989 Sep  8 15:11 Intro_slides.pptx
-drwxr-sr-x 7 sujan.timilsina general_workshop    4096 Sep  8 15:27 share
-drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsina
+-rw-r----- 1 jhuguet general_workshop 1290989 Sep  8 15:11 Intro_slides.pptx
+drwxr-sr-x 7 jhuguet general_workshop    4096 Sep  8 15:27 share
+drwxr-sr-x 2 emogss  general_workshop    4096 Sep  8 11:01 emgoss
 </code></pre></div></div>
 
 <blockquote class="tips">
@@ -507,7 +507,7 @@ Use <code class="language-plaintext highlighter-rouge">pwd</code> to check the c
 <div class="language-plaintext output highlighter-rouge"><div class="highlight"><pre class="highlight"><code>newdir     file1.txt     file2.txt
 </code></pre></div></div>
 
-<p><code class="language-plaintext highlighter-rouge">cp -r</code> can be used for copying entire directories. <code class="language-plaintext highlighter-rouge">-R</code> stands for recursive.
+<p><code class="language-plaintext highlighter-rouge">cp -r</code> can be used for copying entire directories. <code class="language-plaintext highlighter-rouge">-r</code> stands for recursive.
 Copy the <code class="language-plaintext highlighter-rouge">demo</code> folder from share folder to your working directory.</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cp</span> <span class="nt">-r</span> /blue/general_workshop/share/demo ./
@@ -544,7 +544,7 @@ Copy the <code class="language-plaintext highlighter-rouge">demo</code> folder f
 
 <h3 id="removing-directories">Removing directories</h3>
 
-<p><code class="language-plaintext highlighter-rouge">rmdir</code> removes the specified directory from current path. 
+<p><code class="language-plaintext highlighter-rouge">rmdir</code> removes the specified directory <strong>if it is empty</strong>. 
 Lets remove the <code class="language-plaintext highlighter-rouge">newdir</code> we created earlier and 
 check if it is removed using <code class="language-plaintext highlighter-rouge">ls</code>.</p>
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">rmdir </span>newdir

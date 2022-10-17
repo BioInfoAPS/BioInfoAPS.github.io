@@ -90,7 +90,7 @@ $ ls
 
 ~~~
 anujsharma     guest.11240     guest.11248     Intro_slides.pptx     share
-emgoss         guest.11241     guest.11249     jhuguet               sujan.timilsina
+emgoss         guest.11241     guest.11249     jhuguet               emgoss
 ...
 ...
 ~~~
@@ -108,9 +108,9 @@ $ ls -l
 drwxr-sr-x 3 anujsharma      general_workshop    4096 Sep 10 03:47 anujsharma
 ...
 ...
--rw-r----- 1 jhuguet         general_workshop 1290989 Sep  8 15:11 Intro_slides.pptx
-drwxr-sr-x 7 sujan.timilsina general_workshop    4096 Sep  8 15:27 share
-drwxr-sr-x 2 sujan.timilsina general_workshop    4096 Sep  8 11:01 sujan.timilsina
+-rw-r----- 1 jhuguet general_workshop 1290989 Sep  8 15:11 Intro_slides.pptx
+drwxr-sr-x 7 jhuguet general_workshop    4096 Sep  8 15:27 share
+drwxr-sr-x 2 emogss  general_workshop    4096 Sep  8 11:01 emgoss
 ~~~
 {: .output}
 
@@ -217,7 +217,7 @@ newdir     file1.txt     file2.txt
 ~~~
 {: .output}
 
-`cp -r` can be used for copying entire directories. `-R` stands for recursive.
+`cp -r` can be used for copying entire directories. `-r` stands for recursive.
 Copy the `demo` folder from share folder to your working directory.
 
 ~~~
@@ -267,7 +267,7 @@ demo     newdir     file1.txt
 
 ### Removing directories
 
-`rmdir` removes the specified directory from current path. 
+`rmdir` removes the specified directory **if it is empty**. 
 Lets remove the `newdir` we created earlier and 
 check if it is removed using `ls`.
 ~~~
