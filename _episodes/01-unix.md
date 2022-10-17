@@ -90,7 +90,7 @@ $ ls
 
 ~~~
 anujsharma     guest.11240     guest.11248     Intro_slides.pptx     share
-emgoss         guest.11241     guest.11249     jhuguet               emgoss
+emgoss         guest.11241     guest.11249     jhuguet
 ...
 ...
 ~~~
