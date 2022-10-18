@@ -156,6 +156,10 @@ Xeu.fasta      Xeu.nin
 > New database files with extensions `.ndb`, `.nhr`, `.nsq` etc. have been created.
 {: .notes}
 
+> If we were making a protein database, we would use `-dbtype prot`
+> and provide amino acid fasta file.
+{: .notes}
+
 > ## Understanding command arguments
 > For most unix commandline commands, you can use `-h` or `--help` argument/flag to see help or options.
 > This will include list of arguments and their meanings.
@@ -224,10 +228,6 @@ $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtyp
 > For maually selecting the databases, you can use `for` loop like this:
 > `for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done`
 {: .tips}
-
-> If we were making a protein database, we would use `-dbtype prot`
-> and provide amino acid fasta file.
-{: .notes}
 
 > ## Merging database with `blastdb_aliastool`
 > BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
