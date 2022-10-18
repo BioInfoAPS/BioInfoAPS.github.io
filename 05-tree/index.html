@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-10-17 15:07:32 -0400">
+    <meta http-equiv="last-modified" content="2022-10-17 20:36:40 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -365,6 +365,12 @@ done.
   <p>Make sure you are still in phylogeny folder. You can use <code class="language-plaintext highlighter-rouge">pwd</code> to check.</p>
 </blockquote>
 
+<blockquote class="tips">
+  <p>Reminder: <code class="language-plaintext highlighter-rouge">more</code> displays small chunks of the file at a time. 
+You can scroll down the file using <kbd>enter</kbd> key.
+You can return to command line prompt by pressing <kbd>q</kbd> key.</p>
+</blockquote>
+
 <p>The two files avrBs2_all_genomes.fas and avrBs2_all_genomes_aligned.fas 
 may not look very different at the moment considering the gene was present 
 in all the sample genomes used here as seen from blast results. 
@@ -537,7 +543,7 @@ do
 done
 
 # Combine all outputs and parse into multiFASTA file
-cat *_avrBs2.out | ./blast2fasta.sh &gt; avrBs2_all_genomes.fas
+cat *_avrBs2.out | sh blast2fasta.sh &gt; avrBs2_all_genomes.fas
 
 # Align sequences with MAAFT
 mafft avrBs2_all_genomes.fas &gt; avrBs2_all_genomes_aligned.fas
