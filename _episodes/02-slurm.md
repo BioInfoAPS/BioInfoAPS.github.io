@@ -115,7 +115,7 @@ current datetime at 10s interval.
 
 > ## Waiting in bash
 > To halt the execution of commands for certain period of time, 
-> `wait` command is used followed by the period of time.
+> `sleep` command is used followed by the period of time.
 {: .tips}
 
 Change the &lt;email_address&gt; to your email address where you can check email.

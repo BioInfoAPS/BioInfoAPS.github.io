@@ -782,7 +782,7 @@ CM008460.1      5909607 A       T       downstream_gene_variant
 > {: .caution}
 > 
 > ~~~
-> $ cp ../share/strep/aliens_in_scabies ./
+> $ cp /blue/general_workshop/share/strep/aliens_in_scabies ./
 > ~~~
 > {: .language-bash}
 > 
@@ -931,6 +931,11 @@ $ while(($x < 4))
 3
 ~~~
 {: .output}
+
+> `((++x))` means increase the value of `x` by 1.
+> Alternatively, you can use `x=$((x+1))`. 
+> Double parenthesis `(( ))` allows math operations in shell code.
+{: .notes}
 
 As in `for` loop, the commands to be looped over are enclosed between `do` and `done`. 
 

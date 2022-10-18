@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-10-17 20:36:40 -0400">
+    <meta http-equiv="last-modified" content="2022-10-18 12:57:33 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -960,7 +960,7 @@ CM008460.1      5909607 A       T       downstream_gene_variant
 if not use <code class="language-plaintext highlighter-rouge">cd /blue/general_workshop/&lt;username&gt;</code> to go to your personal working directory.</p>
   </blockquote>
 
-  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cp</span> ../share/strep/aliens_in_scabies ./
+  <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span><span class="nb">cp</span> /blue/general_workshop/share/strep/aliens_in_scabies ./
 </code></pre></div>  </div>
 
   <p><em>Streptomyces scabies</em> is a plant pathogen that produces necrosis in potatoes. 
@@ -1116,6 +1116,12 @@ The variable <code class="language-plaintext highlighter-rouge">x</code> will ta
 2
 3
 </code></pre></div></div>
+
+<blockquote class="notes">
+  <p><code class="language-plaintext highlighter-rouge">((++x))</code> means increase the value of <code class="language-plaintext highlighter-rouge">x</code> by 1.
+Alternatively, you can use <code class="language-plaintext highlighter-rouge">x=$((x+1))</code>. 
+Double parenthesis <code class="language-plaintext highlighter-rouge">(( ))</code> allows math operations in shell code.</p>
+</blockquote>
 
 <p>As in <code class="language-plaintext highlighter-rouge">for</code> loop, the commands to be looped over are enclosed between <code class="language-plaintext highlighter-rouge">do</code> and <code class="language-plaintext highlighter-rouge">done</code>.</p>
 
