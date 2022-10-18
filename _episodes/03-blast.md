@@ -225,6 +225,10 @@ $ for genome in $genomes; do makeblastdb -in "$genome.fasta" -out $genome -dbtyp
 > `for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done`
 {: .tips}
 
+> If we were making a protein database, we would use `-dbtype prot`
+> and provide amino acid fasta file.
+{: .notes}
+
 > ## Merging database with `blastdb_aliastool`
 > BLAST+ also includes a command `blastdb_aliastool` for combining databases; 
 > however, it is outside the scope of this workshop.  

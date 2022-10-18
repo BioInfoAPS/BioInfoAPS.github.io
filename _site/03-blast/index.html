@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-10-18 12:57:33 -0400">
+    <meta http-equiv="last-modified" content="2022-10-18 13:12:40 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -560,6 +560,11 @@ and then the output is used for commands outside.</p>
 <blockquote class="tips">
   <p>For maually selecting the databases, you can use <code class="language-plaintext highlighter-rouge">for</code> loop like this:
 <code class="language-plaintext highlighter-rouge">for genome in Xp Xg Xc; do makeblastdb -in "$genome.fasta" -out $genome -dbtype nucl; done</code></p>
+</blockquote>
+
+<blockquote class="notes">
+  <p>If we were making a protein database, we would use <code class="language-plaintext highlighter-rouge">-dbtype prot</code>
+and provide amino acid fasta file.</p>
 </blockquote>
 
 <blockquote class="notes">
