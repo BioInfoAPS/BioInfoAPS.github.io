@@ -190,6 +190,8 @@ The script is located in path `/blue/general_workshop/share/scripts/blast2fasta.
 ~~~
 $ cp ../../share/scripts/blast2fasta.sh ./   
 
+$ chmod +x ./blast2fasta.sh   
+
 $ cat blast2fasta.sh
 ~~~
 {: .language-bash}

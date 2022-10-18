@@ -53,6 +53,11 @@ $ more avrBs2_all_genomes_aligned.fas
 > Make sure you are still in phylogeny folder. You can use `pwd` to check.
 {: .caution}
 
+> Reminder: `more` displays small chunks of the file at a time. 
+> You can scroll down the file using <kbd>enter</kbd> key.
+> You can return to command line prompt by pressing <kbd>q</kbd> key.
+{: .tips}
+
 The two files avrBs2_all_genomes.fas and avrBs2_all_genomes_aligned.fas 
 may not look very different at the moment considering the gene was present 
 in all the sample genomes used here as seen from blast results. 
@@ -242,7 +247,7 @@ do
 done
 
 # Combine all outputs and parse into multiFASTA file
-cat *_avrBs2.out | ./blast2fasta.sh > avrBs2_all_genomes.fas
+cat *_avrBs2.out | sh blast2fasta.sh > avrBs2_all_genomes.fas
 
 # Align sequences with MAAFT
 mafft avrBs2_all_genomes.fas > avrBs2_all_genomes_aligned.fas
