@@ -1,8 +1,9 @@
 ---
 title: "Multiple gene copies"
-Objectives:
+objectives:
 - Search for another gene in a combination of genomes. 
 - Translating command line skills to your specific research. 
+
 ---
 
 
