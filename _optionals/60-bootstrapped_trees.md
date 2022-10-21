@@ -12,12 +12,12 @@ such as the stability of tree topology.
 One way to show this is using bootstrap values, 
 which is the probability that a particular node
 (i.e. a dichotomous branching with a particular set of samples in each branch)
-appearing among a large number of trees generated 
+appears among a large number of trees generated 
 while resampling within the sequence alignment.
 Bootstrap values are often used in the same fashion as confidence intervals.
 
 A common method for creating bootstrapped trees using RAxML consists of 
-3 step approach:
+a 3 step approach:
 - Generate a few maximum likelihood (ML) trees.
 - Generate many bootstrapped trees.
 - Apply the bootstrap information to the best ML tree.
@@ -26,7 +26,7 @@ A common method for creating bootstrapped trees using RAxML consists of
 
 Maximum likelihood tree generation is computationally expensive, 
 but the resulting tree is considered superior to other rapid methods.
-Thus, we'll generate a small number of ML trees.
+Thus, we' usually generate a small number of ML trees (16 in the following example).
 
 ~~~
 $ raxmlHPC -T 8 -m GTRGAMMA -p 144 -# 16 -s input.fasta -n treeML -w outdir

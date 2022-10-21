@@ -19,7 +19,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="last-modified" content="2022-10-20 16:21:04 -0400">
+    <meta http-equiv="last-modified" content="2022-10-20 23:33:00 -0400">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- meta "search-domain" used for google site search function google_search() -->
     <meta name="search-domain" value="https://bioinfoaps.github.io/">
@@ -316,12 +316,12 @@ such as the stability of tree topology.
 One way to show this is using bootstrap values, 
 which is the probability that a particular node
 (i.e. a dichotomous branching with a particular set of samples in each branch)
-appearing among a large number of trees generated 
+appears among a large number of trees generated 
 while resampling within the sequence alignment.
 Bootstrap values are often used in the same fashion as confidence intervals.</p>
 
 <p>A common method for creating bootstrapped trees using RAxML consists of 
-3 step approach:</p>
+a 3 step approach:</p>
 <ul>
   <li>Generate a few maximum likelihood (ML) trees.</li>
   <li>Generate many bootstrapped trees.</li>
@@ -332,7 +332,7 @@ Bootstrap values are often used in the same fashion as confidence intervals.</p>
 
 <p>Maximum likelihood tree generation is computationally expensive, 
 but the resulting tree is considered superior to other rapid methods.
-Thus, we’ll generate a small number of ML trees.</p>
+Thus, we’ usually generate a small number of ML trees (16 in the following example).</p>
 
 <div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="gp">$ </span>raxmlHPC <span class="nt">-T</span> 8 <span class="nt">-m</span> GTRGAMMA <span class="nt">-p</span> 144 -# 16 <span class="nt">-s</span> input.fasta <span class="nt">-n</span> treeML <span class="nt">-w</span> outdir
 
